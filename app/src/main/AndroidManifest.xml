@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.app.sample.fchat">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ActivitySplash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--<service-->
+            <!--android:name=".MyFirebaseMessagingService"-->
+            <!--android:stopWithTask="false">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="com.google.firebase.MESSAGING_EVENT" />-->
+            <!--</intent-filter>-->
+        <!--</service>-->
+         <service
+         android:name=".MyFirebaseMessagingService"
+         android:exported="false">
+         <intent-filter>
+         <action android:name="com.google.firebase.MESSAGING_EVENT" />
+         </intent-filter>
+         </service>
+         <service
+         android:name=".MyFirebaseInstanceIdService"
+         android:exported="false">
+         <intent-filter>
+         <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+         </intent-filter>
+         </service>
+
+        <activity android:name=".ActivityMain">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="fchat.firebase.google.com"
+                    android:pathPrefix="/message"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ActivityChatDetails"
+            android:label="List">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ActivitySelectFriend" />
+        </activity>
+        <activity
+            android:name=".ActivitySelectFriend"
+
+            android:label="Sahaika">
+
+
+        </activity>
+        <activity android:name=".SignupActivity" />
+
+        <!--<service-->
+            <!--android:name=".MyMsgService"-->
+            <!--android:enabled="true"-->
+            <!--android:exported="true"></service>-->
+    </application>
+
+</manifest>

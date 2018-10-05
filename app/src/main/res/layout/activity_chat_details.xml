@@ -1,0 +1,171 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mother_child11"
+    android:orientation="vertical">
+
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:background="@color/translucent_low"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="bottom">
+
+        <ListView
+            android:id="@+id/listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent"
+            android:cacheColorHint="#00000000"
+            android:divider="#00000000"
+            android:listSelector="#00000000"
+            android:padding="5dp"
+            android:transcriptMode="normal">
+
+        </ListView>
+
+        <TextView
+            android:id="@android:id/empty"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentTop="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="empty list"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.CardView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="90dp"
+        android:backgroundTint="@color/translucent"
+        >
+        <LinearLayout
+            android:id="@+id/input_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            android:gravity="center_vertical"
+            android:background="@color/transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/microphone"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/ic_mic_black_24dp"/>
+
+            <!--<ImageView-->
+            <!--android:id="@+id/microphone"-->
+            <!--android:layout_width="40dp"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:background="#EF3B75"-->
+            <!--android:paddingBottom="10dp"-->
+            <!--android:paddingTop="10dp"-->
+            <!--android:src="@drawable/microphone" />-->
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/lyt_thread"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_marginLeft="16dp"
+                android:padding="20dp"
+                app:cardCornerRadius="20dp">
+                <EditText
+                    android:id="@+id/text_content"
+                    android:hint="Enter message"
+                    android:background="@android:color/transparent"
+
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:maxLines="6"/>
+
+            </android.support.v7.widget.CardView>
+
+            <Button
+                android:id="@+id/btn_send"
+                android:background="@drawable/ic_send_black_24dp"
+                android:clickable="true"
+                android:layout_marginLeft="12dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:gravity="center"
+                android:contentDescription="Send"
+                android:layout_gravity="center_vertical" />
+
+
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/input_bar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="70dp"-->
+        <!--android:background="@color/grey_bg"-->
+        <!--android:padding="5dp"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<android.support.v7.widget.CardView-->
+            <!--android:id="@+id/lyt_thread"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:gravity="center_vertical|center_horizontal"-->
+            <!--app:cardCornerRadius="5dp"-->
+            <!--app:cardBackgroundColor="@android:color/white"-->
+            <!--app:cardElevation="2dp"-->
+            <!--android:layout_marginLeft="5dp"-->
+            <!--app:cardUseCompatPadding="true">-->
+
+            <!--<EditText-->
+                <!--android:id="@+id/text_content"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:background="@android:color/white"-->
+                <!--android:gravity="top"-->
+                <!--android:hint="type message.."-->
+                <!--android:padding="10dp" />-->
+
+
+
+        <!--</android.support.v7.widget.CardView>-->
+        <!--<ImageButton-->
+            <!--android:id="@+id/microphone"-->
+            <!--android:layout_width="50dp"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:src="@drawable/microphone_of_voice"/>-->
+
+        <!--<Button-->
+            <!--android:id="@+id/btn_send"-->
+            <!--android:layout_width="50dp"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_marginLeft="5dp"-->
+            <!--android:layout_marginRight="5dp"-->
+            <!--android:background="@drawable/button_send"-->
+            <!--android:contentDescription="Send" />-->
+
+    <!--</LinearLayout>-->
+
+</LinearLayout>

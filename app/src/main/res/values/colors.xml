@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <!--<color name="colorPrimary">#30a5c6</color>-->
+    <!--<color name="colorPrimaryDark">#2a6983</color>-->
+    <color name="colorPrimaryLight">#ab47bc</color>
+    <color name="colorPrimary">#790e8b</color>
+    <color name="colorPrimaryDark">#510b5d</color>
+    <color name="colorPrimaryDarkDark">#400a4a</color>
+
+    <!--<color name="colorPrimaryLight">#ab47bc</color>-->
+    <!--<color name="colorPrimary">#790e8b</color>-->
+    <!--<color name="colorPrimary">#510b5d</color>-->
+    <!--<color name="colorPrimaryDark">#400a4a</color>-->
+    <color name="colorPrimaryDarkDarkDark">#2d0934</color>
+
+
+    <color name="colorAccent">#FF4081</color>
+    <color name="white">#FFFFFF</color>
+    <color name="trial">#edfcfd</color>
+    <color name="translucent_low">#d6fcfcfc</color>
+    <color name="translucent">#c5fcfcfc</color>
+    <color name="translucent_high">#1afcfcfc</color>
+    <color name="drak_gray">#354852</color>
+    <color name="colorAccentDark">#27ae60</color>
+    <color name="colorAccentLight">#2ecc71</color>
+    <color name="textColorSecondary">@color/grey_hard</color>
+
+    <color name="backGroundPrimary">@color/background_material_light</color>
+
+    <color name="dialogContentColor">#767676</color>
+
+    <color name="cardFeaturedContent">#E0E0E0</color>
+
+    <color name="grey_hard">#96989A</color>
+    <color name="grey_medium">#BDBFC1</color>
+    <color name="grey_soft">#F5F5F5</color>
+
+    <color name="grey_bg">#EBEFF0</color>
+    <color name="grey_text">#222D31</color>
+    <color name="me_chat_bg">#FFE0B2</color>
+
+</resources>

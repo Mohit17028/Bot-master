@@ -1,0 +1,125 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
+
+    defaultConfig {
+        applicationId "com.app.sample.fchat"
+        minSdkVersion 19
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+
+
+        multiDexEnabled true
+        useLibrary 'org.apache.http.legacy'
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath true
+            }
+        }
+
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig getSigningConfig()
+            /*applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    def appName = "FChat"
+                    def outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                        def fileName = appName + " " + defaultConfig.versionName + ".apk"
+                        output.outputFile = new File((String) outputFile.parent, (String) fileName)
+                    }
+                }
+            }*/
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/INDEX.LIST'
+
+        exclude 'project.properties'
+        exclude 'META-INF/io.netty.versions.properties'
+    }
+
+
+}
+
+/* IMPORTANT :
+ * Be careful when update dependencies, different version library may caused error */
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support.constraint:constraint-layout:1.1.2'
+    testCompile 'junit:junit:4.12'
+    compile "com.android.support:support-v4:25.3.1"
+    compile "commons-io:commons-io:+"
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    //implementation 'com.android.support:appcompat-v7:26.1.0'
+    compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.android.support:cardview-v7:25.3.1'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+    compile 'com.android.support:design:25.3.1'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.balysv:material-ripple:1.0.2'
+    compile 'com.microsoft.projectoxford:speechrecognition:1.2.2'
+    compile 'pl.droidsonroids.gif:android-gif-drawable:1.2.11'
+
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.google.cloud:google-cloud-speech:0.56.0-beta'
+
+    compile 'com.googlecode.json-simple:json-simple:1.1'
+
+    //compile 'com.google.firebase:firebase-core:16.0.0'
+    //noinspection GradleCompatible
+    compile 'com.google.firebase:firebase-core:10.0.0'
+
+    // Google
+    compile 'com.google.android.gms:play-services-auth:10.0.0'
+
+    // Firebase
+    compile 'com.firebase:firebase-jobdispatcher:0.5.2'
+    compile 'com.google.firebase:firebase-storage:10.0.1'
+    compile 'com.google.firebase:firebase-database:10.0.0'
+    compile 'com.google.firebase:firebase-auth:10.0.0'
+    compile 'com.firebase:firebase-client-android:2.5.0'
+    compile 'com.google.firebase:firebase-config:10.0.0'
+    compile 'com.google.android.gms:play-services-appinvite:10.0.0'
+    compile 'com.google.firebase:firebase-messaging:10.0.0'
+    compile 'com.google.android.gms:play-services-ads:10.0.0'
+    compile 'com.google.firebase:firebase-appindexing:10.0.0'
+    compile 'com.google.firebase:firebase-crash:10.0.0'
+    compile 'com.google.firebase:firebase-analytics:10.0.0'
+
+    compile 'org.apache.httpcomponents:httpcore:4.4.1'
+
+//noinspection DuplicatePlatformClasses
+    compile 'org.apache.httpcomponents:httpclient:4.5'
+
+    //noinspection DuplicatePlatformClasses
+    compile 'org.apache.httpcomponents:httpclient:4.5'
+
+    compile 'com.google.cloud:google-cloud-speech:0.30.0-alpha'
+
+
+
+
+    implementation group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.3.1'
+
+}
+apply plugin: 'com.google.gms.google-services'
+

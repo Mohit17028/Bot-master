@@ -1,0 +1,135 @@
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/d9ea2377a91a88015a93f743329f3d76/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/124cf1deb87197e2a36258a549b1dbb7/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/66228c42e6fb6b76a316e67ab8a9c829/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-jobdispatcher-0.5.2.aar/38dac51c9336433991dd891fab1c7e3c/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/transition-25.3.1.aar/30ef5022d94367d0c5d51dda9d4737f8/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-auth-10.0.0.aar/04048bc71763c42afac001702a7084fd/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-storage-10.0.1.aar/3d963f719efa6e4ff94c484c397b3566/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-database-10.0.0.aar/9f7515ac8e595346e7bb41a047556ec9/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-auth-10.0.0.aar/0c219fa804909e86971f808f320e35f3/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-config-10.0.0.aar/30098e44172566060819d39cfc23307b/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-appinvite-10.0.0.aar/b7f5ece053c345033e92de398c8488af/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-messaging-10.0.0.aar/a5acf4721df37b0805e215da4cacb73e/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-ads-10.0.0.aar/93f610fcb30a5204ed4188ff3083fcd4/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-appindexing-10.0.0.aar/94917e0b245bea482dee32e804c534e4/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-crash-10.0.0.aar/b190d6793300d4645c4d1f75e91eae5b/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-core-10.0.0.aar/ca7d077b7422b1b589e553728b2ab9aa/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-analytics-10.0.0.aar/e54455751a6a750b591a608d6034ada0/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-10.0.0.aar/f743bff7c77d12eed7bc20b3398b6116/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-clearcut-10.0.0.aar/72cb78fc4e783ed227c188a37060f667/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-base-10.0.0.aar/78c188cd37bb3422c7698c52cde98baf/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-10.0.1.aar/539599c550ced3678a7363ef4048265a/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-10.0.0.aar/b8b46bc3e54f457858a0aaa2188a9e86/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-10.0.0.aar/1c2af06ce34033f03ce2b4ca5bdc20a3/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-iid-10.0.0.aar/a98c16fb8669948180a34d0b99fba272/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-10.0.0.aar/0fc989fb6303524d918c86c4bdc8429a/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-gass-10.0.0.aar/88781f793ad7bc4bd98d8cba1da05d02/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-common-10.0.1.aar/515e74882171b717c7774ddfbaf02dbc/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-tasks-10.0.1.aar/a357be7e0f9364116a86c74b7be79d63/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-basement-10.0.1.aar/51b7aa98cb4bb6cbc136d125e097ae8f/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/b03b6542ab0b5f1a5902ff9f33499300/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.6/815893df5f31da2ece4040fe0a12fd44b577afaf/commons-io-2.6.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.3.1.aar/60bbd3f55567fe4ae7d58439de1f6e5e/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.3.1.aar/b87fb6fc7a46373d9b551857970eb213/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/material-ripple-1.0.2.aar/a7874cd344816a45b3a58ffecb3b198f/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/speechrecognition-1.2.2.aar/bcd8db455ee45b21906c3b2b3f9a11df/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/speechrecognition-1.2.2.aar/bcd8db455ee45b21906c3b2b3f9a11df/jars/libs/SpeechSDK.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/android-gif-drawable-1.2.11.aar/67e87817bb7465fd2469e02df271cdda/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/circleimageview-2.1.0.aar/5cd7d89ae695528fabc8c1c6d5a64bee/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/com.google.cloud/google-cloud-speech/0.56.0-beta/5e20f6b97ee7667763361eafb0b439f0aa78e93d/google-cloud-speech-0.56.0-beta.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/com.googlecode.json-simple/json-simple/1.1/5e303a03d04e6788dddfa3655272580ae0fc13bb/json-simple-1.1.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/com.firebase/firebase-client-android/2.5.0/7d0473896b3b10b23a2f9812fec4316dff8afdd/firebase-client-android-2.5.0.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.3.1/f7899276dddd01d8a42ecfe27e7031fcf9824422/httpmime-4.3.1.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/com.google.cloud/google-cloud-core-grpc/1.38.0/41ad4f996da5c0e7a70acfa7a3125e9ff9276567/google-cloud-core-grpc-1.38.0.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/com.google.cloud/google-cloud-core/1.38.0/4b737cf6d63492489e9c7434bb97b591a363b0a7/google-cloud-core-1.38.0.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/com.google.api/gax-grpc/1.29.0/ca2a2853c6f9fc4a25fccd0068f88d98b28e9e35/gax-grpc-1.29.0.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/com.google.api/gax/1.29.0/f4e9a7451d60ad1443088af4b1cdf58bb60054a7/gax-1.29.0.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/com.google.auth/google-auth-library-oauth2-http/0.9.1/c0fe3a39b0f28d59de1986b3c50f018cd7cb9ec2/google-auth-library-oauth2-http-0.9.1.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client-jackson2/1.19.0/81dbf9795d387d5e80e55346582d5f2fb81a42eb/google-http-client-jackson2-1.19.0.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client/1.23.0/8e86c84ff3c98eca6423e97780325b299133d858/google-http-client-1.23.0.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5/a1e6cbb3cc2c5f210dd1310ff9fcb2c09c0d1438/httpclient-4.5.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.1/f5aa318bda4c6c8d688c9d00b90681dcd82ce636/httpcore-4.4.1.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/6ad41dd4c53f99cebf09614bdc63c9f9/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/com.android.support.constraint/constraint-layout-solver/1.1.2/bfc967828daffc35ba01c9ee204d98b664930a0f/constraint-layout-solver-1.1.2.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/support-fragment-25.3.1.aar/5edc884e810014a4456c16aadda20267/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.3.1.aar/c56eb867aafa4c02ab277cb902016eff/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.3.1.aar/ce18ba80977869b1e537e299e6528299/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.3.1.aar/60e6f65e7c98da22c75d571d2e5866c5/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.3.1.aar/fe9aa5c32c1919ac5625a4852b330afb/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.3.1.aar/68b67df935d334eb659513b27adef8f0/jars/classes.jar(**.class)
+-injars /home/himani/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/9bed72fbed363636635b978ff8eb52d7/jars/classes.jar(**.class)
+-injars /home/himani/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.3.1/support-annotations-25.3.1.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/com.firebase/firebase-client-jvm/2.5.0/c0af904657634f7ab9cc21e75d80250570033321/firebase-client-jvm-2.5.0.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/4bfc12adfe4842bf07b657f0369c4cb522955686/commons-logging-1.2.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.9/9ce04e34240f674bc72680f8b843b1457383161a/commons-codec-1.9.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.2.2/3c8f6018eaa72d43b261181e801e6f8676c16ef6/jackson-databind-2.2.2.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/com.firebase/tubesock/0.0.12/6ec0bbd3e161a73ed672284b587fd32309a86d7a/tubesock-0.0.12.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.2.2/285cb9c666f0f0f3dd8a1be04e1f457eb7b15113/jackson-annotations-2.2.2.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.2.2/d20be6a5ddd6f8cfd36ebf6dea329873a1c41f1b/jackson-core-2.2.2.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/com.google.api.grpc/proto-google-cloud-speech-v1beta1/0.21.0/6027e3e06eada5fd3c4d49ec4f806c62f0f6349e/proto-google-cloud-speech-v1beta1-0.21.0.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/com.google.api.grpc/proto-google-cloud-speech-v1p1beta1/0.21.0/82f51885f5a1fde140a149e3a1eb3fc96629d8f9/proto-google-cloud-speech-v1p1beta1-0.21.0.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/com.google.api.grpc/proto-google-cloud-speech-v1/0.21.0/c42698bd826be8b4ed614aedce526a94c76e2bc8/proto-google-cloud-speech-v1-0.21.0.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-netty-shaded/1.13.1/ccdc4f2c2791d93164c574fbfb90d614aa0849ae/grpc-netty-shaded-1.13.1.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-stub/1.13.1/2fc6e85e459ac522a3d81a78add8b6695f7525f1/grpc-stub-1.13.1.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-auth/1.13.1/96327e5774b7e0ed7f47043af9ff4fbc7f00f36/grpc-auth-1.13.1.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java-util/3.6.0/3680d0042d4fe0b95ada844ff24da0698a7f0773/protobuf-java-util-3.6.0.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-protobuf/1.13.1/832f531a79249af2d9c1d50168301ba2bc45b54b/grpc-protobuf-1.13.1.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-protobuf-lite/1.13.1/6ca13585100ad99e1c6140a7c8138dd96596aaf5/grpc-protobuf-lite-1.13.1.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-core/1.13.1/74f5300e1e4d5c2abc0e4fc927d24f4f593c5a7d/grpc-core-1.13.1.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/com.google.api.grpc/proto-google-iam-v1/0.12.0/ea312c0250a5d0a7cdd1b20bc2c3259938b79855/proto-google-iam-v1-0.12.0.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/com.google.api/api-common/1.6.0/fea8ce6b7d8629f1646641e07a3ab712b56b901e/api-common-1.6.0.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/20.0/89507701249388e1ed5ddcf8c41f4ce1be7831ef/guava-20.0.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/joda-time/joda-time/2.9.2/36d6e77a419cb455e6fd5909f6f96b168e21e9d0/joda-time-2.9.2.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/25ea2e8b0c338a877313bd4672d3fe056ea78f0d/jsr305-3.0.2.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/com.google.api.grpc/proto-google-common-protos/1.12.0/1140cc74df039deb044ed0e320035e674dc13062/proto-google-common-protos-1.12.0.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/com.google.auth/google-auth-library-credentials/0.10.0/f981288bd84fe6d140ed70d1d8dbe994a64fa3cc/google-auth-library-credentials-0.10.0.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java/3.6.0/5333f7e422744d76840c08a106e28e519fbe3acd/protobuf-java-3.6.0.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-context/1.13.1/e8d8407217ffe43996700f667fa1f6bee0a8c19a/grpc-context-1.13.1.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/org.threeten/threetenbp/1.3.3/3ea31c96676ff12ab56be0b1af6fff61d1a4f1f2/threetenbp-1.3.3.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.7/751f548c85fa49f330cecbb1875893f971b33c4e/gson-2.7.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.1.2/6dcc08f90f678ac33e5ef78c3c752b6f59e63e0c/error_prone_annotations-2.1.2.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/io.opencensus/opencensus-contrib-grpc-metrics/0.12.3/a4c7ff238a91b901c8b459889b6d0d7a9d889b4d/opencensus-contrib-grpc-metrics-0.12.3.jar(**.class)
+-injars /home/himani/.gradle/caches/modules-2/files-2.1/io.opencensus/opencensus-api/0.12.3/743f074095f29aa985517299545e72cc99c87de0/opencensus-api-0.12.3.jar(**.class)
+-injars /home/himani/Downloads/Bot-master/app/build/intermediates/classes/debug(**.class)
+-outjars /home/himani/Downloads/Bot-master/app/build/intermediates/multi-dex/debug/componentClasses.jar
+
+-libraryjars /home/himani/Android/Sdk/build-tools/26.0.2/lib/shrinkedAndroid.jar
+
+-forceprocessing
+-dontoptimize
+-dontobfuscate
+-dontusemixedcaseclassnames
+-dontpreverify
+-dontnote **
+-dontwarn **
+-printconfiguration /home/himani/Downloads/Bot-master/app/build/intermediates/multi-dex/debug/components.flags
+
+
+# Referenced at /home/himani/Downloads/Bot-master/app/build/intermediates/manifests/full/debug/AndroidManifest.xml:35
+-keep class android.support.multidex.MultiDexApplication {
+    <init>(...);
+}
+
+-keep public class * extends android.app.Instrumentation {
+    <init>();
+}
+
+-keep public class * extends android.app.Application {
+    <init>();
+    void attachBaseContext(android.content.Context);
+}
+
+-keep public class * extends android.app.backup.BackupAgent {
+    <init>();
+}
+
+-keep public class * extends java.lang.annotation.Annotation {
+    <fields>;
+    <methods>;
+}
+
+-keep class com.android.tools.ir.** {
+    <fields>;
+    <methods>;
+}
