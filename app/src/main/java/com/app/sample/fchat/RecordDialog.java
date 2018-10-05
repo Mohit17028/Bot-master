@@ -2,6 +2,7 @@ package com.app.sample.fchat;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import org.apache.commons.io.FileUtils;
 
@@ -93,6 +94,10 @@ public class RecordDialog extends AppCompatDialogFragment {
     private String outputFile;
     private static String urlLink = "http://192.168.2.71:9009/audioqa/";
 
+    public interface MyAlertDialogResultInterface {
+        abstract void onButtonClicked(int button);
+    }
+
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder buider = new AlertDialog.Builder(getActivity());
@@ -162,6 +167,11 @@ public class RecordDialog extends AppCompatDialogFragment {
                     myAudioRecorder.release();
                     chrono.stop();
                     myAudioRecorder = null;
+
+                /*SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+                SharedPreferences.Editor editor = pref.edit();
+                editor.putString("Filename",opfile);*/
+
                     //                stop.setEnabled(false);
                     //                play.setEnabled(true);
 //                }catch (IllegalStateException e){
@@ -189,8 +199,9 @@ public class RecordDialog extends AppCompatDialogFragment {
                 doFileUpload(opFile);
                 //translateAudioToText();
 
-                //translateAudioToText();
-
+                Intent intent = new Intent(getContext(),ActivityChatDetails.class);
+                intent.putExtra("aud_name",outputFile);
+                startActivity(intent);
             }
         });
 

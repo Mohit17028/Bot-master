@@ -22,7 +22,7 @@ public final class R {
         public static final int mrl_rippleRoundedCorners = 0x7f030120;
     }
     public static final class color {
-        public static final int transparent = 0x7f050083;
+        public static final int transparent = 0x7f050084;
     }
     public static final class styleable {
         public static final int[] MaterialRippleLayout = { 0x7f030115, 0x7f030116, 0x7f030117, 0x7f030118, 0x7f030119, 0x7f03011a, 0x7f03011b, 0x7f03011c, 0x7f03011d, 0x7f03011e, 0x7f03011f, 0x7f030120 };

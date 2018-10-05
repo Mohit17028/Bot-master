@@ -1,10 +1,10 @@
-#Wed Oct 03 23:33:36 IST 2018
+#Fri Oct 05 17:47:44 IST 2018
 path.2=classes2.dex
 path.1=classes3.dex
 path.0=classes.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
-base.2=/home/himani/Downloads/Bot-master/app/build/intermediates/transforms/dexMerger/debug/29
-base.1=/home/himani/Downloads/Bot-master/app/build/intermediates/transforms/dexMerger/debug/29
-base.0=/home/himani/Downloads/Bot-master/app/build/intermediates/transforms/dexMerger/debug/29
+base.2=/home/himani/Downloads/Bot-master/app/build/intermediates/transforms/dexMerger/debug/67
+base.1=/home/himani/Downloads/Bot-master/app/build/intermediates/transforms/dexMerger/debug/67
+base.0=/home/himani/Downloads/Bot-master/app/build/intermediates/transforms/dexMerger/debug/67

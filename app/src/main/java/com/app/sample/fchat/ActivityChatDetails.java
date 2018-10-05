@@ -91,6 +91,7 @@ public class ActivityChatDetails extends AppCompatActivity {
     String urlLink_hin = "https://api.dialogflow.com/v1/query";
     String chatNode, chatNode_1, chatNode_2;
     String ques = " ";
+    String audName;
 
     public static final String MESSAGE_CHILD = "messages";
     DatabaseReference ref;
@@ -99,6 +100,10 @@ public class ActivityChatDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_details);
+        Intent intent1 = getIntent();
+        String audName = intent1.getStringExtra("aud_name");
+        Toast.makeText(this,audName,Toast.LENGTH_SHORT).show();
+
         parent_view = findViewById(android.R.id.content);
         pfbd = new ParseFirebaseData(this);
         set = new SettingsAPI(this);
@@ -145,6 +150,8 @@ public class ActivityChatDetails extends AppCompatActivity {
 
             }
         });
+
+
 
 
         ref = FirebaseDatabase.getInstance().getReference(MESSAGE_CHILD);

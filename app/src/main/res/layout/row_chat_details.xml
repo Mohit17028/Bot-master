@@ -66,7 +66,7 @@
                     >
 
                     <TextView
-                        android:id="@+id/textViewRecordingname"
+                        android:id="@+id/tv_audio_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Voice 001"

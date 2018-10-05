@@ -32,6 +32,7 @@
     <color name="dialogContentColor">#767676</color>
 
     <color name="cardFeaturedContent">#E0E0E0</color>
+    <color name="grey_translucent">#91e0e0e0</color>
 
     <color name="grey_hard">#96989A</color>
     <color name="grey_medium">#BDBFC1</color>

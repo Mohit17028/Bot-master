@@ -62,6 +62,8 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 			holder.audio_layout = (LinearLayout) convertView.findViewById(R.id.audio_layout);
 			holder.image_status	= (ImageView) convertView.findViewById(R.id.image_status);
 			holder.profile_img  = (CircleImageView) convertView.findViewById(R.id.profile_img);
+			holder.play_icon    = (ImageView) convertView.findViewById(R.id.imageViewPlay);
+			holder.aud_name_tv  = (TextView) convertView.findViewById(R.id.tv_audio_name);
         	convertView.setTag(holder);	
         }else{
             holder = (ViewHolder) convertView.getTag();
@@ -71,9 +73,13 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 		holder.time.setText(msg.getReadableTime());
 
         if(msg.getReceiver().getId().equals(set.readSetting("myid"))){
-            holder.lyt_parent.setPadding(5, 3, 10, 2);
+            holder.lyt_parent.setPadding(5, 3, 50, 2);
             holder.lyt_parent.setGravity(Gravity.LEFT);
-            holder.audio_layout.setVisibility(View.GONE);
+//            holder.audio_layout.setVisibility(View.GONE);
+            holder.play_icon.setImageResource(R.drawable.ic_play_circle_filled_dark_24dp);
+            holder.aud_name_tv.setTextColor(mContext.getResources().getColor(R.color.colorPrimaryDarkDarkDark));
+            holder.time.setTextColor(mContext.getResources().getColor(R.color.colorPrimaryDarkDarkDark));
+            holder.message.setTextColor(mContext.getResources().getColor(R.color.colorPrimaryDarkDarkDark));
             holder.lyt_thread.setBackgroundResource(R.drawable.left_chat_msg_box_style);
 //            holder.lyt_thread.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
 //            holder.profile_img.setImageResource(R.drawable.mascot_face);
@@ -83,7 +89,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 
         	holder.profile_img.setVisibility(View.GONE);
         	holder.lyt_thread.setBackgroundResource(R.drawable.right_chat_msg_box_style);
-            holder.lyt_parent.setPadding(10, 3, 5, 2);
+            holder.lyt_parent.setPadding(50, 3, 5, 2);
             holder.lyt_parent.setGravity(Gravity.RIGHT);
 //            holder.lyt_thread.setCardBackgroundColor(mContext.getResources().getColor(R.color.colorPrimaryDarkDark));
         }
@@ -114,5 +120,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 		LinearLayout audio_layout;
 		ImageView image_status;
 		CircleImageView profile_img;
+		ImageView play_icon;
+		TextView aud_name_tv;
 	}	
 }

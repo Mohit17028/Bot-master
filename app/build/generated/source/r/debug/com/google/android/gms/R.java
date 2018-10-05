@@ -122,8 +122,8 @@ public final class R {
         public static final int text = 0x7f0800c1;
         public static final int text1 = 0x7f0800c2;
         public static final int text2 = 0x7f0800c3;
-        public static final int thing_proto = 0x7f0800cc;
-        public static final int toolbar = 0x7f0800d1;
+        public static final int thing_proto = 0x7f0800cb;
+        public static final int toolbar = 0x7f0800d0;
         public static final int url = 0x7f0800d8;
         public static final int wide = 0x7f0800dc;
         public static final int wrap_content = 0x7f0800df;

@@ -20,6 +20,7 @@ import com.app.sample.fchat.data.Tools;
 public class ChatMessage {
 
     private String text;
+//    private String aud_name;
     private String friendId;
     private String friendName;
     private String friendPhoto;
@@ -30,6 +31,7 @@ public class ChatMessage {
 
     public ChatMessage(String text, String timestamp,String friendId, String friendName,String friendPhoto,String senderId,String senderName,String senderPhoto) {
         this.text = text;
+//        this.aud_name = aud_name;
         this.timestamp = timestamp;
         this.friendId=friendId;
         this.friendName=friendName;
@@ -42,6 +44,10 @@ public class ChatMessage {
     public String getText() {
         return text;
     }
+
+//    public String getAudName(){
+//        return aud_name;
+//    }
 
     public void setText(String text) {
         this.text = text;
