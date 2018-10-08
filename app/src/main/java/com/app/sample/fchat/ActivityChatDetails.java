@@ -62,7 +62,7 @@ import java.util.concurrent.ExecutionException;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class ActivityChatDetails extends AppCompatActivity {
+public class ActivityChatDetails extends AppCompatActivity implements RecordDialog.RecordDialogListener {
     public static String KEY_FRIEND = "FRIEND";
 
     private final int REQ_CODE_SPEECH_INPUT = 100;
@@ -91,7 +91,7 @@ public class ActivityChatDetails extends AppCompatActivity {
     String urlLink_hin = "https://api.dialogflow.com/v1/query";
     String chatNode, chatNode_1, chatNode_2;
     String ques = " ";
-    String audName;
+//    String audName;
 
     public static final String MESSAGE_CHILD = "messages";
     DatabaseReference ref;
@@ -100,9 +100,9 @@ public class ActivityChatDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_details);
-        Intent intent1 = getIntent();
-        String audName = intent1.getStringExtra("aud_name");
-        Toast.makeText(this,audName,Toast.LENGTH_SHORT).show();
+//        Intent intent1 = getIntent();
+//        String audName = intent1.getStringExtra("aud_name");
+//        Toast.makeText(this,audName,Toast.LENGTH_SHORT).show();
 
         parent_view = findViewById(android.R.id.content);
         pfbd = new ParseFirebaseData(this);
@@ -167,6 +167,7 @@ public class ActivityChatDetails extends AppCompatActivity {
                 }
                 String totalData = dataSnapshot.child(chatNode).toString();
                 items.clear();
+                System.out.println("TOTAL DATA :  "+totalData);
                 items.addAll(pfbd.getMessageListForUser(totalData));
                 mAdapter = new ChatDetailsListAdapter(ActivityChatDetails.this, items);
                 listview.setAdapter(mAdapter);
@@ -194,6 +195,28 @@ public class ActivityChatDetails extends AppCompatActivity {
         recDialog.show(getSupportFragmentManager(),"Record Dialog");
     }
 
+    @Override
+    public void applyTexts(String audName) {
+        HashMap hm = new HashMap();
+//        et_content.setText(null);
+        hm.put("text",null);
+        hm.put("timestamp", String.valueOf(System.currentTimeMillis()));
+        hm.put("receiverid", friend.getId());
+        hm.put("receivername", friend.getName());
+        hm.put("receiverphoto", friend.getPhoto());
+        hm.put("senderid", set.readSetting("myid"));
+        hm.put("sendername", set.readSetting("myname"));
+        hm.put("senderphoto", set.readSetting("mydp"));
+        hm.put("audio_name",audName);
+        hm.put("isText","0");
+//        Log.d("hm1",audName);
+        System.out.println("hm"+hm.entrySet());
+        ref.child(chatNode).push().setValue(hm);
+        String qy = String.valueOf(et_content.getText());
+
+        MyFirebaseInstanceIdService ob = new MyFirebaseInstanceIdService();
+        ob.onTokenRefresh();
+    }
     public void initToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -230,6 +253,8 @@ public class ActivityChatDetails extends AppCompatActivity {
                 {
                     hm.put("text", ques);
                 }*/
+//                SharedPreferences pref = getApplicationContext().getSharedPreferences("Record_dialog_pref", 0); // 0 - for private mode
+//                String audName= pref.getString("aud_name",null);
 
                 hm.put("timestamp", String.valueOf(System.currentTimeMillis()));
                 hm.put("receiverid", friend.getId());
@@ -238,6 +263,8 @@ public class ActivityChatDetails extends AppCompatActivity {
                 hm.put("senderid", set.readSetting("myid"));
                 hm.put("sendername", set.readSetting("myname"));
                 hm.put("senderphoto", set.readSetting("mydp"));
+                hm.put("audio_name",null);
+                hm.put("isText","1");
                 System.out.println("hm"+hm.entrySet());
                 ref.child(chatNode).push().setValue(hm);
                 String qy = String.valueOf(et_content.getText());
@@ -453,6 +480,8 @@ public class ActivityChatDetails extends AppCompatActivity {
         //return jsonObj;
 
     }
+
+
 
     private class HttpAsyncTask extends AsyncTask<String, Void, Void> {
         @Override

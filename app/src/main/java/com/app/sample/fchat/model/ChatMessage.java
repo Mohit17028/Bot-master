@@ -20,7 +20,8 @@ import com.app.sample.fchat.data.Tools;
 public class ChatMessage {
 
     private String text;
-//    private String aud_name;
+    private String aud_name;
+    private String is_text;
     private String friendId;
     private String friendName;
     private String friendPhoto;
@@ -29,9 +30,10 @@ public class ChatMessage {
     private String senderPhoto;
     private String timestamp;
 
-    public ChatMessage(String text, String timestamp,String friendId, String friendName,String friendPhoto,String senderId,String senderName,String senderPhoto) {
+    public ChatMessage(String text, String aud_name, String is_text, String timestamp,String friendId, String friendName,String friendPhoto,String senderId,String senderName,String senderPhoto) {
         this.text = text;
-//        this.aud_name = aud_name;
+        this.aud_name = aud_name;
+        this.is_text = is_text;
         this.timestamp = timestamp;
         this.friendId=friendId;
         this.friendName=friendName;
@@ -45,9 +47,11 @@ public class ChatMessage {
         return text;
     }
 
-//    public String getAudName(){
-//        return aud_name;
-//    }
+    public String getAudName(){
+        return aud_name;
+    }
+
+    public String getIs_text(){ return is_text; }
 
     public void setText(String text) {
         this.text = text;

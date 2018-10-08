@@ -1,6 +1,7 @@
 package com.app.sample.fchat;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -93,7 +94,11 @@ public class RecordDialog extends AppCompatDialogFragment {
     private String opFile;
     private String outputFile;
     private static String urlLink = "http://192.168.2.71:9009/audioqa/";
+    private RecordDialogListener listener;
 
+    public interface RecordDialogListener{
+        void applyTexts(String audName);
+    }
     public interface MyAlertDialogResultInterface {
         abstract void onButtonClicked(int button);
     }
@@ -148,7 +153,7 @@ public class RecordDialog extends AppCompatDialogFragment {
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
             opFile = Environment.getExternalStorageDirectory().getAbsolutePath()+ "/recording_"+timestamp.getTime()+".3gp";
 //        System.out.println("Record Dialog: filename :"+opFile);
-            outputFile="/"+userid+"/recording_"+timestamp.getTime()+".3gp";
+            outputFile="/"+userid+"/recording_"+timestamp.getTime()+".mp3";
             myAudioRecorder = new MediaRecorder();
             myAudioRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
             myAudioRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
@@ -196,12 +201,19 @@ public class RecordDialog extends AppCompatDialogFragment {
                     }
                 });
 
+
                 doFileUpload(opFile);
+                listener.applyTexts(outputFile);
                 //translateAudioToText();
 
-                Intent intent = new Intent(getContext(),ActivityChatDetails.class);
-                intent.putExtra("aud_name",outputFile);
-                startActivity(intent);
+//                Intent intent = new Intent(getContext(),ActivityChatDetails.class);
+//                intent.putExtra("aud_name",outputFile);
+//                startActivity(intent);
+
+//                SharedPreferences pref = getContext().getSharedPreferences("Record_dialog_pref", 0); // 0 - for private mode
+//                SharedPreferences.Editor editor = pref.edit();
+//                editor.putString("aud_name",outputFile);
+//                editor.commit();
             }
         });
 
@@ -268,6 +280,16 @@ public class RecordDialog extends AppCompatDialogFragment {
         return buider.create();
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        try {
+            listener = (RecordDialogListener) context;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString()+"must implement RecordDialogListener");
+
+        }
+    }
 
     public static void doFileUpload(final String selectedPath){//}, final Handler handler) {
 
@@ -564,7 +586,5 @@ return null;
 
     }
 
-//    public interface RecordDialogListerner{
-//        void applyTexts();
-//    }
+
 }

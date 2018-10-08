@@ -68,16 +68,27 @@ public class ChatDetailsListAdapter extends BaseAdapter {
         }else{
             holder = (ViewHolder) convertView.getTag();
         }
-        
-        holder.message.setText(msg.getText());
+
+        if(msg.getIs_text().equals("1")) {
+			holder.message.setVisibility(View.VISIBLE);
+			holder.message.setText(msg.getText());
+			holder.audio_layout.setVisibility(View.GONE);
+		}
+        else {
+			holder.message.setVisibility(View.GONE);
+			holder.audio_layout.setVisibility(View.VISIBLE);
+			holder.aud_name_tv.setText(msg.getAudName());
+		}
+
 		holder.time.setText(msg.getReadableTime());
 
         if(msg.getReceiver().getId().equals(set.readSetting("myid"))){
             holder.lyt_parent.setPadding(5, 3, 50, 2);
             holder.lyt_parent.setGravity(Gravity.LEFT);
-//            holder.audio_layout.setVisibility(View.GONE);
-            holder.play_icon.setImageResource(R.drawable.ic_play_circle_filled_dark_24dp);
-            holder.aud_name_tv.setTextColor(mContext.getResources().getColor(R.color.colorPrimaryDarkDarkDark));
+            if(holder.audio_layout.getVisibility()==View.VISIBLE) {
+				holder.play_icon.setImageResource(R.drawable.ic_play_circle_filled_dark_24dp);
+				holder.aud_name_tv.setTextColor(mContext.getResources().getColor(R.color.colorPrimaryDarkDarkDark));
+			}
             holder.time.setTextColor(mContext.getResources().getColor(R.color.colorPrimaryDarkDarkDark));
             holder.message.setTextColor(mContext.getResources().getColor(R.color.colorPrimaryDarkDarkDark));
             holder.lyt_thread.setBackgroundResource(R.drawable.left_chat_msg_box_style);
@@ -86,7 +97,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
             //holder.image_status.setImageResource(android.R.color.transparent);
         }else{
 //        	when msg is audio txt_layout visibility will be gone; if text, audio layout visibility will be gone
-
+//			if(holder.audio_layout.getVisibility()==View.VISIBLE) {}
         	holder.profile_img.setVisibility(View.GONE);
         	holder.lyt_thread.setBackgroundResource(R.drawable.right_chat_msg_box_style);
             holder.lyt_parent.setPadding(50, 3, 5, 2);
