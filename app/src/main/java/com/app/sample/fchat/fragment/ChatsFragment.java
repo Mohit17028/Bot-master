@@ -114,6 +114,7 @@ public class ChatsFragment extends Fragment {
 
                     @Override
                     public void onItemClick(View v, ChatMessage obj, int position) {
+                        System.out.println("in chats fragment called");
                         if (obj.getReceiver().getId().equals(set.readSetting("myid"))){
                             ActivityChatDetails.navigate((ActivityMain) getActivity(), v.findViewById(R.id.lyt_parent), obj.getSender());
                             System.out.println("if called");

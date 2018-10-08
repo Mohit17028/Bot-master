@@ -108,6 +108,7 @@ public class ActivityMain extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        System.out.println("onOptionsItemSelected called");
         int id = item.getItemId();
         switch (id) {
             case R.id.action_logout: {

@@ -98,6 +98,7 @@ public class RecordDialog extends AppCompatDialogFragment {
 
     public interface RecordDialogListener{
         void applyTexts(String audName);
+        void downloadAudio(String audName);
     }
     public interface MyAlertDialogResultInterface {
         abstract void onButtonClicked(int button);
@@ -151,13 +152,13 @@ public class RecordDialog extends AppCompatDialogFragment {
 //        } else {
 
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-            opFile = Environment.getExternalStorageDirectory().getAbsolutePath()+ "/recording_"+timestamp.getTime()+".3gp";
+            opFile = Environment.getExternalStorageDirectory().getAbsolutePath()+ "/recording_"+timestamp.getTime()+".mp3";
 //        System.out.println("Record Dialog: filename :"+opFile);
             outputFile="/"+userid+"/recording_"+timestamp.getTime()+".mp3";
             myAudioRecorder = new MediaRecorder();
             myAudioRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-            myAudioRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
-            myAudioRecorder.setAudioEncoder(MediaRecorder.OutputFormat.AMR_NB);
+            myAudioRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
+            myAudioRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
             myAudioRecorder.setOutputFile(opFile);
             chrono.start();
 
@@ -186,6 +187,7 @@ public class RecordDialog extends AppCompatDialogFragment {
                 Toast.makeText(getContext(), "Question Saved :)", Toast.LENGTH_LONG).show();
                 Uri uriAudio = Uri.fromFile(new File(opFile).getAbsoluteFile());
                 System.out.println(uriAudio+"uriaudio");
+
                 FirebaseStorage storage = FirebaseStorage.getInstance();
 //                final StorageReference audioRef = ref.child("Education/audio").child(uriAudio.getLastPathSegment());
                 StorageReference storageRef = storage.getReference(outputFile);
@@ -202,8 +204,11 @@ public class RecordDialog extends AppCompatDialogFragment {
                 });
 
 
+
                 doFileUpload(opFile);
+
                 listener.applyTexts(outputFile);
+                listener.downloadAudio(outputFile);
                 //translateAudioToText();
 
 //                Intent intent = new Intent(getContext(),ActivityChatDetails.class);
@@ -279,6 +284,8 @@ public class RecordDialog extends AppCompatDialogFragment {
 //        });
         return buider.create();
     }
+
+
 
     @Override
     public void onAttach(Context context) {

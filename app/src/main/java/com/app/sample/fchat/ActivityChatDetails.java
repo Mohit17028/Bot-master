@@ -6,10 +6,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.speech.RecognizerIntent;
+import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
@@ -35,11 +38,17 @@ import com.app.sample.fchat.data.SettingsAPI;
 import com.app.sample.fchat.data.Tools;
 import com.app.sample.fchat.model.ChatMessage;
 import com.app.sample.fchat.model.Friend;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -51,6 +60,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -120,7 +130,7 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
         ViewCompat.setTransitionName(parent_view, KEY_FRIEND);
 
 
-        ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.RECORD_AUDIO,Manifest.permission.WRITE_EXTERNAL_STORAGE},
+        ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.RECORD_AUDIO,Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE},
                 10);
 
         // initialize conversation data
@@ -148,6 +158,7 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
 
 
 
+
             }
         });
 
@@ -158,8 +169,10 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+
                 if (dataSnapshot.hasChild(chatNode_1)) {
                     chatNode = chatNode_1;
+
                 } else if (dataSnapshot.hasChild(chatNode_2)) {
                     chatNode = chatNode_2;
                 } else {
@@ -171,8 +184,10 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
                 items.addAll(pfbd.getMessageListForUser(totalData));
                 mAdapter = new ChatDetailsListAdapter(ActivityChatDetails.this, items);
                 listview.setAdapter(mAdapter);
+                System.out.println("Listview : "+listview);
                 listview.setSelectionFromTop(mAdapter.getCount(), 0);
                 listview.requestFocus();
+
                 registerForContextMenu(listview);
                 bindView();
             }
@@ -217,6 +232,54 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
         MyFirebaseInstanceIdService ob = new MyFirebaseInstanceIdService();
         ob.onTokenRefresh();
     }
+
+    @Override
+    public void downloadAudio(final String audName)  {
+        System.out.println("Chat node :download audio called"+chatNode);
+        System.out.println("Start download called");
+        FirebaseStorage storage=FirebaseStorage.getInstance();
+        String fileName=audName;
+        String DOWNLOAD_DIR = Environment.getExternalStoragePublicDirectory
+                (Environment.DIRECTORY_DOWNLOADS).getPath();
+
+        StorageReference storageRef = storage.getReference();
+        System.out.println("Filename :"+fileName.substring(1));
+        StorageReference downloadRef = storageRef.child(fileName.substring(1));
+        String[] arr= audName.split("/");
+        for(int i=0; i<arr.length;i++) System.out.println(arr[i]);
+        System.out.println("Array :"+arr.toString());
+        System.out.println("download ref : "+downloadRef.toString()+" "+downloadRef.getPath()+" "+downloadRef.getName());
+        System.out.println("Pathname :"+DOWNLOAD_DIR+"/"+downloadRef.getName());
+        File localFile  = new File(Environment.getExternalStoragePublicDirectory(
+                Environment.DIRECTORY_DOWNLOADS),arr[1]);
+        try {
+            localFile .createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        downloadRef.getFile(localFile);
+        File fileNameOnDevice = new File(DOWNLOAD_DIR+"/"+downloadRef.getName());
+        System.out.println("File on device :"+fileNameOnDevice);
+        downloadRef.getFile(fileNameOnDevice).addOnSuccessListener(
+                new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                        Log.d("Download", "downloaded the file");
+                        Toast.makeText(getApplicationContext(),
+                                "Downloaded the file",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                Log.e("Download", "Failed to download the file");
+                Toast.makeText(getApplicationContext(),
+                        "Couldn't be downloaded",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
     public void initToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -239,6 +302,7 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
         listview = (ListView) findViewById(R.id.listview);
         btn_send = (Button) findViewById(R.id.btn_send);
         et_content = (EditText) findViewById(R.id.text_content);
+
         btn_send.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -294,6 +358,7 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
         if (et_content.length() == 0) {
             btn_send.setEnabled(false);
         }
+        System.out.println("content test :"+et_content.getText());
         hideKeyboard();
     }
 

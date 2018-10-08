@@ -74,6 +74,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 				holder.message.setVisibility(View.VISIBLE);
 				holder.message.setText(msg.getText());
 				holder.audio_layout.setVisibility(View.GONE);
+
 			}
 			else {
 				holder.message.setVisibility(View.GONE);
