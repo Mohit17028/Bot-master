@@ -112,6 +112,15 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 //            holder.lyt_thread.setCardBackgroundColor(mContext.getResources().getColor(R.color.colorPrimaryDarkDark));
 
         }
+
+        String audio_path = msg.getAudName();
+        holder.audio_layout.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+			//play audio code here
+				
+			}
+		});
         return convertView;
 	}
 

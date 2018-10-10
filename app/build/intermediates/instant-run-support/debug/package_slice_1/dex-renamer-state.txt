@@ -1,4 +1,4 @@
-#Mon Oct 08 16:31:47 IST 2018
-base.0=D\:\\AndroidStudioProjects\\Bot-master\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\2
+#Wed Oct 10 19:36:32 IST 2018
+base.0=/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/transforms/dexMerger/debug/2
 path.0=classes.dex
 renamed.0=classes.dex

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\AndroidStudioProjects\\Bot-master\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
+            "outputFile": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v11/values-v11.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\hp 1\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-appinvite-10.0.0.aar\\ddbfdbc95e9821b8b62f53ae64e2c7fe\\res\\values-v11\\values.xml",
+                    "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/play-services-appinvite-10.0.0.aar/b7f5ece053c345033e92de398c8488af/res/values-v11/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\hp 1\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\56c02623a8a4854ba3e717567b5e4010\\res\\values-v11\\values-v11.xml",
+                    "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/66228c42e6fb6b76a316e67ab8a9c829/res/values-v11/values-v11.xml",
                     "from": {
                         "startLines": "2,8,14,20,26,32,38,39,43,47,48,52,56,57,61,66,71,76,78,80,81,82,136,191",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

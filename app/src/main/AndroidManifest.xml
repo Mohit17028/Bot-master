@@ -24,27 +24,27 @@
             </intent-filter>
         </activity>
 
-        <!--<service-->
-            <!--android:name=".MyFirebaseMessagingService"-->
-            <!--android:stopWithTask="false">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="com.google.firebase.MESSAGING_EVENT" />-->
-            <!--</intent-filter>-->
-        <!--</service>-->
-         <service
-         android:name=".MyFirebaseMessagingService"
-         android:exported="false">
-         <intent-filter>
-         <action android:name="com.google.firebase.MESSAGING_EVENT" />
-         </intent-filter>
-         </service>
-         <service
-         android:name=".MyFirebaseInstanceIdService"
-         android:exported="false">
-         <intent-filter>
-         <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
-         </intent-filter>
-         </service>
+        <!-- <service -->
+        <!-- android:name=".MyFirebaseMessagingService" -->
+        <!-- android:stopWithTask="false"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="com.google.firebase.MESSAGING_EVENT" /> -->
+        <!-- </intent-filter> -->
+        <!-- </service> -->
+        <service
+            android:name=".MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".MyFirebaseInstanceIdService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
 
         <activity android:name=".ActivityMain">
             <intent-filter>
@@ -68,17 +68,14 @@
         </activity>
         <activity
             android:name=".ActivitySelectFriend"
-
-            android:label="Sahaika">
-
-
-        </activity>
+            android:label="Sahaika"></activity>
         <activity android:name=".SignupActivity" />
 
-        <!--<service-->
-            <!--android:name=".MyMsgService"-->
-            <!--android:enabled="true"-->
-            <!--android:exported="true"></service>-->
+        <!-- <service -->
+        <!-- android:name=".MyMsgService" -->
+        <!-- android:enabled="true" -->
+        <!-- android:exported="true"></service> -->
+        <activity android:name=".SliderActivity"></activity>
     </application>
 
 </manifest>

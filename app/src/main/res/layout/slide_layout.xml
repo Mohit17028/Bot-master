@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg2"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/slide_txt_view"
+        android:layout_width="311dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp"
+        android:fontFamily="casual"
+        android:padding="15dp"
+        android:text="Something about ASHA and what this app does. How will it be helpul. More Illustrative images will be next."
+        android:textSize="21dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/slide_imageView"
+        android:layout_width="288dp"
+        android:layout_height="273dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="96dp"
+        app:srcCompat="@drawable/mascot_side2" />
+</RelativeLayout>

@@ -211,14 +211,7 @@ public class RecordDialog extends AppCompatDialogFragment {
                 listener.downloadAudio(outputFile);
                 //translateAudioToText();
 
-//                Intent intent = new Intent(getContext(),ActivityChatDetails.class);
-//                intent.putExtra("aud_name",outputFile);
-//                startActivity(intent);
-
-//                SharedPreferences pref = getContext().getSharedPreferences("Record_dialog_pref", 0); // 0 - for private mode
-//                SharedPreferences.Editor editor = pref.edit();
-//                editor.putString("aud_name",outputFile);
-//                editor.commit();
+//
             }
         });
 

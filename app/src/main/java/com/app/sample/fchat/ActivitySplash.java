@@ -104,7 +104,7 @@ public class ActivitySplash extends AppCompatActivity implements GoogleApiClient
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        startActivity(new Intent(ActivitySplash.this, ActivitySelectFriend.class));
+                        startActivity(new Intent(ActivitySplash.this, SliderActivity.class));
                         finish();
                     }
                 }, 5000);
@@ -241,7 +241,7 @@ public class ActivitySplash extends AppCompatActivity implements GoogleApiClient
                                 }
                             });
 
-                            startActivity(new Intent(ActivitySplash.this, ActivitySelectFriend.class));
+                            startActivity(new Intent(ActivitySplash.this, SliderActivity.class));
                             finish();
                         }
                     }
