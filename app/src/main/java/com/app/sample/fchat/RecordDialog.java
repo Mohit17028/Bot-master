@@ -22,6 +22,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatDialogFragment;
@@ -33,6 +34,7 @@ import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.speech.v1p1beta1.RecognitionAudio;
@@ -98,7 +100,7 @@ public class RecordDialog extends AppCompatDialogFragment {
 
     public interface RecordDialogListener{
         void applyTexts(String audName);
-        void downloadAudio(String audName);
+//        void downloadAudio(String audName);
     }
     public interface MyAlertDialogResultInterface {
         abstract void onButtonClicked(int button);
@@ -155,6 +157,7 @@ public class RecordDialog extends AppCompatDialogFragment {
             opFile = Environment.getExternalStorageDirectory().getAbsolutePath()+ "/recording_"+timestamp.getTime()+".mp3";
 //        System.out.println("Record Dialog: filename :"+opFile);
             outputFile="/"+userid+"/recording_"+timestamp.getTime()+".mp3";
+//            outputFile="/recording_"+timestamp.getTime()+"_"+userid+".mp3";
             myAudioRecorder = new MediaRecorder();
             myAudioRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
             myAudioRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
@@ -208,7 +211,7 @@ public class RecordDialog extends AppCompatDialogFragment {
                 doFileUpload(opFile);
 
                 listener.applyTexts(outputFile);
-                listener.downloadAudio(outputFile);
+//                listener.downloadAudio(outputFile);
                 //translateAudioToText();
 
 //

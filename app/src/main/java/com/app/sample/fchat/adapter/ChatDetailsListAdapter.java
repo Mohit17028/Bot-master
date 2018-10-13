@@ -2,7 +2,13 @@ package com.app.sample.fchat.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.media.MediaPlayer;
+import android.net.Uri;
+import android.os.Environment;
+import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,11 +17,23 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.app.sample.fchat.ActivityChatDetails;
+import com.app.sample.fchat.ActivityMain;
 import com.app.sample.fchat.R;
+import com.app.sample.fchat.RecordDialog;
 import com.app.sample.fchat.data.SettingsAPI;
+import com.app.sample.fchat.fragment.ChatsFragment;
 import com.app.sample.fchat.model.ChatMessage;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -113,13 +131,98 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 
         }
 
-        String audio_path = msg.getAudName();
+        final String audio_path = msg.getAudName();
         holder.audio_layout.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-			//play audio code here
-				
-			}
+            @Override
+            public void onClick(View view) {
+                //play audio code here
+
+                System.out.println("Method play called" + audio_path);
+                FirebaseStorage storage = FirebaseStorage.getInstance();
+                String fileName = audio_path;
+//        fileName="/111433108964661785456/recording_1539375297988.mp3";
+                String DOWNLOAD_DIR = Environment.getExternalStoragePublicDirectory
+                        (Environment.DIRECTORY_DOWNLOADS).getPath();
+
+                StorageReference storageRef = storage.getReference();
+                System.out.println("Filename :" + fileName.substring(1));
+                StorageReference downloadRef = storageRef.child(fileName.substring(1));
+                storageRef.child(fileName.substring(1)).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        Toast.makeText(mContext,
+                                "file found",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception exception) {
+                        // File not found
+                        Toast.makeText(mContext,
+                                "file not found",
+                                Toast.LENGTH_SHORT).show();
+                        try {
+                            Thread.sleep(10000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+                String[] arr = audio_path.split("/");
+                System.out.println("Array :" + arr);
+                System.out.println("download ref : " + downloadRef.toString() + " " + downloadRef.getPath() + " " + downloadRef.getName());
+                System.out.println("Pathname :" + DOWNLOAD_DIR + "/" + downloadRef.getName());
+                File localFile = new File(Environment.getExternalStoragePublicDirectory(
+                        Environment.DIRECTORY_DOWNLOADS), arr[2]);
+                System.out.println("local file :" + localFile);
+                try {
+                    localFile.createNewFile();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                downloadRef.getFile(localFile);
+                final int[] flag = {0};
+                File fileNameOnDevice = new File(DOWNLOAD_DIR + "/" + downloadRef.getName());
+                System.out.println("File on device :" + fileNameOnDevice);
+
+                downloadRef.getFile(fileNameOnDevice).addOnSuccessListener(
+                        new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                            @Override
+                            public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                                Log.d("File Download", "downloaded the file");
+                                Toast.makeText(mContext,
+                                        "Downloaded the file",
+                                        Toast.LENGTH_SHORT).show();
+                                        flag[0] =1;
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception exception) {
+                        Log.e("File Download", "Failed to download the file");
+                        Toast.makeText(mContext,
+                                "Couldn't be downloaded",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                });
+                if (fileNameOnDevice.exists() || flag[0]==1) {
+//                    RecordDialog recDialog = new RecordDialog();
+//                    FragmentManager fm = ((ActivityChatDetails)mContext).getSupportFragmentManager();
+//                    recDialog.show(fm,"Record Dialog");
+                    MediaPlayer mediaPlayer = new MediaPlayer();
+                    try {
+                        mediaPlayer.setDataSource(fileNameOnDevice.getPath());
+                        mediaPlayer.prepare();
+                        mediaPlayer.start();
+
+                        Toast.makeText(mContext, "Playing Audio", Toast.LENGTH_SHORT).show();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+
+
 		});
         return convertView;
 	}

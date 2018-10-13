@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -130,7 +131,7 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
         ViewCompat.setTransitionName(parent_view, KEY_FRIEND);
 
 
-        ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.RECORD_AUDIO,Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE},
+        ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.RECORD_AUDIO,Manifest.permission.WRITE_EXTERNAL_STORAGE},
                 10);
 
         // initialize conversation data
@@ -155,7 +156,7 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
                 
 ////                askSpeechInput();
                 showRecordDialog();
-
+                downloadAudioFile();
 
 
 
@@ -204,6 +205,10 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
         }
     }
 
+    private void downloadAudioFile() {
+        System.out.println("download audio file called");
+    }
+
 
     private void showRecordDialog() {
         RecordDialog recDialog = new RecordDialog();
@@ -233,52 +238,74 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
         ob.onTokenRefresh();
     }
 
-    @Override
-    public void downloadAudio(final String audName)  {
-        System.out.println("Chat node :download audio called"+chatNode);
-        System.out.println("Start download called");
-        FirebaseStorage storage=FirebaseStorage.getInstance();
-        String fileName=audName;
-        String DOWNLOAD_DIR = Environment.getExternalStoragePublicDirectory
-                (Environment.DIRECTORY_DOWNLOADS).getPath();
-
-        StorageReference storageRef = storage.getReference();
-        System.out.println("Filename :"+fileName.substring(1));
-        StorageReference downloadRef = storageRef.child(fileName.substring(1));
-        String[] arr= audName.split("/");
-        for(int i=0; i<arr.length;i++) System.out.println(arr[i]);
-        System.out.println("Array :"+arr.toString());
-        System.out.println("download ref : "+downloadRef.toString()+" "+downloadRef.getPath()+" "+downloadRef.getName());
-        System.out.println("Pathname :"+DOWNLOAD_DIR+"/"+downloadRef.getName());
-        File localFile  = new File(Environment.getExternalStoragePublicDirectory(
-                Environment.DIRECTORY_DOWNLOADS),arr[1]);
-        try {
-            localFile .createNewFile();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        downloadRef.getFile(localFile);
-        File fileNameOnDevice = new File(DOWNLOAD_DIR+"/"+downloadRef.getName());
-        System.out.println("File on device :"+fileNameOnDevice);
-        downloadRef.getFile(fileNameOnDevice).addOnSuccessListener(
-                new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                        Log.d("Download", "downloaded the file");
-                        Toast.makeText(getApplicationContext(),
-                                "Downloaded the file",
-                                Toast.LENGTH_SHORT).show();
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception exception) {
-                Log.e("Download", "Failed to download the file");
-                Toast.makeText(getApplicationContext(),
-                        "Couldn't be downloaded",
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
+//    @Override
+//    public void downloadAudio(final String audName)  {
+//        System.out.println("Chat node :download audio called"+chatNode);
+//        System.out.println("Start download called");
+//        FirebaseStorage storage=FirebaseStorage.getInstance();
+//        String fileName=audName;
+////        fileName="/111433108964661785456/recording_1539375297988.mp3";
+//        String DOWNLOAD_DIR = Environment.getExternalStoragePublicDirectory
+//                (Environment.DIRECTORY_DOWNLOADS).getPath();
+//
+//        StorageReference storageRef = storage.getReference();
+//        System.out.println("Filename :"+fileName.substring(1));
+//        StorageReference downloadRef = storageRef.child(fileName.substring(1));
+//        storageRef.child(fileName.substring(1)).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+//            @Override
+//            public void onSuccess(Uri uri) {
+//                Toast.makeText(getApplicationContext(),
+//                        "file found",
+//                        Toast.LENGTH_SHORT).show();
+//            }
+//        }).addOnFailureListener(new OnFailureListener() {
+//            @Override
+//            public void onFailure(@NonNull Exception exception) {
+//                // File not found
+//                Toast.makeText(getApplicationContext(),
+//                        "file not found",
+//                        Toast.LENGTH_SHORT).show();
+//                try {
+//                    Thread.sleep(10000);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        });
+//        String[] arr= audName.split("/");
+//        System.out.println("Array :"+arr);
+//        System.out.println("download ref : "+downloadRef.toString()+" "+downloadRef.getPath()+" "+downloadRef.getName());
+//        System.out.println("Pathname :"+DOWNLOAD_DIR+"/"+downloadRef.getName());
+//        File localFile  = new File(Environment.getExternalStoragePublicDirectory(
+//                Environment.DIRECTORY_DOWNLOADS), arr[2]);
+//        System.out.println("local file :"+localFile);
+//        try {
+//            localFile .createNewFile();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        downloadRef.getFile(localFile);
+//        File fileNameOnDevice = new File(DOWNLOAD_DIR+"/"+downloadRef.getName());
+//        System.out.println("File on device :"+fileNameOnDevice);
+//        downloadRef.getFile(fileNameOnDevice).addOnSuccessListener(
+//                new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+//                    @Override
+//                    public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+//                        Log.d("File Download", "downloaded the file");
+//                        Toast.makeText(getApplicationContext(),
+//                                "Downloaded the file",
+//                                Toast.LENGTH_SHORT).show();
+//                    }
+//                }).addOnFailureListener(new OnFailureListener() {
+//            @Override
+//            public void onFailure(@NonNull Exception exception) {
+//                Log.e("File Download", "Failed to download the file");
+//                Toast.makeText(getApplicationContext(),
+//                        "Couldn't be downloaded",
+//                        Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//    }
 
     public void initToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
