@@ -4,10 +4,11 @@
     android:background="@color/white"
     >
 
-    <!--<pl.droidsonroids.gif.GifImageView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:src="@drawable/scenery"/>-->
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/scenario1"
+        />
 
 
 </RelativeLayout>

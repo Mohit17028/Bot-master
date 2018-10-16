@@ -4,24 +4,7 @@
             "outputFile": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-si/values-si.xml",
             "map": [
                 {
-                    "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/play-services-base-10.0.0.aar/78c188cd37bb3422c7698c52cde98baf/res/values-si/values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
-                        "startOffsets": "283,389,575,697,808,1009,1131,1254,1464,1577,1764,1893,2096,2283,2382,2469",
-                        "endColumns": "105,185,121,110,200,121,122,209,112,186,128,202,186,98,86,104",
-                        "endOffsets": "388,574,696,807,1008,1130,1253,1463,1576,1763,1892,2095,2282,2381,2468,2573"
-                    },
-                    "to": {
-                        "startLines": "3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "179,289,475,601,716,917,1043,1368,1578,1695,1882,2015,2218,2409,2512,2603",
-                        "endColumns": "109,185,125,114,200,125,126,209,116,186,132,202,190,102,90,108",
-                        "endOffsets": "284,470,596,711,912,1038,1165,1573,1690,1877,2010,2213,2404,2507,2598,2707"
-                    }
-                },
-                {
-                    "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/play-services-ads-10.0.0.aar/93f610fcb30a5204ed4188ff3083fcd4/res/values-si/values.xml",
+                    "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/play-services-ads-10.0.0.aar/e1b17bfd35c7393f3554e2abf9893ca8/res/values-si/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0",
@@ -38,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/play-services-basement-10.0.1.aar/51b7aa98cb4bb6cbc136d125e097ae8f/res/values-si/values.xml",
+                    "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/play-services-basement-10.0.1.aar/e79fb43f282c78317ddb9108317e69e4/res/values-si/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -52,6 +35,23 @@
                         "startOffsets": "1170",
                         "endColumns": "197",
                         "endOffsets": "1363"
+                    }
+                },
+                {
+                    "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/play-services-base-10.0.0.aar/8f131fef814741f4d562396fece04e43/res/values-si/values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "283,389,575,697,808,1009,1131,1254,1464,1577,1764,1893,2096,2283,2382,2469",
+                        "endColumns": "105,185,121,110,200,121,122,209,112,186,128,202,186,98,86,104",
+                        "endOffsets": "388,574,696,807,1008,1130,1253,1463,1576,1763,1892,2095,2282,2381,2468,2573"
+                    },
+                    "to": {
+                        "startLines": "3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "179,289,475,601,716,917,1043,1368,1578,1695,1882,2015,2218,2409,2512,2603",
+                        "endColumns": "109,185,125,114,200,125,126,209,116,186,132,202,190,102,90,108",
+                        "endOffsets": "284,470,596,711,912,1038,1165,1573,1690,1877,2010,2213,2404,2507,2598,2707"
                     }
                 }
             ]

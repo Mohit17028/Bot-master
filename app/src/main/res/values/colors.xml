@@ -17,13 +17,15 @@
 
 
     <color name="colorAccent">#FF4081</color>
+    <color name="colorAccentDark">#d62662</color>
+
     <color name="white">#FFFFFF</color>
     <color name="trial">#edfcfd</color>
     <color name="translucent_low">#d6fcfcfc</color>
     <color name="translucent">#c5fcfcfc</color>
     <color name="translucent_high">#1afcfcfc</color>
     <color name="drak_gray">#354852</color>
-    <color name="colorAccentDark">#27ae60</color>
+    <!--<color name="colorAccentDark">#27ae60</color>-->
     <color name="colorAccentLight">#2ecc71</color>
     <color name="textColorSecondary">@color/grey_hard</color>
 
