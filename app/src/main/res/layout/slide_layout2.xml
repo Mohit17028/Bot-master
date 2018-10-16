@@ -24,7 +24,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="17dp"
-        android:src="@drawable/women1" />
+        android:src="@drawable/mascot" />
 
     <pl.droidsonroids.gif.GifImageView
         android:layout_width="65dp"

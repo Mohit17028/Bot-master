@@ -4,13 +4,14 @@ ADDED from /home/himani/AndroidStudioProjects/Bot-master/app/src/main/AndroidMan
 INJECTED from /home/himani/AndroidStudioProjects/Bot-master/app/src/main/AndroidManifest.xml:2:1-81:12
 INJECTED from /home/himani/AndroidStudioProjects/Bot-master/app/src/main/AndroidManifest.xml:2:1-81:12
 INJECTED from /home/himani/AndroidStudioProjects/Bot-master/app/src/main/AndroidManifest.xml:2:1-81:12
+MERGED from [com.android.support:multidex:1.0.2] /home/himani/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/3fd66960bb7579bdb0970f2eea686a6e/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/himani/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/e10f22e9ff27d9cb84b887375553177c/AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:design:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/ace2c534ccf1d93d4e202a2b29f23af1/AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:appcompat-v7:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/769a2e7ff656fe59c99ed9e63b783eee/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:design:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/c9451c311b08e09be888eccde11e8236/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:appcompat-v7:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/fc6d18af367b2a2890afe1058bf6ef56/AndroidManifest.xml:17:1-31:12
 MERGED from [com.firebase:firebase-jobdispatcher:0.5.2] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-jobdispatcher-0.5.2.aar/818c47014ea6a99e0f835aa8f370f548/AndroidManifest.xml:17:1-42:12
-MERGED from [com.android.support:transition:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/transition-25.3.1.aar/ccca40081c3da5e5ada2a144710e1a49/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:transition:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/fcb49b87275133044df405163740c9e5/AndroidManifest.xml:17:1-28:12
 MERGED from [com.google.android.gms:play-services-auth:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-auth-10.0.0.aar/2205a93ae46ca0cb7db75f5d4bdfc250/AndroidManifest.xml:16:1-26:12
-MERGED from [com.google.firebase:firebase-storage:10.0.1] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-storage-10.0.1.aar/48db058abd4504466e265aa752dfb9d1/AndroidManifest.xml:2:1-4:12
+MERGED from [com.google.firebase:firebase-storage:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-storage-10.0.0.aar/9a490eb1a0e1f0d7e540351b4965f95b/AndroidManifest.xml:2:1-4:12
 MERGED from [com.google.firebase:firebase-database:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-database-10.0.0.aar/eb29e36f28fcab9ddebcf7655d068417/AndroidManifest.xml:2:1-4:12
 MERGED from [com.google.firebase:firebase-auth:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-auth-10.0.0.aar/b398adcc73f6fb2a94fd0141b50ee91a/AndroidManifest.xml:16:1-21:12
 MERGED from [com.google.firebase:firebase-config:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-config-10.0.0.aar/8e37c33fb5d74ec0fb6c449e6e8abe05/AndroidManifest.xml:16:1-19:12
@@ -27,27 +28,27 @@ MERGED from [com.google.android.gms:play-services-base:10.0.0] /home/himani/.gra
 MERGED from [com.google.firebase:firebase-database-connection:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-10.0.0.aar/7a280bc2ffa4cb088270ddb30d68055b/AndroidManifest.xml:2:1-4:12
 MERGED from [com.google.firebase:firebase-analytics-impl:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-10.0.0.aar/c6cef6ad018d0cf8de354dda31c9b7b5/AndroidManifest.xml:16:1-29:12
 MERGED from [com.google.firebase:firebase-iid:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-iid-10.0.0.aar/b0a67b2c68e3076bc67178ff42909013/AndroidManifest.xml:16:1-51:12
-MERGED from [com.google.firebase:firebase-common:10.0.1] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-common-10.0.1.aar/d3ae88c626293e7f9764de8e2ec8e0a9/AndroidManifest.xml:2:1-8:12
-MERGED from [com.google.android.gms:play-services-tasks:10.0.1] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-tasks-10.0.1.aar/dc11718f01440f9c79c30b257ab4b5aa/AndroidManifest.xml:2:1-5:12
-MERGED from [com.google.firebase:firebase-storage-common:10.0.1] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-10.0.1.aar/feb5eff21c854ace0a3282e08e88aad7/AndroidManifest.xml:2:1-4:12
+MERGED from [com.google.firebase:firebase-common:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-common-10.0.0.aar/2a9628df940dec4b2fb0a3ad1b5e8f3d/AndroidManifest.xml:2:1-8:12
+MERGED from [com.google.android.gms:play-services-tasks:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-tasks-10.0.0.aar/00d9d418320e286ee9170ebb34b5ef82/AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.firebase:firebase-storage-common:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-10.0.0.aar/052acc157d4b96b78a0883c70bb21580/AndroidManifest.xml:2:1-4:12
 MERGED from [com.google.android.gms:play-services-ads-lite:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-10.0.0.aar/488e2df59cc1772e4aa1301597ffb0c3/AndroidManifest.xml:16:1-28:12
 MERGED from [com.google.android.gms:play-services-gass:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-gass-10.0.0.aar/29142aa849cfad8f229f455f6a2100df/AndroidManifest.xml:2:1-5:12
-MERGED from [com.google.android.gms:play-services-basement:10.0.1] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-basement-10.0.1.aar/e79fb43f282c78317ddb9108317e69e4/AndroidManifest.xml:16:1-23:12
-MERGED from [com.android.support:support-v4:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/57404cc49f082842f990bb6eb7b87591/AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:cardview-v7:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.3.1.aar/b6affffcb698130558d99032fc26b82a/AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:recyclerview-v7:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.3.1.aar/619cf454d6c57933ce314a73f46093da/AndroidManifest.xml:17:1-26:12
+MERGED from [com.google.android.gms:play-services-basement:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-basement-10.0.0.aar/183c338744c50f4f40aa2557c18412b1/AndroidManifest.xml:16:1-23:12
+MERGED from [com.android.support:support-v4:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/737e0a56182cdf8c2c87aa566722ea31/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:cardview-v7:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/b8d33e7bf16e7a4c21f289a01af23a62/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/7c40cc6ad096d57f73d4fdd432a90a9b/AndroidManifest.xml:17:1-28:12
 MERGED from [com.balysv:material-ripple:1.0.2] /home/himani/.gradle/caches/transforms-1/files-1.1/material-ripple-1.0.2.aar/57ad85d83b7888f50349b1b5c0abc1dc/AndroidManifest.xml:2:1-14:12
 MERGED from [com.microsoft.projectoxford:speechrecognition:1.2.2] /home/himani/.gradle/caches/transforms-1/files-1.1/speechrecognition-1.2.2.aar/d6bbcf18bd799d615f4a48c79096660e/AndroidManifest.xml:2:1-19:12
 MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.11] /home/himani/.gradle/caches/transforms-1/files-1.1/android-gif-drawable-1.2.11.aar/20ec2578f8153ce29dc9a148cc2a09b5/AndroidManifest.xml:2:1-11:12
 MERGED from [de.hdodenhof:circleimageview:2.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/circleimageview-2.1.0.aar/7586204128ed65aac0b139e70785424f/AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:multidex:1.0.2] /home/himani/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/3fd66960bb7579bdb0970f2eea686a6e/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-fragment:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-fragment-25.3.1.aar/8075a1f3e42476413c157d5e0e1b3eaf/AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-media-compat:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.3.1.aar/3540a29ca049486ad34cc4a3eb761c85/AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-core-utils:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.3.1.aar/b0347136645a5c66fdc06301689a6f59/AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-core-ui:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.3.1.aar/d812895aeac7ba3e10d3908e310b3b37/AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.3.1.aar/de6b205d63530fee6c178e9c9448dc8e/AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.3.1.aar/b3893274ceab8def05f682e7b5cca776/AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-compat:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/53e8b24dbd9c210b681fba6f97f93011/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/4907000e03470a6081ddd4850243b851/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-fragment:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/f46ca6a1201f050bf2e8406108068645/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-utils:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/3013d1255973ab8b850b265549d85325/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/75b1a3edea6b98f307df65a90bbd1643/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-core-ui:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/0898c369b8463cdf616fd27d590a6645/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/ca31322c214485d9a70f584a1e61017c/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-compat:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/b0365b6b2d5d48d22cd83c4b7bba11f6/AndroidManifest.xml:17:1-31:12
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/bc6b9e3a055250149a16df18933d1495/AndroidManifest.xml:17:1-30:12
 INJECTED from /home/himani/AndroidStudioProjects/Bot-master/app/src/main/AndroidManifest.xml:2:1-81:12
 INJECTED from /home/himani/AndroidStudioProjects/Bot-master/app/src/main/AndroidManifest.xml:2:1-81:12
 INJECTED from /home/himani/AndroidStudioProjects/Bot-master/app/src/main/AndroidManifest.xml:2:1-81:12
@@ -117,14 +118,14 @@ application
 ADDED from /home/himani/AndroidStudioProjects/Bot-master/app/src/main/AndroidManifest.xml:13:5-79:19
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/himani/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/e10f22e9ff27d9cb84b887375553177c/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/himani/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/e10f22e9ff27d9cb84b887375553177c/AndroidManifest.xml:9:5-20
-MERGED from [com.android.support:design:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/ace2c534ccf1d93d4e202a2b29f23af1/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:design:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/ace2c534ccf1d93d4e202a2b29f23af1/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:appcompat-v7:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/769a2e7ff656fe59c99ed9e63b783eee/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:appcompat-v7:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/769a2e7ff656fe59c99ed9e63b783eee/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:design:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/c9451c311b08e09be888eccde11e8236/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:design:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/c9451c311b08e09be888eccde11e8236/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:appcompat-v7:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/fc6d18af367b2a2890afe1058bf6ef56/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:appcompat-v7:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/fc6d18af367b2a2890afe1058bf6ef56/AndroidManifest.xml:25:5-29:19
 MERGED from [com.firebase:firebase-jobdispatcher:0.5.2] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-jobdispatcher-0.5.2.aar/818c47014ea6a99e0f835aa8f370f548/AndroidManifest.xml:26:5-40:19
 MERGED from [com.firebase:firebase-jobdispatcher:0.5.2] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-jobdispatcher-0.5.2.aar/818c47014ea6a99e0f835aa8f370f548/AndroidManifest.xml:26:5-40:19
-MERGED from [com.android.support:transition:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/transition-25.3.1.aar/ccca40081c3da5e5ada2a144710e1a49/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:transition:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/transition-25.3.1.aar/ccca40081c3da5e5ada2a144710e1a49/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:transition:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/fcb49b87275133044df405163740c9e5/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:transition:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/fcb49b87275133044df405163740c9e5/AndroidManifest.xml:22:5-26:19
 MERGED from [com.google.android.gms:play-services-auth:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-auth-10.0.0.aar/2205a93ae46ca0cb7db75f5d4bdfc250/AndroidManifest.xml:19:5-25:19
 MERGED from [com.google.android.gms:play-services-auth:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-auth-10.0.0.aar/2205a93ae46ca0cb7db75f5d4bdfc250/AndroidManifest.xml:19:5-25:19
 MERGED from [com.google.firebase:firebase-auth:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-auth-10.0.0.aar/b398adcc73f6fb2a94fd0141b50ee91a/AndroidManifest.xml:19:5-20:19
@@ -151,38 +152,42 @@ MERGED from [com.google.firebase:firebase-analytics-impl:10.0.0] /home/himani/.g
 MERGED from [com.google.firebase:firebase-analytics-impl:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-10.0.0.aar/c6cef6ad018d0cf8de354dda31c9b7b5/AndroidManifest.xml:24:5-28:19
 MERGED from [com.google.firebase:firebase-iid:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-iid-10.0.0.aar/b0a67b2c68e3076bc67178ff42909013/AndroidManifest.xml:28:5-50:19
 MERGED from [com.google.firebase:firebase-iid:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-iid-10.0.0.aar/b0a67b2c68e3076bc67178ff42909013/AndroidManifest.xml:28:5-50:19
-MERGED from [com.google.firebase:firebase-common:10.0.1] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-common-10.0.1.aar/d3ae88c626293e7f9764de8e2ec8e0a9/AndroidManifest.xml:4:5-7:19
-MERGED from [com.google.firebase:firebase-common:10.0.1] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-common-10.0.1.aar/d3ae88c626293e7f9764de8e2ec8e0a9/AndroidManifest.xml:4:5-7:19
-MERGED from [com.google.android.gms:play-services-tasks:10.0.1] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-tasks-10.0.1.aar/dc11718f01440f9c79c30b257ab4b5aa/AndroidManifest.xml:4:5-19
-MERGED from [com.google.android.gms:play-services-tasks:10.0.1] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-tasks-10.0.1.aar/dc11718f01440f9c79c30b257ab4b5aa/AndroidManifest.xml:4:5-19
+MERGED from [com.google.firebase:firebase-common:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-common-10.0.0.aar/2a9628df940dec4b2fb0a3ad1b5e8f3d/AndroidManifest.xml:4:5-7:19
+MERGED from [com.google.firebase:firebase-common:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-common-10.0.0.aar/2a9628df940dec4b2fb0a3ad1b5e8f3d/AndroidManifest.xml:4:5-7:19
+MERGED from [com.google.android.gms:play-services-tasks:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-tasks-10.0.0.aar/00d9d418320e286ee9170ebb34b5ef82/AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-tasks:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-tasks-10.0.0.aar/00d9d418320e286ee9170ebb34b5ef82/AndroidManifest.xml:4:5-19
 MERGED from [com.google.android.gms:play-services-ads-lite:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-10.0.0.aar/488e2df59cc1772e4aa1301597ffb0c3/AndroidManifest.xml:23:5-27:19
 MERGED from [com.google.android.gms:play-services-ads-lite:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-10.0.0.aar/488e2df59cc1772e4aa1301597ffb0c3/AndroidManifest.xml:23:5-27:19
 MERGED from [com.google.android.gms:play-services-gass:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-gass-10.0.0.aar/29142aa849cfad8f229f455f6a2100df/AndroidManifest.xml:4:5-19
 MERGED from [com.google.android.gms:play-services-gass:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-gass-10.0.0.aar/29142aa849cfad8f229f455f6a2100df/AndroidManifest.xml:4:5-19
-MERGED from [com.google.android.gms:play-services-basement:10.0.1] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-basement-10.0.1.aar/e79fb43f282c78317ddb9108317e69e4/AndroidManifest.xml:19:5-21:19
-MERGED from [com.google.android.gms:play-services-basement:10.0.1] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-basement-10.0.1.aar/e79fb43f282c78317ddb9108317e69e4/AndroidManifest.xml:19:5-21:19
-MERGED from [com.android.support:support-v4:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/57404cc49f082842f990bb6eb7b87591/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-v4:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/57404cc49f082842f990bb6eb7b87591/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:cardview-v7:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.3.1.aar/b6affffcb698130558d99032fc26b82a/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:cardview-v7:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.3.1.aar/b6affffcb698130558d99032fc26b82a/AndroidManifest.xml:26:5-20
+MERGED from [com.google.android.gms:play-services-basement:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-basement-10.0.0.aar/183c338744c50f4f40aa2557c18412b1/AndroidManifest.xml:19:5-21:19
+MERGED from [com.google.android.gms:play-services-basement:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-basement-10.0.0.aar/183c338744c50f4f40aa2557c18412b1/AndroidManifest.xml:19:5-21:19
+MERGED from [com.android.support:support-v4:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/737e0a56182cdf8c2c87aa566722ea31/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/737e0a56182cdf8c2c87aa566722ea31/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:cardview-v7:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/b8d33e7bf16e7a4c21f289a01af23a62/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:cardview-v7:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/b8d33e7bf16e7a4c21f289a01af23a62/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/7c40cc6ad096d57f73d4fdd432a90a9b/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/7c40cc6ad096d57f73d4fdd432a90a9b/AndroidManifest.xml:22:5-26:19
 MERGED from [com.balysv:material-ripple:1.0.2] /home/himani/.gradle/caches/transforms-1/files-1.1/material-ripple-1.0.2.aar/57ad85d83b7888f50349b1b5c0abc1dc/AndroidManifest.xml:12:5-20
 MERGED from [com.balysv:material-ripple:1.0.2] /home/himani/.gradle/caches/transforms-1/files-1.1/material-ripple-1.0.2.aar/57ad85d83b7888f50349b1b5c0abc1dc/AndroidManifest.xml:12:5-20
 MERGED from [de.hdodenhof:circleimageview:2.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/circleimageview-2.1.0.aar/7586204128ed65aac0b139e70785424f/AndroidManifest.xml:9:5-20
 MERGED from [de.hdodenhof:circleimageview:2.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/circleimageview-2.1.0.aar/7586204128ed65aac0b139e70785424f/AndroidManifest.xml:9:5-20
-MERGED from [com.android.support:support-fragment:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-fragment-25.3.1.aar/8075a1f3e42476413c157d5e0e1b3eaf/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-fragment:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-fragment-25.3.1.aar/8075a1f3e42476413c157d5e0e1b3eaf/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-media-compat:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.3.1.aar/3540a29ca049486ad34cc4a3eb761c85/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-media-compat:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.3.1.aar/3540a29ca049486ad34cc4a3eb761c85/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-utils:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.3.1.aar/b0347136645a5c66fdc06301689a6f59/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-utils:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.3.1.aar/b0347136645a5c66fdc06301689a6f59/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-ui:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.3.1.aar/d812895aeac7ba3e10d3908e310b3b37/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-ui:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.3.1.aar/d812895aeac7ba3e10d3908e310b3b37/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.3.1.aar/de6b205d63530fee6c178e9c9448dc8e/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.3.1.aar/de6b205d63530fee6c178e9c9448dc8e/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.3.1.aar/b3893274ceab8def05f682e7b5cca776/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.3.1.aar/b3893274ceab8def05f682e7b5cca776/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-compat:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/53e8b24dbd9c210b681fba6f97f93011/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-compat:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/53e8b24dbd9c210b681fba6f97f93011/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/4907000e03470a6081ddd4850243b851/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/4907000e03470a6081ddd4850243b851/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/f46ca6a1201f050bf2e8406108068645/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/f46ca6a1201f050bf2e8406108068645/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/3013d1255973ab8b850b265549d85325/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/3013d1255973ab8b850b265549d85325/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/75b1a3edea6b98f307df65a90bbd1643/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/75b1a3edea6b98f307df65a90bbd1643/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-core-ui:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/0898c369b8463cdf616fd27d590a6645/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/0898c369b8463cdf616fd27d590a6645/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/ca31322c214485d9a70f584a1e61017c/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/ca31322c214485d9a70f584a1e61017c/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-compat:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/b0365b6b2d5d48d22cd83c4b7bba11f6/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/b0365b6b2d5d48d22cd83c4b7bba11f6/AndroidManifest.xml:25:5-29:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/bc6b9e3a055250149a16df18933d1495/AndroidManifest.xml:24:5-28:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/bc6b9e3a055250149a16df18933d1495/AndroidManifest.xml:24:5-28:19
 	android:supportsRtl
 		ADDED from /home/himani/AndroidStudioProjects/Bot-master/app/src/main/AndroidManifest.xml:17:9-35
 	android:label
@@ -287,20 +292,22 @@ uses-sdk
 INJECTED from /home/himani/AndroidStudioProjects/Bot-master/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/himani/AndroidStudioProjects/Bot-master/app/src/main/AndroidManifest.xml
 INJECTED from /home/himani/AndroidStudioProjects/Bot-master/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:multidex:1.0.2] /home/himani/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/3fd66960bb7579bdb0970f2eea686a6e/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:multidex:1.0.2] /home/himani/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/3fd66960bb7579bdb0970f2eea686a6e/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/himani/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/e10f22e9ff27d9cb84b887375553177c/AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/himani/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/e10f22e9ff27d9cb84b887375553177c/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:design:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/ace2c534ccf1d93d4e202a2b29f23af1/AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:design:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/ace2c534ccf1d93d4e202a2b29f23af1/AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:appcompat-v7:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/769a2e7ff656fe59c99ed9e63b783eee/AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:appcompat-v7:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/769a2e7ff656fe59c99ed9e63b783eee/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:design:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/c9451c311b08e09be888eccde11e8236/AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:design:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/c9451c311b08e09be888eccde11e8236/AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/fc6d18af367b2a2890afe1058bf6ef56/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/fc6d18af367b2a2890afe1058bf6ef56/AndroidManifest.xml:21:5-23:78
 MERGED from [com.firebase:firebase-jobdispatcher:0.5.2] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-jobdispatcher-0.5.2.aar/818c47014ea6a99e0f835aa8f370f548/AndroidManifest.xml:22:5-24:41
 MERGED from [com.firebase:firebase-jobdispatcher:0.5.2] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-jobdispatcher-0.5.2.aar/818c47014ea6a99e0f835aa8f370f548/AndroidManifest.xml:22:5-24:41
-MERGED from [com.android.support:transition:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/transition-25.3.1.aar/ccca40081c3da5e5ada2a144710e1a49/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/transition-25.3.1.aar/ccca40081c3da5e5ada2a144710e1a49/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/fcb49b87275133044df405163740c9e5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/fcb49b87275133044df405163740c9e5/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-auth:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-auth-10.0.0.aar/2205a93ae46ca0cb7db75f5d4bdfc250/AndroidManifest.xml:17:5-42
 MERGED from [com.google.android.gms:play-services-auth:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-auth-10.0.0.aar/2205a93ae46ca0cb7db75f5d4bdfc250/AndroidManifest.xml:17:5-42
-MERGED from [com.google.firebase:firebase-storage:10.0.1] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-storage-10.0.1.aar/48db058abd4504466e265aa752dfb9d1/AndroidManifest.xml:3:5-42
-MERGED from [com.google.firebase:firebase-storage:10.0.1] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-storage-10.0.1.aar/48db058abd4504466e265aa752dfb9d1/AndroidManifest.xml:3:5-42
+MERGED from [com.google.firebase:firebase-storage:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-storage-10.0.0.aar/9a490eb1a0e1f0d7e540351b4965f95b/AndroidManifest.xml:3:5-42
+MERGED from [com.google.firebase:firebase-storage:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-storage-10.0.0.aar/9a490eb1a0e1f0d7e540351b4965f95b/AndroidManifest.xml:3:5-42
 MERGED from [com.google.firebase:firebase-database:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-database-10.0.0.aar/eb29e36f28fcab9ddebcf7655d068417/AndroidManifest.xml:3:5-42
 MERGED from [com.google.firebase:firebase-database:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-database-10.0.0.aar/eb29e36f28fcab9ddebcf7655d068417/AndroidManifest.xml:3:5-42
 MERGED from [com.google.firebase:firebase-auth:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-auth-10.0.0.aar/b398adcc73f6fb2a94fd0141b50ee91a/AndroidManifest.xml:17:5-42
@@ -333,24 +340,24 @@ MERGED from [com.google.firebase:firebase-analytics-impl:10.0.0] /home/himani/.g
 MERGED from [com.google.firebase:firebase-analytics-impl:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-10.0.0.aar/c6cef6ad018d0cf8de354dda31c9b7b5/AndroidManifest.xml:17:5-42
 MERGED from [com.google.firebase:firebase-iid:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-iid-10.0.0.aar/b0a67b2c68e3076bc67178ff42909013/AndroidManifest.xml:17:5-42
 MERGED from [com.google.firebase:firebase-iid:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-iid-10.0.0.aar/b0a67b2c68e3076bc67178ff42909013/AndroidManifest.xml:17:5-42
-MERGED from [com.google.firebase:firebase-common:10.0.1] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-common-10.0.1.aar/d3ae88c626293e7f9764de8e2ec8e0a9/AndroidManifest.xml:3:5-42
-MERGED from [com.google.firebase:firebase-common:10.0.1] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-common-10.0.1.aar/d3ae88c626293e7f9764de8e2ec8e0a9/AndroidManifest.xml:3:5-42
-MERGED from [com.google.android.gms:play-services-tasks:10.0.1] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-tasks-10.0.1.aar/dc11718f01440f9c79c30b257ab4b5aa/AndroidManifest.xml:3:5-42
-MERGED from [com.google.android.gms:play-services-tasks:10.0.1] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-tasks-10.0.1.aar/dc11718f01440f9c79c30b257ab4b5aa/AndroidManifest.xml:3:5-42
-MERGED from [com.google.firebase:firebase-storage-common:10.0.1] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-10.0.1.aar/feb5eff21c854ace0a3282e08e88aad7/AndroidManifest.xml:3:5-42
-MERGED from [com.google.firebase:firebase-storage-common:10.0.1] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-10.0.1.aar/feb5eff21c854ace0a3282e08e88aad7/AndroidManifest.xml:3:5-42
+MERGED from [com.google.firebase:firebase-common:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-common-10.0.0.aar/2a9628df940dec4b2fb0a3ad1b5e8f3d/AndroidManifest.xml:3:5-42
+MERGED from [com.google.firebase:firebase-common:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-common-10.0.0.aar/2a9628df940dec4b2fb0a3ad1b5e8f3d/AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-tasks:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-tasks-10.0.0.aar/00d9d418320e286ee9170ebb34b5ef82/AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-tasks:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-tasks-10.0.0.aar/00d9d418320e286ee9170ebb34b5ef82/AndroidManifest.xml:3:5-42
+MERGED from [com.google.firebase:firebase-storage-common:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-10.0.0.aar/052acc157d4b96b78a0883c70bb21580/AndroidManifest.xml:3:5-42
+MERGED from [com.google.firebase:firebase-storage-common:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-10.0.0.aar/052acc157d4b96b78a0883c70bb21580/AndroidManifest.xml:3:5-42
 MERGED from [com.google.android.gms:play-services-ads-lite:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-10.0.0.aar/488e2df59cc1772e4aa1301597ffb0c3/AndroidManifest.xml:22:5-42
 MERGED from [com.google.android.gms:play-services-ads-lite:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-10.0.0.aar/488e2df59cc1772e4aa1301597ffb0c3/AndroidManifest.xml:22:5-42
 MERGED from [com.google.android.gms:play-services-gass:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-gass-10.0.0.aar/29142aa849cfad8f229f455f6a2100df/AndroidManifest.xml:3:5-42
 MERGED from [com.google.android.gms:play-services-gass:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-gass-10.0.0.aar/29142aa849cfad8f229f455f6a2100df/AndroidManifest.xml:3:5-42
-MERGED from [com.google.android.gms:play-services-basement:10.0.1] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-basement-10.0.1.aar/e79fb43f282c78317ddb9108317e69e4/AndroidManifest.xml:17:5-42
-MERGED from [com.google.android.gms:play-services-basement:10.0.1] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-basement-10.0.1.aar/e79fb43f282c78317ddb9108317e69e4/AndroidManifest.xml:17:5-42
-MERGED from [com.android.support:support-v4:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/57404cc49f082842f990bb6eb7b87591/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-v4:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/57404cc49f082842f990bb6eb7b87591/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:cardview-v7:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.3.1.aar/b6affffcb698130558d99032fc26b82a/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:cardview-v7:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.3.1.aar/b6affffcb698130558d99032fc26b82a/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:recyclerview-v7:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.3.1.aar/619cf454d6c57933ce314a73f46093da/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:recyclerview-v7:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.3.1.aar/619cf454d6c57933ce314a73f46093da/AndroidManifest.xml:20:5-43
+MERGED from [com.google.android.gms:play-services-basement:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-basement-10.0.0.aar/183c338744c50f4f40aa2557c18412b1/AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-basement:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-basement-10.0.0.aar/183c338744c50f4f40aa2557c18412b1/AndroidManifest.xml:17:5-42
+MERGED from [com.android.support:support-v4:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/737e0a56182cdf8c2c87aa566722ea31/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/737e0a56182cdf8c2c87aa566722ea31/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:cardview-v7:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/b8d33e7bf16e7a4c21f289a01af23a62/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/b8d33e7bf16e7a4c21f289a01af23a62/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/7c40cc6ad096d57f73d4fdd432a90a9b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/7c40cc6ad096d57f73d4fdd432a90a9b/AndroidManifest.xml:20:5-44
 MERGED from [com.balysv:material-ripple:1.0.2] /home/himani/.gradle/caches/transforms-1/files-1.1/material-ripple-1.0.2.aar/57ad85d83b7888f50349b1b5c0abc1dc/AndroidManifest.xml:8:5-10:41
 MERGED from [com.balysv:material-ripple:1.0.2] /home/himani/.gradle/caches/transforms-1/files-1.1/material-ripple-1.0.2.aar/57ad85d83b7888f50349b1b5c0abc1dc/AndroidManifest.xml:8:5-10:41
 MERGED from [com.microsoft.projectoxford:speechrecognition:1.2.2] /home/himani/.gradle/caches/transforms-1/files-1.1/speechrecognition-1.2.2.aar/d6bbcf18bd799d615f4a48c79096660e/AndroidManifest.xml:7:5-9:41
@@ -359,26 +366,26 @@ MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.11] /home/himani/.gra
 MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.11] /home/himani/.gradle/caches/transforms-1/files-1.1/android-gif-drawable-1.2.11.aar/20ec2578f8153ce29dc9a148cc2a09b5/AndroidManifest.xml:7:5-9:41
 MERGED from [de.hdodenhof:circleimageview:2.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/circleimageview-2.1.0.aar/7586204128ed65aac0b139e70785424f/AndroidManifest.xml:5:5-7:41
 MERGED from [de.hdodenhof:circleimageview:2.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/circleimageview-2.1.0.aar/7586204128ed65aac0b139e70785424f/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:multidex:1.0.2] /home/himani/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/3fd66960bb7579bdb0970f2eea686a6e/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:multidex:1.0.2] /home/himani/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/3fd66960bb7579bdb0970f2eea686a6e/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-fragment:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-fragment-25.3.1.aar/8075a1f3e42476413c157d5e0e1b3eaf/AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-fragment:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-fragment-25.3.1.aar/8075a1f3e42476413c157d5e0e1b3eaf/AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-media-compat:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.3.1.aar/3540a29ca049486ad34cc4a3eb761c85/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-media-compat:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.3.1.aar/3540a29ca049486ad34cc4a3eb761c85/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-utils:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.3.1.aar/b0347136645a5c66fdc06301689a6f59/AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-core-utils:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.3.1.aar/b0347136645a5c66fdc06301689a6f59/AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-core-ui:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.3.1.aar/d812895aeac7ba3e10d3908e310b3b37/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-ui:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.3.1.aar/d812895aeac7ba3e10d3908e310b3b37/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.3.1.aar/de6b205d63530fee6c178e9c9448dc8e/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.3.1.aar/de6b205d63530fee6c178e9c9448dc8e/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.3.1.aar/b3893274ceab8def05f682e7b5cca776/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.3.1.aar/b3893274ceab8def05f682e7b5cca776/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-compat:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/53e8b24dbd9c210b681fba6f97f93011/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-compat:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/53e8b24dbd9c210b681fba6f97f93011/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/4907000e03470a6081ddd4850243b851/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/4907000e03470a6081ddd4850243b851/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/f46ca6a1201f050bf2e8406108068645/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/f46ca6a1201f050bf2e8406108068645/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-utils:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/3013d1255973ab8b850b265549d85325/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/3013d1255973ab8b850b265549d85325/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/75b1a3edea6b98f307df65a90bbd1643/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/75b1a3edea6b98f307df65a90bbd1643/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/0898c369b8463cdf616fd27d590a6645/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/0898c369b8463cdf616fd27d590a6645/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/ca31322c214485d9a70f584a1e61017c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/ca31322c214485d9a70f584a1e61017c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/b0365b6b2d5d48d22cd83c4b7bba11f6/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/b0365b6b2d5d48d22cd83c4b7bba11f6/AndroidManifest.xml:21:5-23:58
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/bc6b9e3a055250149a16df18933d1495/AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/bc6b9e3a055250149a16df18933d1495/AndroidManifest.xml:20:5-22:41
 INJECTED from /home/himani/AndroidStudioProjects/Bot-master/app/src/main/AndroidManifest.xml
 INJECTED from /home/himani/AndroidStudioProjects/Bot-master/app/src/main/AndroidManifest.xml
 	tools:overrideLibrary
-		ADDED from [com.android.support:design:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/ace2c534ccf1d93d4e202a2b29f23af1/AndroidManifest.xml:23:9-59
+		ADDED from [com.android.support:design:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/c9451c311b08e09be888eccde11e8236/AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
 		INJECTED from /home/himani/AndroidStudioProjects/Bot-master/app/src/main/AndroidManifest.xml
 		ADDED from /home/himani/AndroidStudioProjects/Bot-master/app/src/main/AndroidManifest.xml
@@ -388,35 +395,35 @@ INJECTED from /home/himani/AndroidStudioProjects/Bot-master/app/src/main/Android
 		ADDED from /home/himani/AndroidStudioProjects/Bot-master/app/src/main/AndroidManifest.xml
 		INJECTED from /home/himani/AndroidStudioProjects/Bot-master/app/src/main/AndroidManifest.xml
 meta-data#android.support.VERSION
-ADDED from [com.android.support:design:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/ace2c534ccf1d93d4e202a2b29f23af1/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:appcompat-v7:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/769a2e7ff656fe59c99ed9e63b783eee/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:appcompat-v7:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/769a2e7ff656fe59c99ed9e63b783eee/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:transition:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/transition-25.3.1.aar/ccca40081c3da5e5ada2a144710e1a49/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:transition:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/transition-25.3.1.aar/ccca40081c3da5e5ada2a144710e1a49/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-v4:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/57404cc49f082842f990bb6eb7b87591/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-v4:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/57404cc49f082842f990bb6eb7b87591/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:cardview-v7:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.3.1.aar/b6affffcb698130558d99032fc26b82a/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:cardview-v7:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.3.1.aar/b6affffcb698130558d99032fc26b82a/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:recyclerview-v7:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.3.1.aar/619cf454d6c57933ce314a73f46093da/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:recyclerview-v7:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.3.1.aar/619cf454d6c57933ce314a73f46093da/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-fragment:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-fragment-25.3.1.aar/8075a1f3e42476413c157d5e0e1b3eaf/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-fragment:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-fragment-25.3.1.aar/8075a1f3e42476413c157d5e0e1b3eaf/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-media-compat:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.3.1.aar/3540a29ca049486ad34cc4a3eb761c85/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-media-compat:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.3.1.aar/3540a29ca049486ad34cc4a3eb761c85/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-utils:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.3.1.aar/b0347136645a5c66fdc06301689a6f59/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-utils:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.3.1.aar/b0347136645a5c66fdc06301689a6f59/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-ui:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.3.1.aar/d812895aeac7ba3e10d3908e310b3b37/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-ui:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.3.1.aar/d812895aeac7ba3e10d3908e310b3b37/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.3.1.aar/de6b205d63530fee6c178e9c9448dc8e/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.3.1.aar/de6b205d63530fee6c178e9c9448dc8e/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.3.1.aar/b3893274ceab8def05f682e7b5cca776/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.3.1.aar/b3893274ceab8def05f682e7b5cca776/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-compat:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/53e8b24dbd9c210b681fba6f97f93011/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-compat:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/53e8b24dbd9c210b681fba6f97f93011/AndroidManifest.xml:25:5-27:34
+ADDED from [com.android.support:design:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/c9451c311b08e09be888eccde11e8236/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:appcompat-v7:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/fc6d18af367b2a2890afe1058bf6ef56/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:appcompat-v7:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/fc6d18af367b2a2890afe1058bf6ef56/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:transition:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/fcb49b87275133044df405163740c9e5/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:transition:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/fcb49b87275133044df405163740c9e5/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-v4:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/737e0a56182cdf8c2c87aa566722ea31/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-v4:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/737e0a56182cdf8c2c87aa566722ea31/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:cardview-v7:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/b8d33e7bf16e7a4c21f289a01af23a62/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:cardview-v7:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/b8d33e7bf16e7a4c21f289a01af23a62/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/7c40cc6ad096d57f73d4fdd432a90a9b/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/7c40cc6ad096d57f73d4fdd432a90a9b/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/4907000e03470a6081ddd4850243b851/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/4907000e03470a6081ddd4850243b851/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/f46ca6a1201f050bf2e8406108068645/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/f46ca6a1201f050bf2e8406108068645/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/3013d1255973ab8b850b265549d85325/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/3013d1255973ab8b850b265549d85325/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/75b1a3edea6b98f307df65a90bbd1643/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/75b1a3edea6b98f307df65a90bbd1643/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-core-ui:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/0898c369b8463cdf616fd27d590a6645/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/0898c369b8463cdf616fd27d590a6645/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/ca31322c214485d9a70f584a1e61017c/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/ca31322c214485d9a70f584a1e61017c/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-compat:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/b0365b6b2d5d48d22cd83c4b7bba11f6/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/b0365b6b2d5d48d22cd83c4b7bba11f6/AndroidManifest.xml:26:9-28:38
 	android:value
-		ADDED from [com.android.support:design:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/ace2c534ccf1d93d4e202a2b29f23af1/AndroidManifest.xml:27:9-31
+		ADDED from [com.android.support:design:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/c9451c311b08e09be888eccde11e8236/AndroidManifest.xml:28:13-35
 	android:name
-		ADDED from [com.android.support:design:25.3.1] /home/himani/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/ace2c534ccf1d93d4e202a2b29f23af1/AndroidManifest.xml:26:9-47
+		ADDED from [com.android.support:design:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/c9451c311b08e09be888eccde11e8236/AndroidManifest.xml:27:13-51
 service#com.firebase.jobdispatcher.GooglePlayReceiver
 ADDED from [com.firebase:firebase-jobdispatcher:0.5.2] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-jobdispatcher-0.5.2.aar/818c47014ea6a99e0f835aa8f370f548/AndroidManifest.xml:32:9-39:19
 	android:exported
@@ -584,15 +591,15 @@ ADDED from [com.google.firebase:firebase-iid:10.0.0] /home/himani/.gradle/caches
 	android:name
 		ADDED from [com.google.firebase:firebase-iid:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-iid-10.0.0.aar/b0a67b2c68e3076bc67178ff42909013/AndroidManifest.xml:44:18-82
 provider#com.google.firebase.provider.FirebaseInitProvider
-ADDED from [com.google.firebase:firebase-common:10.0.1] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-common-10.0.1.aar/d3ae88c626293e7f9764de8e2ec8e0a9/AndroidManifest.xml:6:9-194
+ADDED from [com.google.firebase:firebase-common:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-common-10.0.0.aar/2a9628df940dec4b2fb0a3ad1b5e8f3d/AndroidManifest.xml:6:9-194
 	android:authorities
-		ADDED from [com.google.firebase:firebase-common:10.0.1] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-common-10.0.1.aar/d3ae88c626293e7f9764de8e2ec8e0a9/AndroidManifest.xml:6:19-78
+		ADDED from [com.google.firebase:firebase-common:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-common-10.0.0.aar/2a9628df940dec4b2fb0a3ad1b5e8f3d/AndroidManifest.xml:6:19-78
 	android:exported
-		ADDED from [com.google.firebase:firebase-common:10.0.1] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-common-10.0.1.aar/d3ae88c626293e7f9764de8e2ec8e0a9/AndroidManifest.xml:6:144-168
+		ADDED from [com.google.firebase:firebase-common:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-common-10.0.0.aar/2a9628df940dec4b2fb0a3ad1b5e8f3d/AndroidManifest.xml:6:144-168
 	android:initOrder
-		ADDED from [com.google.firebase:firebase-common:10.0.1] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-common-10.0.1.aar/d3ae88c626293e7f9764de8e2ec8e0a9/AndroidManifest.xml:6:169-192
+		ADDED from [com.google.firebase:firebase-common:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-common-10.0.0.aar/2a9628df940dec4b2fb0a3ad1b5e8f3d/AndroidManifest.xml:6:169-192
 	android:name
-		ADDED from [com.google.firebase:firebase-common:10.0.1] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-common-10.0.1.aar/d3ae88c626293e7f9764de8e2ec8e0a9/AndroidManifest.xml:6:79-143
+		ADDED from [com.google.firebase:firebase-common:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-common-10.0.0.aar/2a9628df940dec4b2fb0a3ad1b5e8f3d/AndroidManifest.xml:6:79-143
 activity#com.google.android.gms.ads.AdActivity
 ADDED from [com.google.android.gms:play-services-ads-lite:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-10.0.0.aar/488e2df59cc1772e4aa1301597ffb0c3/AndroidManifest.xml:25:9-232
 	android:configChanges
@@ -608,11 +615,11 @@ ADDED from [com.google.android.gms:play-services-ads-lite:10.0.0] /home/himani/.
 	android:name
 		ADDED from [com.google.android.gms:play-services-ads-lite:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-10.0.0.aar/488e2df59cc1772e4aa1301597ffb0c3/AndroidManifest.xml:26:19-91
 meta-data#com.google.android.gms.version
-ADDED from [com.google.android.gms:play-services-basement:10.0.1] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-basement-10.0.1.aar/e79fb43f282c78317ddb9108317e69e4/AndroidManifest.xml:20:9-121
+ADDED from [com.google.android.gms:play-services-basement:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-basement-10.0.0.aar/183c338744c50f4f40aa2557c18412b1/AndroidManifest.xml:20:9-121
 	android:value
-		ADDED from [com.google.android.gms:play-services-basement:10.0.1] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-basement-10.0.1.aar/e79fb43f282c78317ddb9108317e69e4/AndroidManifest.xml:20:66-119
+		ADDED from [com.google.android.gms:play-services-basement:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-basement-10.0.0.aar/183c338744c50f4f40aa2557c18412b1/AndroidManifest.xml:20:66-119
 	android:name
-		ADDED from [com.google.android.gms:play-services-basement:10.0.1] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-basement-10.0.1.aar/e79fb43f282c78317ddb9108317e69e4/AndroidManifest.xml:20:20-65
+		ADDED from [com.google.android.gms:play-services-basement:10.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/play-services-basement-10.0.0.aar/183c338744c50f4f40aa2557c18412b1/AndroidManifest.xml:20:20-65
 uses-permission#android.permission.CHANGE_WIFI_MULTICAST_STATE
 ADDED from [com.microsoft.projectoxford:speechrecognition:1.2.2] /home/himani/.gradle/caches/transforms-1/files-1.1/speechrecognition-1.2.2.aar/d6bbcf18bd799d615f4a48c79096660e/AndroidManifest.xml:13:5-86
 	android:name
@@ -625,3 +632,9 @@ uses-permission#android.permission.READ_PHONE_STATE
 ADDED from [com.microsoft.projectoxford:speechrecognition:1.2.2] /home/himani/.gradle/caches/transforms-1/files-1.1/speechrecognition-1.2.2.aar/d6bbcf18bd799d615f4a48c79096660e/AndroidManifest.xml:17:5-75
 	android:name
 		ADDED from [com.microsoft.projectoxford:speechrecognition:1.2.2] /home/himani/.gradle/caches/transforms-1/files-1.1/speechrecognition-1.2.2.aar/d6bbcf18bd799d615f4a48c79096660e/AndroidManifest.xml:17:22-72
+meta-data#android.arch.lifecycle.VERSION
+ADDED from [android.arch.lifecycle:runtime:1.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/bc6b9e3a055250149a16df18933d1495/AndroidManifest.xml:25:9-27:47
+	android:value
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/bc6b9e3a055250149a16df18933d1495/AndroidManifest.xml:27:13-44
+	android:name
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] /home/himani/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/bc6b9e3a055250149a16df18933d1495/AndroidManifest.xml:26:13-58
