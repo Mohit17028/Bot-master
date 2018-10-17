@@ -962,6 +962,8 @@ drawable ic_mic_black_24dp
 drawable ic_mic_white_24dp
 drawable ic_not_found
 drawable ic_notif
+drawable ic_pause_circle_filled_dark_24dp
+drawable ic_pause_circle_filled_white_24dp
 drawable ic_people
 drawable ic_play_circle_filled_dark_24dp
 drawable ic_play_circle_filled_white_24dp
