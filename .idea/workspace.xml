@@ -13,6 +13,51 @@
   <component name="ChangeListManager">
     <list default="true" id="85d69aa2-f628-4ac8-825e-bd982638f3ed" name="Default" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_pause_circle_filled_dark_24dp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_pause_circle_filled_white_24dp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-hdpi/ic_pause_circle_filled_dark_24dp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-hdpi/ic_pause_circle_filled_white_24dp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-ldpi/ic_pause_circle_filled_dark_24dp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-ldpi/ic_pause_circle_filled_white_24dp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-mdpi/ic_pause_circle_filled_dark_24dp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-mdpi/ic_pause_circle_filled_white_24dp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_pause_circle_filled_dark_24dp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_pause_circle_filled_white_24dp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_pause_circle_filled_dark_24dp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_pause_circle_filled_white_24dp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_pause_circle_filled_dark_24dp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_pause_circle_filled_white_24dp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/builds/debug/1539784080759/classes.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/app/sample/fchat/adapter/ChatDetailsListAdapter$1$5.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/app/sample/fchat/adapter/ChatDetailsListAdapter$1$6.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/app/sample/fchat/adapter/ChatDetailsListAdapter$1$7.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/app/sample/fchat/adapter/ChatDetailsListAdapter$1$8.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/app/sample/fchat/adapter/ChatDetailsListAdapter$1$5.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/app/sample/fchat/adapter/ChatDetailsListAdapter$1$6.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/app/sample/fchat/adapter/ChatDetailsListAdapter$1$7.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/app/sample/fchat/adapter/ChatDetailsListAdapter$1$8.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_pause_circle_filled_dark_24dp.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_pause_circle_filled_white_24dp.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_pause_circle_filled_dark_24dp.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_pause_circle_filled_white_24dp.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-ldpi_ic_pause_circle_filled_dark_24dp.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-ldpi_ic_pause_circle_filled_white_24dp.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_pause_circle_filled_dark_24dp.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_pause_circle_filled_white_24dp.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_pause_circle_filled_dark_24dp.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_pause_circle_filled_white_24dp.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_pause_circle_filled_dark_24dp.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_pause_circle_filled_white_24dp.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_pause_circle_filled_dark_24dp.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_pause_circle_filled_white_24dp.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/97/com/app/sample/fchat/adapter/ChatDetailsListAdapter$1$5.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/97/com/app/sample/fchat/adapter/ChatDetailsListAdapter$1$6.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/97/com/app/sample/fchat/adapter/ChatDetailsListAdapter$1$7.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/97/com/app/sample/fchat/adapter/ChatDetailsListAdapter$1$8.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/app/sample/fchat/adapter/ChatDetailsListAdapter$1$5.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/app/sample/fchat/adapter/ChatDetailsListAdapter$1$6.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/app/sample/fchat/adapter/ChatDetailsListAdapter$1$7.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/app/sample/fchat/adapter/ChatDetailsListAdapter$1$8.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_pause_circle_filled_dark_24dp.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_pause_circle_filled_white_24dp.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileContent/fileContent.lock" afterDir="false" />
@@ -190,6 +235,7 @@
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/app/sample/fchat/adapter/ChatDetailsListAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/app/sample/fchat/adapter/ChatDetailsListAdapter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/github/bubbleview/R$drawable.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/github/bubbleview/R$drawable.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/__content__.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/__content__.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/sample/fchat/adapter/ChatDetailsListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/sample/fchat/adapter/ChatDetailsListAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_chat_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_chat_details.xml" afterDir="false" />
     </list>
@@ -214,7 +260,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="525">
-      <file leaf-file-name="ChatDetailsListAdapter.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ChatDetailsListAdapter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/app/sample/fchat/adapter/ChatDetailsListAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1290">
@@ -224,6 +270,13 @@
                 <element signature="e#14315#14316#0" expanded="true" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state />
           </provider>
         </entry>
       </file>
@@ -2409,16 +2462,35 @@
     <option name="height" value="668" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
       <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Bot-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Bot-master" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="Bot-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Bot-master" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="AndroidView">
         <subPane>
           <expand>
+            <path>
+              <item name="Bot-master" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
             <path>
               <item name="Bot-master" type="1abcf292:AndroidViewProjectNode" />
               <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
@@ -2573,7 +2645,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3296837" />
       <window_info anchor="bottom" id="Logcat" order="7" />
       <window_info id="Captures" order="2" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
@@ -2950,6 +3022,11 @@
             <element signature="e#14315#14316#0" expanded="true" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state />
       </provider>
     </entry>
   </component>
