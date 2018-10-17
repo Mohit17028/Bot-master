@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_star_half_black_16dp.png.flat",
-        "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/fc6d18af367b2a2890afe1058bf6ef56/res/drawable-xxhdpi-v4/abc_ic_star_half_black_16dp.png"
-    },
-    {
         "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_common_google_signin_btn_icon_dark_normal.9.png.flat",
         "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/play-services-base-10.0.0.aar/8f131fef814741f4d562396fece04e43/res/drawable-xxhdpi-v4/common_google_signin_btn_icon_dark_normal.9.png"
+    },
+    {
+        "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_star_half_black_16dp.png.flat",
+        "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/fc6d18af367b2a2890afe1058bf6ef56/res/drawable-xxhdpi-v4/abc_ic_star_half_black_16dp.png"
     },
     {
         "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/color_abc_tint_spinner.xml.flat",
@@ -20,24 +20,24 @@
         "source": "/home/himani/AndroidStudioProjects/Bot-master/app/src/main/res/layout/row_chats.xml"
     },
     {
-        "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable_bg_doodle.jpg.flat",
-        "source": "/home/himani/AndroidStudioProjects/Bot-master/app/src/main/res/drawable/bg_doodle.jpg"
-    },
-    {
         "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable_abc_item_background_holo_dark.xml.flat",
         "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/fc6d18af367b2a2890afe1058bf6ef56/res/drawable/abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable_bg_doodle.jpg.flat",
+        "source": "/home/himani/AndroidStudioProjects/Bot-master/app/src/main/res/drawable/bg_doodle.jpg"
     },
     {
         "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/layout_slide_layout2.xml.flat",
         "source": "/home/himani/AndroidStudioProjects/Bot-master/app/src/main/res/layout/slide_layout2.xml"
     },
     {
-        "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable_ic_forum.png.flat",
-        "source": "/home/himani/AndroidStudioProjects/Bot-master/app/src/main/res/drawable/ic_forum.png"
-    },
-    {
         "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
         "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/fc6d18af367b2a2890afe1058bf6ef56/res/drawable-mdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable_ic_forum.png.flat",
+        "source": "/home/himani/AndroidStudioProjects/Bot-master/app/src/main/res/drawable/ic_forum.png"
     },
     {
         "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/color_abc_tint_switch_track.xml.flat",
@@ -52,16 +52,16 @@
         "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/fc6d18af367b2a2890afe1058bf6ef56/res/anim/abc_slide_out_top.xml"
     },
     {
-        "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
-        "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/fc6d18af367b2a2890afe1058bf6ef56/res/drawable-hdpi-v4/abc_scrubber_control_off_mtrl_alpha.png"
+        "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/layout-v26_abc_screen_toolbar.xml.flat",
+        "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/fc6d18af367b2a2890afe1058bf6ef56/res/layout-v26/abc_screen_toolbar.xml"
     },
     {
         "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/layout_activity_new_chat.xml.flat",
         "source": "/home/himani/AndroidStudioProjects/Bot-master/app/src/main/res/layout/activity_new_chat.xml"
     },
     {
-        "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/layout-v26_abc_screen_toolbar.xml.flat",
-        "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/fc6d18af367b2a2890afe1058bf6ef56/res/layout-v26/abc_screen_toolbar.xml"
+        "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
+        "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/fc6d18af367b2a2890afe1058bf6ef56/res/drawable-hdpi-v4/abc_scrubber_control_off_mtrl_alpha.png"
     },
     {
         "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_list_pressed_holo_light.9.png.flat",
@@ -72,12 +72,12 @@
         "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/fc6d18af367b2a2890afe1058bf6ef56/res/drawable-xxxhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
-        "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_common_google_signin_btn_icon_light_pressed.9.png.flat",
-        "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/play-services-base-10.0.0.aar/8f131fef814741f4d562396fece04e43/res/drawable-hdpi-v4/common_google_signin_btn_icon_light_pressed.9.png"
-    },
-    {
         "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/color_common_google_signin_btn_text_dark.xml.flat",
         "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/play-services-base-10.0.0.aar/8f131fef814741f4d562396fece04e43/res/color/common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_common_google_signin_btn_icon_light_pressed.9.png.flat",
+        "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/play-services-base-10.0.0.aar/8f131fef814741f4d562396fece04e43/res/drawable-hdpi-v4/common_google_signin_btn_icon_light_pressed.9.png"
     },
     {
         "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable_abc_ic_arrow_drop_right_black_24dp.xml.flat",
@@ -120,12 +120,12 @@
         "source": "/home/himani/AndroidStudioProjects/Bot-master/app/src/main/res/drawable/bg_chat_cardview.jpg"
     },
     {
-        "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
-        "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/fc6d18af367b2a2890afe1058bf6ef56/res/drawable-mdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
-    },
-    {
         "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable_button_send.xml.flat",
         "source": "/home/himani/AndroidStudioProjects/Bot-master/app/src/main/res/drawable/button_send.xml"
+    },
+    {
+        "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
+        "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/fc6d18af367b2a2890afe1058bf6ef56/res/drawable-mdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
         "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable_medicine_icon.png.flat",
@@ -144,12 +144,12 @@
         "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/fc6d18af367b2a2890afe1058bf6ef56/res/drawable-mdpi-v4/abc_list_longpressed_holo.9.png"
     },
     {
-        "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_normal_pressed.9.png.flat",
-        "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/b0365b6b2d5d48d22cd83c4b7bba11f6/res/drawable-xhdpi-v4/notification_bg_normal_pressed.9.png"
-    },
-    {
         "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_mic_black_24dp.png.flat",
         "source": "/home/himani/AndroidStudioProjects/Bot-master/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_mic_black_24dp.png"
+    },
+    {
+        "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_normal_pressed.9.png.flat",
+        "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/b0365b6b2d5d48d22cd83c4b7bba11f6/res/drawable-xhdpi-v4/notification_bg_normal_pressed.9.png"
     },
     {
         "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/anim_abc_slide_out_bottom.xml.flat",
@@ -188,12 +188,12 @@
         "source": "/home/himani/AndroidStudioProjects/Bot-master/app/src/main/res/drawable/photo_male_3.jpg"
     },
     {
-        "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_play_circle_filled_dark_24dp.xml.flat",
-        "source": "/home/himani/AndroidStudioProjects/Bot-master/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_play_circle_filled_dark_24dp.xml"
-    },
-    {
         "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/layout_abc_list_menu_item_radio.xml.flat",
         "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/fc6d18af367b2a2890afe1058bf6ef56/res/layout/abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_play_circle_filled_dark_24dp.xml.flat",
+        "source": "/home/himani/AndroidStudioProjects/Bot-master/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_play_circle_filled_dark_24dp.xml"
     },
     {
         "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable_abc_switch_thumb_material.xml.flat",
@@ -276,16 +276,16 @@
         "source": "/home/himani/AndroidStudioProjects/Bot-master/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_play_circle_filled_dark_24dp.png"
     },
     {
-        "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/color-v23_abc_tint_btn_checkable.xml.flat",
-        "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/fc6d18af367b2a2890afe1058bf6ef56/res/color-v23/abc_tint_btn_checkable.xml"
+        "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
+        "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/fc6d18af367b2a2890afe1058bf6ef56/res/drawable-mdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
     {
         "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
         "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/fc6d18af367b2a2890afe1058bf6ef56/res/drawable-mdpi-v4/abc_list_selector_disabled_holo_light.9.png"
     },
     {
-        "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
-        "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/fc6d18af367b2a2890afe1058bf6ef56/res/drawable-mdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png"
+        "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/color-v23_abc_tint_btn_checkable.xml.flat",
+        "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/fc6d18af367b2a2890afe1058bf6ef56/res/color-v23/abc_tint_btn_checkable.xml"
     },
     {
         "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
@@ -334,6 +334,10 @@
     {
         "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
         "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/fc6d18af367b2a2890afe1058bf6ef56/res/drawable-xxhdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable_left_chat_bubble.xml.flat",
+        "source": "/home/himani/AndroidStudioProjects/Bot-master/app/src/main/res/drawable/left_chat_bubble.xml"
     },
     {
         "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_text_select_handle_middle_mtrl_light.png.flat",
@@ -2438,6 +2442,10 @@
     {
         "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
         "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/fc6d18af367b2a2890afe1058bf6ef56/res/drawable-mdpi-v4/abc_btn_radio_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable_right_chat_bubble.xml.flat",
+        "source": "/home/himani/AndroidStudioProjects/Bot-master/app/src/main/res/drawable/right_chat_bubble.xml"
     },
     {
         "merged": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/res/merged/debug/drawable_two.png.flat",

@@ -7,6 +7,7 @@ INJECTED from /home/himani/AndroidStudioProjects/Bot-master/app/src/main/Android
 MERGED from [com.android.support:multidex:1.0.2] /home/himani/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/3fd66960bb7579bdb0970f2eea686a6e/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/himani/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/e10f22e9ff27d9cb84b887375553177c/AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:design:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/c9451c311b08e09be888eccde11e8236/AndroidManifest.xml:17:1-31:12
+MERGED from [com.github.lguipeng:BubbleView:1.0.1] /home/himani/.gradle/caches/transforms-1/files-1.1/BubbleView-1.0.1.aar/a5863c3487133372c744f94c612686b4/AndroidManifest.xml:2:1-16:12
 MERGED from [com.android.support:appcompat-v7:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/fc6d18af367b2a2890afe1058bf6ef56/AndroidManifest.xml:17:1-31:12
 MERGED from [com.firebase:firebase-jobdispatcher:0.5.2] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-jobdispatcher-0.5.2.aar/818c47014ea6a99e0f835aa8f370f548/AndroidManifest.xml:17:1-42:12
 MERGED from [com.android.support:transition:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/fcb49b87275133044df405163740c9e5/AndroidManifest.xml:17:1-28:12
@@ -120,6 +121,8 @@ MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/himan
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/himani/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/e10f22e9ff27d9cb84b887375553177c/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:design:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/c9451c311b08e09be888eccde11e8236/AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:design:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/c9451c311b08e09be888eccde11e8236/AndroidManifest.xml:25:5-29:19
+MERGED from [com.github.lguipeng:BubbleView:1.0.1] /home/himani/.gradle/caches/transforms-1/files-1.1/BubbleView-1.0.1.aar/a5863c3487133372c744f94c612686b4/AndroidManifest.xml:11:5-14:19
+MERGED from [com.github.lguipeng:BubbleView:1.0.1] /home/himani/.gradle/caches/transforms-1/files-1.1/BubbleView-1.0.1.aar/a5863c3487133372c744f94c612686b4/AndroidManifest.xml:11:5-14:19
 MERGED from [com.android.support:appcompat-v7:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/fc6d18af367b2a2890afe1058bf6ef56/AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:appcompat-v7:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/fc6d18af367b2a2890afe1058bf6ef56/AndroidManifest.xml:25:5-29:19
 MERGED from [com.firebase:firebase-jobdispatcher:0.5.2] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-jobdispatcher-0.5.2.aar/818c47014ea6a99e0f835aa8f370f548/AndroidManifest.xml:26:5-40:19
@@ -298,6 +301,8 @@ MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/himan
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/himani/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/e10f22e9ff27d9cb84b887375553177c/AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support:design:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/c9451c311b08e09be888eccde11e8236/AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:design:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/c9451c311b08e09be888eccde11e8236/AndroidManifest.xml:21:5-23:62
+MERGED from [com.github.lguipeng:BubbleView:1.0.1] /home/himani/.gradle/caches/transforms-1/files-1.1/BubbleView-1.0.1.aar/a5863c3487133372c744f94c612686b4/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.lguipeng:BubbleView:1.0.1] /home/himani/.gradle/caches/transforms-1/files-1.1/BubbleView-1.0.1.aar/a5863c3487133372c744f94c612686b4/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:appcompat-v7:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/fc6d18af367b2a2890afe1058bf6ef56/AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support:appcompat-v7:26.1.0] /home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/fc6d18af367b2a2890afe1058bf6ef56/AndroidManifest.xml:21:5-23:78
 MERGED from [com.firebase:firebase-jobdispatcher:0.5.2] /home/himani/.gradle/caches/transforms-1/files-1.1/firebase-jobdispatcher-0.5.2.aar/818c47014ea6a99e0f835aa8f370f548/AndroidManifest.xml:22:5-24:41

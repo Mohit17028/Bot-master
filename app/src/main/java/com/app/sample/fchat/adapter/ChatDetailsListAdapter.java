@@ -26,6 +26,7 @@ import com.app.sample.fchat.RecordDialog;
 import com.app.sample.fchat.data.SettingsAPI;
 import com.app.sample.fchat.fragment.ChatsFragment;
 import com.app.sample.fchat.model.ChatMessage;
+import com.github.library.bubbleview.BubbleLinearLayout;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FileDownloadTask;
@@ -82,7 +83,8 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 			holder.profile_img  = (CircleImageView) convertView.findViewById(R.id.profile_img);
 			holder.play_icon    = (ImageView) convertView.findViewById(R.id.imageViewPlay);
 			holder.aud_name_tv  = (TextView) convertView.findViewById(R.id.tv_audio_name);
-        	convertView.setTag(holder);	
+//        	holder.bubbleView   = (BubbleLinearLayout) convertView.findViewById(R.id.bubble_view);
+			convertView.setTag(holder);
         }else{
             holder = (ViewHolder) convertView.getTag();
         }
@@ -95,9 +97,10 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 
 			}
 			else {
+			    String aud_name[] = msg.getAudName().split("/");
 				holder.message.setVisibility(View.GONE);
 				holder.audio_layout.setVisibility(View.VISIBLE);
-				holder.aud_name_tv.setText(msg.getAudName());
+				holder.aud_name_tv.setText(aud_name[aud_name.length-1]);
 			}
 		} catch (NullPointerException e) {
 			e.printStackTrace();
@@ -105,7 +108,8 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 
 		holder.time.setText(msg.getReadableTime());
 
-        if(msg.getReceiver().getId().equals(set.readSetting("myid"))){
+        if(msg.getReceiver().getId().equals(set.readSetting("myid"))){  //left side
+            holder.profile_img.setVisibility(View.VISIBLE);
             holder.lyt_parent.setPadding(5, 3, 90, 2);
             holder.lyt_parent.setGravity(Gravity.LEFT);
             if(holder.audio_layout.getVisibility()==View.VISIBLE) {
@@ -116,17 +120,30 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                 holder.time.setTextColor(mContext.getResources().getColor(R.color.colorPrimaryDarkDarkDark));
                 holder.message.setTextColor(mContext.getResources().getColor(R.color.colorPrimaryDarkDarkDark));
             }
-            holder.lyt_thread.setBackgroundResource(R.drawable.left_chat_msg_box_style);
+//            holder.bubbleView.setBackgroundColor(mContext.getResources().getColor(R.color.white));
+//            holder.lyt_thread.setBackgroundResource(R.drawable.left_chat_msg_box_style);
+            holder.lyt_thread.setBackgroundResource(R.drawable.left_chat_bubble);
+
 //            holder.lyt_thread.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
 //            holder.profile_img.setImageResource(R.drawable.mascot_face);
             //holder.image_status.setImageResource(android.R.color.transparent);
         }else{
-//        	when msg is audio txt_layout visibility will be gone; if text, audio layout visibility will be gone
-//			if(holder.audio_layout.getVisibility()==View.VISIBLE) {}
         	holder.profile_img.setVisibility(View.GONE);
-        	holder.lyt_thread.setBackgroundResource(R.drawable.right_chat_msg_box_style);
-            holder.lyt_parent.setPadding(90, 3, 5, 2);
+            holder.lyt_parent.setPadding(90, 3, 10, 2);
             holder.lyt_parent.setGravity(Gravity.RIGHT);
+//            holder.bubbleView.setBackgroundColor(mContext.getResources().getColor(R.color.colorPrimaryDarkDark));
+//            holder.bubbleView.set;
+//            holder.lyt_thread.setBackgroundResource(R.drawable.right_chat_msg_box_style);
+            holder.lyt_thread.setBackgroundResource(R.drawable.right_chat_bubble);
+
+//            if(holder.audio_layout.getVisibility()==View.VISIBLE) {
+                holder.play_icon.setImageResource(R.drawable.ic_play_circle_filled_white_24dp);
+                holder.aud_name_tv.setTextColor(mContext.getResources().getColor(R.color.white));
+//            }
+//            if (holder.message.getVisibility()==View.VISIBLE) {
+                holder.time.setTextColor(mContext.getResources().getColor(R.color.white));
+                holder.message.setTextColor(mContext.getResources().getColor(R.color.white));
+//            }
 //            holder.lyt_thread.setCardBackgroundColor(mContext.getResources().getColor(R.color.colorPrimaryDarkDark));
 
         }
@@ -253,5 +270,6 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 		CircleImageView profile_img;
 		ImageView play_icon;
 		TextView aud_name_tv;
+//        BubbleLinearLayout bubbleView;
 	}	
 }

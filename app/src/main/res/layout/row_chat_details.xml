@@ -4,6 +4,7 @@
     android:id="@+id/lyt_parent"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginTop="3dp"
     android:orientation="horizontal">
 
 
@@ -13,7 +14,7 @@
         android:layout_height="40dp"
         android:src="@drawable/mascot_face"
         app:civ_border_color="@color/translucent"
-        android:layout_gravity="center_vertical"
+        android:layout_gravity="top"
         app:civ_border_width="@dimen/cardview_default_radius" />
 
     <!--<android.support.v7.widget.CardView-->
@@ -24,15 +25,29 @@
         <!--app:cardCornerRadius="15dp"-->
         <!--app:cardElevation="5dp">-->
 
+
+    <!--<com.github.library.bubbleview.BubbleLinearLayout-->
+        <!--android:id="@+id/bubble_view"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--app:arrowPosition="10dp"-->
+        <!--android:orientation="vertical"-->
+        <!--app:bubbleColor="@color/white"-->
+        <!--app:arrowLocation="left"-->
+        <!--app:arrowCenter="true"-->
+        <!--app:angle="4dp">-->
+
         <LinearLayout
             android:id="@+id/lyt_thread"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingBottom="5dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingTop="5dp">
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="5dp"
+            android:layout_marginTop="2dp">
+
             <TextView
                 android:id="@+id/text_content"
                 android:layout_width="wrap_content"
@@ -71,7 +86,7 @@
                         android:layout_height="wrap_content"
                         android:text="Voice 001"
                         android:textColor="@color/white"
-                        android:textSize="18sp"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
                     <SeekBar
                         android:id="@+id/seekBar"
@@ -121,8 +136,10 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Caption"
                     android:textColor="@color/white" />
             </LinearLayout>
-
         </LinearLayout>
+
+    <!--</com.github.library.bubbleview.BubbleLinearLayout>-->
+
 
     <!--</android.support.v7.widget.CardView>-->
 

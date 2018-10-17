@@ -120,7 +120,6 @@ public class SliderActivity extends AppCompatActivity {
         dotstv = new TextView[layouts.length];
         for (int i=0; i<dotstv.length; i++){
             dotstv[i] = new TextView(this);
-//            dotstv[i].setText(Html.fromHtml("&#8226"));
             dotstv[i].setText(Html.fromHtml("&#8226"));
             dotstv[i].setTextSize(30);
 //            dotstv[i].setTextColor(Color.parseColor("#a9b4bb"));

@@ -62,8 +62,14 @@ attr allowShortcuts
 attr allowStacking
 attr alpha
 attr alphabeticModifiers
+attr angle
+attr arrowCenter
 attr arrowHeadLength
+attr arrowHeight
+attr arrowLocation
+attr arrowPosition
 attr arrowShaftLength
+attr arrowWidth
 attr autoCompleteTextViewStyle
 attr autoSizeMaxTextSize
 attr autoSizeMinTextSize
@@ -87,6 +93,7 @@ attr borderWidth
 attr borderlessButtonStyle
 attr bottomSheetDialogTheme
 attr bottomSheetStyle
+attr bubbleColor
 attr buttonBarButtonStyle
 attr buttonBarNegativeButtonStyle
 attr buttonBarNeutralButtonStyle
@@ -966,6 +973,7 @@ drawable ic_send_white_24dp
 drawable ic_stop_white_24dp
 drawable ic_web
 drawable layout_click
+drawable left_chat_bubble
 drawable left_chat_msg_box_style
 drawable mascot
 drawable mascot_face
@@ -1012,6 +1020,7 @@ drawable photo_male_7
 drawable photo_male_8
 drawable profile
 drawable recording_gif
+drawable right_chat_bubble
 drawable right_chat_msg_box_style
 drawable rounded_corner_btn_bg
 drawable scenario1
@@ -1883,6 +1892,7 @@ styleable AppCompatTheme android_windowIsFloating android_windowAnimationStyle a
 styleable AppDataSearch
 styleable BottomNavigationView elevation itemBackground itemIconTint itemTextColor menu
 styleable BottomSheetBehavior_Layout behavior_hideable behavior_peekHeight behavior_skipCollapsed
+styleable BubbleView angle arrowCenter arrowHeight arrowLocation arrowPosition arrowWidth bubbleColor
 styleable ButtonBarLayout allowStacking
 styleable CardView android_minWidth android_minHeight cardBackgroundColor cardCornerRadius cardElevation cardMaxElevation cardPreventCornerOverlap cardUseCompatPadding contentPadding contentPaddingBottom contentPaddingLeft contentPaddingRight contentPaddingTop
 styleable CircleImageView civ_border_color civ_border_overlay civ_border_width civ_fill_color
