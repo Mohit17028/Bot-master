@@ -232,27 +232,37 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                 if (fileNameOnDevice.exists() || flag[0]==1) {
                     handler = new Handler();
                     mediaPlayer = new MediaPlayer();
-                    try {
-                        mediaPlayer.setDataSource(fileNameOnDevice.getPath());
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+//                    try {
+//                        mediaPlayer.setDataSource(fileNameOnDevice.getPath());
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
 //                    RecordDialog recDialog = new RecordDialog();
 //                    FragmentManager fm = ((ActivityChatDetails)mContext).getSupportFragmentManager();
 //                    recDialog.show(fm,"Record Dialog");
                     if(mediaPlayer.isPlaying()){
                         mediaPlayer.pause();
-                        holder.play_icon.setImageResource(R.drawable.ic_play_circle_filled_white_24dp);
+                        if(msg.getReceiver().getId().equals(set.readSetting("myid"))){;
+                            holder.play_icon.setImageResource(R.drawable.ic_pause_circle_filled_dark_24dp);
+                        }
+                        else {
+                            holder.play_icon.setImageResource(R.drawable.ic_pause_circle_filled_white_24dp);
+                        }
                     }
                     else {
 
                         try {
 
+                            mediaPlayer.setDataSource(fileNameOnDevice.getPath());
 //                        Toast.makeText(mContext, "media player set", Toast.LENGTH_SHORT).show();
                             mediaPlayer.prepare();
                             mediaPlayer.start();
-                            holder.play_icon.setImageResource(R.drawable.ic_pause_circle_filled_white_24dp);
-
+                            if(msg.getReceiver().getId().equals(set.readSetting("myid"))){;
+                                holder.play_icon.setImageResource(R.drawable.ic_pause_circle_filled_dark_24dp);
+                            }
+                            else {
+                                holder.play_icon.setImageResource(R.drawable.ic_pause_circle_filled_white_24dp);
+                            }
                             isPlaying = true;
                             changeSeekbar();
 //                        Toast.makeText(mContext, "Playing Audio", Toast.LENGTH_SHORT).show();
@@ -302,7 +312,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                             mediaPlayer.start();
                             seekBar_inner.setVisibility(View.VISIBLE);
                             changeSeekbar();
-                            Toast.makeText(mContext, "Playing Audio", Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(mContext, "Playing Audio", Toast.LENGTH_SHORT).show();
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -312,6 +322,12 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                     @Override
                     public void onCompletion(MediaPlayer mediaPlayer) {
                         seekBar_inner.setProgress(0);
+                        if(msg.getReceiver().getId().equals(set.readSetting("myid"))){;
+                            holder.play_icon.setImageResource(R.drawable.ic_play_circle_filled_dark_24dp);
+                        }
+                        else {
+                            holder.play_icon.setImageResource(R.drawable.ic_play_circle_filled_white_24dp);
+                        }
                     }
                 });
             }

@@ -64,7 +64,7 @@
                 android:id="@+id/microphone"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:src="@drawable/ic_mic_black_24dp"/>
+                android:src="@drawable/ic_mic_dark_green_24dp"/>
 
             <!--<ImageView-->
             <!--android:id="@+id/microphone"-->
@@ -103,7 +103,7 @@
 
             <Button
                 android:id="@+id/btn_send"
-                android:background="@drawable/ic_send_black_24dp"
+                android:background="@drawable/ic_send_dark_green_24dp"
                 android:clickable="true"
                 android:layout_marginLeft="12dp"
                 android:layout_width="35dp"
