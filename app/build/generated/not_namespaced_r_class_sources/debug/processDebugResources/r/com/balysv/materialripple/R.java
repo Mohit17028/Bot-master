@@ -28,7 +28,7 @@ public final class R {
     public static final class color {
         private color() {}
 
-        public static final int transparent = 0x7f050084;
+        public static final int transparent = 0x7f050086;
     }
     public static final class styleable {
         private styleable() {}

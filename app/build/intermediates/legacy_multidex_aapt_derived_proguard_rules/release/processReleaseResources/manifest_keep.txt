@@ -1,2 +1,0 @@
-# Referenced at /home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/merged_manifests/release/processReleaseManifest/merged/AndroidManifest.xml:30
--keep class android.support.multidex.MultiDexApplication { <init>(...); }

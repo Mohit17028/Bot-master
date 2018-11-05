@@ -37,7 +37,8 @@
         <!--app:arrowCenter="true"-->
         <!--app:angle="4dp">-->
 
-        <LinearLayout
+
+    <LinearLayout
             android:id="@+id/lyt_thread"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -45,8 +46,23 @@
             android:paddingBottom="5dp"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
-            android:paddingTop="5dp"
+            android:paddingTop="20dp"
             android:layout_marginTop="2dp">
+
+        <com.app.sample.fchat.HorizontalDottedProgress
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/dottedProgressBar"
+            android:layout_gravity="center_vertical"
+            android:visibility="gone"
+            >
+        </com.app.sample.fchat.HorizontalDottedProgress>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
 
             <TextView
                 android:id="@+id/text_content"
@@ -73,11 +89,12 @@
                     android:focusable="true"
                     />
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_gravity="center_vertical"
                     >
 
                     <TextView
@@ -87,25 +104,27 @@
                         android:text="Voice 001"
                         android:textColor="@color/white"
                         android:textSize="15sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
                     <SeekBar
                         android:id="@+id/seekBar"
-                        android:layout_width="match_parent"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="0dp"
+
                         android:secondaryProgressTint="@color/colorAccent"
 
                         />
 
                     <!--<View-->
-                        <!--android:id="@+id/separating_view"-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="0.5dp"-->
-                        <!--android:background="@android:color/darker_gray"-->
-                        <!--android:layout_marginTop="15dp"-->
-                        <!--android:layout_marginRight="20dp"-->
-                        <!--android:layout_marginEnd="20dp"-->
-                        <!--/>-->
+                    <!--android:id="@+id/separating_view"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="0.5dp"-->
+                    <!--android:background="@android:color/darker_gray"-->
+                    <!--android:layout_marginTop="15dp"-->
+                    <!--android:layout_marginRight="20dp"-->
+                    <!--android:layout_marginEnd="20dp"-->
+                    <!--/>-->
 
                 </LinearLayout>
 
@@ -137,6 +156,11 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Caption"
                     android:textColor="@color/white" />
             </LinearLayout>
+
+        </LinearLayout>
+
+
+
         </LinearLayout>
 
     <!--</com.github.library.bubbleview.BubbleLinearLayout>-->

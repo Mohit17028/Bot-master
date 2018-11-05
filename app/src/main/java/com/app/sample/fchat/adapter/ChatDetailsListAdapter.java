@@ -122,7 +122,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
             holder.lyt_parent.setPadding(5, 3, 90, 2);
             holder.lyt_parent.setGravity(Gravity.LEFT);
             if(holder.audio_layout.getVisibility()==View.VISIBLE) {
-				holder.play_icon.setImageResource(R.drawable.ic_play_circle_filled_dark_24dp);
+				holder.play_icon.setImageResource(R.drawable.ic_play_circle_filled_dark_green_24dp);
 				holder.aud_name_tv.setTextColor(mContext.getResources().getColor(R.color.colorPrimaryDarkDarkDark));
 			}
 			if (holder.message.getVisibility()==View.VISIBLE) {
@@ -243,7 +243,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                     if(mediaPlayer.isPlaying()){
                         mediaPlayer.pause();
                         if(msg.getReceiver().getId().equals(set.readSetting("myid"))){;
-                            holder.play_icon.setImageResource(R.drawable.ic_pause_circle_filled_dark_24dp);
+                            holder.play_icon.setImageResource(R.drawable.ic_pause_circle_filled_dark_green_24dp);
                         }
                         else {
                             holder.play_icon.setImageResource(R.drawable.ic_pause_circle_filled_white_24dp);
@@ -258,7 +258,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                             mediaPlayer.prepare();
                             mediaPlayer.start();
                             if(msg.getReceiver().getId().equals(set.readSetting("myid"))){;
-                                holder.play_icon.setImageResource(R.drawable.ic_pause_circle_filled_dark_24dp);
+                                holder.play_icon.setImageResource(R.drawable.ic_pause_circle_filled_dark_green_24dp);
                             }
                             else {
                                 holder.play_icon.setImageResource(R.drawable.ic_pause_circle_filled_white_24dp);
@@ -323,7 +323,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                     public void onCompletion(MediaPlayer mediaPlayer) {
                         seekBar_inner.setProgress(0);
                         if(msg.getReceiver().getId().equals(set.readSetting("myid"))){;
-                            holder.play_icon.setImageResource(R.drawable.ic_play_circle_filled_dark_24dp);
+                            holder.play_icon.setImageResource(R.drawable.ic_play_circle_filled_dark_green_24dp);
                         }
                         else {
                             holder.play_icon.setImageResource(R.drawable.ic_play_circle_filled_white_24dp);

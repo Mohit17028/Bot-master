@@ -64,7 +64,7 @@ public class ActivitySelectFriend extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String totalData = dataSnapshot.getValue().toString();
                 System.out.println("FRIEND SELECTED  :::  "+totalData);
-                totalData = "{104438938056703894690={name=Start a Conversation, photo=https://lh5.googleusercontent.com/-aB7ra_oRRdo/AAAAAAAAAAI/AAAAAAAAAT0/YV97n4P2WC8/s96-c/photo.jpg, id=104438938056703894690}}";
+                totalData = "{101303631882520175868={name=Start a Conversation, photo=https://lh5.googleusercontent.com/-aB7ra_oRRdo/AAAAAAAAAAI/AAAAAAAAAT0/YV97n4P2WC8/s96-c/photo.jpg, id=101303631882520175868}}";
                 // TODO: 25-05-2017 if number of items is 0 then show something else
                 mAdapter = new FriendsListAdapter(ActivitySelectFriend.this, pfbd.getUserList(totalData));
                 recyclerView.setAdapter(mAdapter);
@@ -74,7 +74,7 @@ public class ActivitySelectFriend extends AppCompatActivity {
                     public void onItemClick(View view, Friend obj, int position) {
                         System.out.println("OBJECT ------  "+obj);
                         String bot = obj.getId();
-                        obj.setId("104438938056703894690");
+                        obj.setId("101303631882520175868");
                         obj.setName("Sahaika");
                         obj.setPhoto("\"https://lh5.googleusercontent.com/-aB7ra_oRRdo/AAAAAAAAAAI/AAAAAAAAAT0/YV97n4P2WC8/s96-c/photo.jpg\"");
                         ActivityChatDetails.navigate((ActivitySelectFriend) ActivitySelectFriend.this, findViewById(R.id.lyt_parent), obj);
@@ -111,8 +111,8 @@ public class ActivitySelectFriend extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeButtonEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(false);
+        actionBar.setHomeButtonEnabled(false);
 //        actionBar.setSubtitle(Constant.getFriendsData(this).size()+" friends");
     }
 

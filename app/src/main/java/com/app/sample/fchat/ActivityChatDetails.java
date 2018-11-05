@@ -115,6 +115,12 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
 //        String audName = intent1.getStringExtra("aud_name");
 //        Toast.makeText(this,audName,Toast.LENGTH_SHORT).show();
 
+//      remove back btn
+//        ActionBar actionBar = getSupportActionBar();
+//        if (actionBar != null) {
+//            actionBar.setDisplayHomeAsUpEnabled(false);
+//        }
+
         parent_view = findViewById(android.R.id.content);
         pfbd = new ParseFirebaseData(this);
         set = new SettingsAPI(this);

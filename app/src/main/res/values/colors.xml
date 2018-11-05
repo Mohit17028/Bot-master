@@ -6,11 +6,12 @@
     <!--<color name="colorPrimaryDark">#2a6983</color>-->
 
     <!-- Purple -->
-    <!--<color name="colorPrimaryLight">#ab47bc</color>-->
-    <!--<color name="colorPrimary">#790e8b</color>-->
-    <!--<color name="colorPrimaryDark">#510b5d</color>-->
-    <!--<color name="colorPrimaryDarkDark">#400a4a</color>-->
-    <!--<color name="colorPrimaryDarkDarkDark">#2d0934</color>-->
+    <color name="colorPrimaryLight">#ab47bc</color>
+    <color name="colorPrimary">#790e8b</color>
+    <color name="colorPrimaryDark">#510b5d</color>
+    <color name="colorPrimaryDarkDark">#400a4a</color>
+    <color name="colorPrimaryDarkDarkDark">#2d0934</color>
+    <color name="colorPrimaryDarkBlue">#2a1e5c</color>
 
     <!--<color name="colorPrimaryLight">#ab47bc</color>-->
     <!--<color name="colorPrimary">#790e8b</color>-->
@@ -18,15 +19,16 @@
     <!--<color name="colorPrimaryDark">#400a4a</color>-->
 
     <!-- BLue -->
-    <color name="colorPrimaryLight">#1c98a7</color>
-    <color name="colorPrimary">#1e7a86</color>
-    <color name="colorPrimaryDark">#15626b</color>
-    <color name="colorPrimaryDarkDark">#02454d</color>
-    <color name="colorPrimaryDarkDarkDark">#061d20</color>
+    <!--<color name="colorPrimaryLight">#1c98a7</color>-->
+    <!--<color name="colorPrimary">#1e7a86</color>-->
+    <!--<color name="colorPrimaryDark">#15626b</color>-->
+    <!--<color name="colorPrimaryDarkDark">#02454d</color>-->
+    <!--<color name="colorPrimaryDarkDarkDark">#061d20</color>-->
 
     <color name="colorAccentLight">#f37da5</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorAccentDark">#d62662</color>
+    <color name="yellow">#eac435</color>
 
     <color name="white">#FFFFFF</color>
     <color name="trial">#edfcfd</color>
@@ -52,5 +54,6 @@
     <color name="grey_bg">#EBEFF0</color>
     <color name="grey_text">#222D31</color>
     <color name="me_chat_bg">#FFE0B2</color>
+    <color name="slide_bg">#fff3f4</color>
 
 </resources>
