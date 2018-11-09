@@ -958,6 +958,7 @@ drawable ic_dashboard
 drawable ic_delete
 drawable ic_discuss
 drawable ic_event
+drawable ic_file_download_grey_24dp
 drawable ic_forum
 drawable ic_group_catlovers
 drawable ic_group_collage

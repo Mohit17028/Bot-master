@@ -93,7 +93,8 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 			holder.aud_name_tv  = (TextView) convertView.findViewById(R.id.tv_audio_name);
 //        	holder.bubbleView   = (BubbleLinearLayout) convertView.findViewById(R.id.bubble_view);
 			holder.seekBar      = (SeekBar) convertView.findViewById(R.id.seekBar);
-            convertView.setTag(holder);
+            holder.download_iv  = (ImageView) convertView.findViewById(R.id.download_btn);
+			convertView.setTag(holder);
         }else{
             holder = (ViewHolder) convertView.getTag();
         }
@@ -157,6 +158,16 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 
         }
 
+//       Download on click
+        holder.download_iv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        
+//       play on click
         final String audio_path = msg.getAudName();
         final SeekBar seekBar_inner = holder.seekBar;
         holder.play_icon.setOnClickListener(new View.OnClickListener() {
@@ -404,6 +415,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 		ImageView play_icon;
 		TextView aud_name_tv;
 		SeekBar seekBar;
+		ImageView download_iv;
 //        BubbleLinearLayout bubbleView;
 	}	
 }
