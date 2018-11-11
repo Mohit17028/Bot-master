@@ -166,7 +166,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
             }
         });
 
-        
+
 //       play on click
         final String audio_path = msg.getAudName();
         final SeekBar seekBar_inner = holder.seekBar;

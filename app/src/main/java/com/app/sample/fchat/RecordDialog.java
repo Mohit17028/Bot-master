@@ -95,7 +95,7 @@ public class RecordDialog extends AppCompatDialogFragment {
     private MediaRecorder myAudioRecorder;
     private String opFile;
     private String outputFile;
-    private static String urlLink = "http://192.168.2.71:9009/audioqa/";
+    private static String urlLink = "http://103.25.231.23:9009/audioqa/";
     private RecordDialogListener listener;
 
     public interface RecordDialogListener{

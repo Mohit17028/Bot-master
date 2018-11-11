@@ -1133,6 +1133,7 @@ id direct
 id disableHome
 id dots_layout
 id dottedProgressBar
+id download_btn
 id drawer_layout
 id ease_cv
 id ease_iv
