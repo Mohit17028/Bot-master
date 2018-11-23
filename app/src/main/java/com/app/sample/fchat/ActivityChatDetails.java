@@ -31,6 +31,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.sample.fchat.adapter.ChatDetailsListAdapter;
@@ -86,6 +87,8 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
         ActivityCompat.startActivity(activity, intent, options.toBundle());
     }
 
+    private TextView feedback_pos,feedback_neg,feedback_neutral;
+    private String feedback_str;
     private Button btn_send;
     private EditText et_content;
     public static ChatDetailsListAdapter mAdapter;
@@ -121,6 +124,10 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
 //            actionBar.setDisplayHomeAsUpEnabled(false);
 //        }
 
+        feedback_pos = (TextView)findViewById(R.id.feedback_pos);
+        feedback_neg = (TextView)findViewById(R.id.feedback_neg);
+        feedback_neutral = (TextView)findViewById(R.id.feedback_nuetral);
+
         parent_view = findViewById(android.R.id.content);
         pfbd = new ParseFirebaseData(this);
         set = new SettingsAPI(this);
@@ -150,6 +157,26 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
         chatNode_2 = friend.getId() + "-" + set.readSetting("myid");
         System.out.println("testing"+chatNode+" "+chatNode_1+" "+chatNode_2);
 
+//      /* FEEDBACK */
+        feedback_pos.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                feedback_str = feedback_pos.getText().toString();
+            }
+        });
+        feedback_neg.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                feedback_str = feedback_neg.getText().toString();
+            }
+        });
+        feedback_neutral.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                feedback_str = feedback_neutral.getText().toString();
+            }
+        });
+
         /*  MICROPHONE   */
 //        ImageButton microphone = (ImageButton)findViewById(R.id.microphone);
         CircleImageView microphone = (CircleImageView)findViewById(R.id.microphone);
@@ -158,14 +185,9 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
             public void onClick(View view) {
                 //Intent intent = new Intent(getApplicationContext(),Microphone.class);
                 //startActivity(intent);
-
-                
 ////                askSpeechInput();
                 showRecordDialog();
                 downloadAudioFile();
-
-
-
             }
         });
 
@@ -223,6 +245,8 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
 
     @Override
     public void applyTexts(String audName) {
+//        feedback_str has the feedback,  i have Put it in hashmap just make sure
+//        it is parsed correctly in ParseFirebaseData file
         HashMap hm = new HashMap();
 //        et_content.setText(null);
         hm.put("text",null);
@@ -235,6 +259,7 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
         hm.put("senderphoto", set.readSetting("mydp"));
         hm.put("audio_name",audName);
         hm.put("isText","0");
+        hm.put("feedback_string",feedback_str);
 //        Log.d("hm1",audName);
         System.out.println("hm"+hm.entrySet());
         ref.child(chatNode).push().setValue(hm);
@@ -341,6 +366,7 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
             public void onClick(View view) {
 //                ChatMessage im=new ChatMessage(et_content.getText().toString(), String.valueOf(System.currentTimeMillis()),friend.getId(),friend.getName(),friend.getPhoto());
 
+//                PUT IT HERE TOO IF NEEDED
                 HashMap hm = new HashMap();
                 //if(et_content.getText().toString()!="")
 
@@ -472,17 +498,10 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
                     et_content.setText(ques);
 
                     //Toast.makeText(this,ques,Toast.LENGTH_SHORT).show();
-
-
                 }
                 break;
             }
-
         }
-
-
-
-
     }
     public static void POST(String url, String query) {
         InputStream inputStream = null;
@@ -499,9 +518,6 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
             HttpPost httpPost = new HttpPost(url);
 
             String json = " ";
-
-
-
 
             //Id object = new Id();
             //String id = object.getId();
@@ -531,13 +547,11 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
 
             //httpResponse.setStatusCode();
 
-
             int status = httpResponse.getStatusLine().getStatusCode();
 
             System.out.print("STATUS == == == " + status);
             // 9. receive response as inputStream
             inputStream = httpResponse.getEntity().getContent();
-
 
             BufferedReader br = null;
             StringBuilder sb = new StringBuilder();
@@ -567,14 +581,10 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
 
             //System.out.println("ID  ID  = "+ss.charAt(13) + "  " + ss.charAt(16)+ "  "+ss.charAt(19));
 
-
-
         } catch (Exception e) {
             //Log.d("InputStream", e.getLocalizedMessage());
         }
         //Log.d("Post meth " , result);
-
-
         //return jsonObj;
 
     }
@@ -590,9 +600,6 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
             //Toast.makeText(getBaseContext(),q,Toast.LENGTH_LONG).show();
             System.out.println("QUERYYYYYYY   =  " + q);
 
-
-
-
             return null;
         }
 
@@ -600,10 +607,7 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
         @Override
         protected void onPostExecute(Void result) {
 
-
             JSONObject json = null;
-
-
             String statistics = null;
 
         }

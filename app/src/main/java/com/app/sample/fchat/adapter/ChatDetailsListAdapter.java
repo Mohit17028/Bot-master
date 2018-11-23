@@ -123,10 +123,13 @@ public class ChatDetailsListAdapter extends BaseAdapter {
             holder.lyt_parent.setPadding(5, 3, 90, 2);
             holder.lyt_parent.setGravity(Gravity.LEFT);
             if(holder.audio_layout.getVisibility()==View.VISIBLE) {
-				holder.play_icon.setImageResource(R.drawable.ic_play_circle_filled_dark_green_24dp);
-				holder.aud_name_tv.setTextColor(mContext.getResources().getColor(R.color.colorPrimaryDarkDarkDark));
+				holder.play_icon.setImageResource(R.drawable.ic_file_download_dark_24dp);
+				holder.time.setTextColor(mContext.getResources().getColor(R.color.colorPrimaryDarkDarkDark));
+                holder.aud_name_tv.setTextColor(mContext.getResources().getColor(R.color.colorPrimaryDarkDarkDark));
+                holder.download_iv.setVisibility(View.GONE);
 			}
 			if (holder.message.getVisibility()==View.VISIBLE) {
+//                holder.download_iv.setVisibility(View.GONE);
                 holder.time.setTextColor(mContext.getResources().getColor(R.color.colorPrimaryDarkDarkDark));
                 holder.message.setTextColor(mContext.getResources().getColor(R.color.colorPrimaryDarkDarkDark));
             }
@@ -146,14 +149,16 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 //            holder.lyt_thread.setBackgroundResource(R.drawable.right_chat_msg_box_style);
             holder.lyt_thread.setBackgroundResource(R.drawable.right_chat_bubble);
 
-//            if(holder.audio_layout.getVisibility()==View.VISIBLE) {
-                holder.play_icon.setImageResource(R.drawable.ic_play_circle_filled_white_24dp);
+            if(holder.audio_layout.getVisibility()==View.VISIBLE) {
+                holder.time.setTextColor(mContext.getResources().getColor(R.color.white));
+                holder.play_icon.setImageResource(R.drawable.ic_file_download_white_24dp);
                 holder.aud_name_tv.setTextColor(mContext.getResources().getColor(R.color.white));
-//            }
-//            if (holder.message.getVisibility()==View.VISIBLE) {
+            }
+            if (holder.message.getVisibility()==View.VISIBLE) {
+//                holder.download_iv.setVisibility(View.GONE);
                 holder.time.setTextColor(mContext.getResources().getColor(R.color.white));
                 holder.message.setTextColor(mContext.getResources().getColor(R.color.white));
-//            }
+            }
 //            holder.lyt_thread.setCardBackgroundColor(mContext.getResources().getColor(R.color.colorPrimaryDarkDark));
 
         }
@@ -241,6 +246,12 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                 });
 
                 if (fileNameOnDevice.exists() || flag[0]==1) {
+                    if(msg.getReceiver().getId().equals(set.readSetting("myid"))){;
+                        holder.play_icon.setImageResource(R.drawable.ic_play_circle_filled_dark_24dp);
+                    }
+                    else {
+                        holder.play_icon.setImageResource(R.drawable.ic_play_circle_filled_white_24dp);
+                    }
                     handler = new Handler();
                     mediaPlayer = new MediaPlayer();
 //                    try {
@@ -254,7 +265,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                     if(mediaPlayer.isPlaying()){
                         mediaPlayer.pause();
                         if(msg.getReceiver().getId().equals(set.readSetting("myid"))){;
-                            holder.play_icon.setImageResource(R.drawable.ic_pause_circle_filled_dark_green_24dp);
+                            holder.play_icon.setImageResource(R.drawable.ic_pause_circle_filled_dark_24dp);
                         }
                         else {
                             holder.play_icon.setImageResource(R.drawable.ic_pause_circle_filled_white_24dp);
@@ -269,7 +280,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                             mediaPlayer.prepare();
                             mediaPlayer.start();
                             if(msg.getReceiver().getId().equals(set.readSetting("myid"))){;
-                                holder.play_icon.setImageResource(R.drawable.ic_pause_circle_filled_dark_green_24dp);
+                                holder.play_icon.setImageResource(R.drawable.ic_pause_circle_filled_dark_24dp);
                             }
                             else {
                                 holder.play_icon.setImageResource(R.drawable.ic_pause_circle_filled_white_24dp);
@@ -334,7 +345,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                     public void onCompletion(MediaPlayer mediaPlayer) {
                         seekBar_inner.setProgress(0);
                         if(msg.getReceiver().getId().equals(set.readSetting("myid"))){;
-                            holder.play_icon.setImageResource(R.drawable.ic_play_circle_filled_dark_green_24dp);
+                            holder.play_icon.setImageResource(R.drawable.ic_play_circle_filled_dark_24dp);
                         }
                         else {
                             holder.play_icon.setImageResource(R.drawable.ic_play_circle_filled_white_24dp);

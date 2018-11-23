@@ -1,17 +1,47 @@
 <resources>
 
-    <string name="app_name">FChat</string>
+    <!--ENGLISH TEXT-->
+    <!--<string name="app_name">FChat</string>-->
+    <!--<string name="bot_name">Sahaika</string>-->
+    <!--&lt;!&ndash;exit notification&ndash;&gt;-->
+    <!--<string name="press_again_exit_app">Press again to exit</string>-->
 
-    <!--exit notification-->
-    <string name="press_again_exit_app">Press again to exit</string>
+    <!--<string name="settings_file_name">com.app.sample.fchat.temp</string>-->
+    <!--<string name="skip_btn">Skip</string>-->
+    <!--<string name="next_btn">Next</string>-->
+    <!--<string name="signup_text">SIGN UP</string>-->
+    <!--<string name="login_text">LOGIN</string>-->
+    <!--<string name="logout">LOGOUT</string>-->
+    <!--<string name="enter_message">Enter message</string>-->
+    <!--<string name="no_chat_found">No Chat found</string>-->
+    <!--<string name="start_conversation">Start a conversation</string>-->
+    <!--<string name="feedback_positive">Helpful</string>-->
+    <!--<string name="feedback_neutral">Neutral</string>-->
+    <!--<string name="feedback_negative">Not Helpful</string>-->
 
-    <string name="settings_file_name">com.app.sample.fchat.temp</string>
-    <string name="skip_btn">Skip</string>
-    <string name="next_btn">Next</string>
-    <string name="signup_text">SIGN UP</string>
-    <string name="login_text">LOGIN</string>
+
+    <!--HINDI TEXT-->
     <string name="welcome_text"> नमस्ते, मेरा नाम है सहेली, और हु आपकी भी सहेली। स्तनपान से सम्बंद में मैं करुँगी आपकी मदद।</string>
     <string name="intro2_screen1">जैसा की हमे जानते है, सफल स्तनपान कराना कोई आसान काम नहीं|  स्तनपान करते वक़्त माँ को अनेक परेशानिया आती है| इस दौरान ज़रूरत होती है, धीरज की और और निरंतर प्रयास की | मैं सहेली  आपके स्तनपान से सम्बंधित सवालो और परेशानियों का हल निकालने में मदद करुँगी, आप खुल कर मुझे अपनी परेशानिया बताएं और मैं डॉक्टरों द्वारा बतायेगे गए सुझाव आपके साथ बाटूंगी</string>
-    <string name="logout">LOGOUT</string>
+
+    <string name="app_name">FChat</string>
+    <string name="bot_name">सहायिका</string>
+
+    <!--exit notification-->
+    <string name="press_again_exit_app">बाहर निकलने के लिए फिर से दबाएं</string>
+
+    <string name="settings_file_name">com.app.sample.fchat.temp</string>
+    <string name="skip_btn">छोड़ें</string>
+    <string name="next_btn">आगे बढ़ें</string>
+    <string name="signup_text">साइन अप करें</string>
+    <string name="login_text">लॉग इन करें</string>
+    <string name="logout">लोग आउट</string>
+    <string name="enter_message">संदेश दर्ज करें</string>
+    <string name="no_chat_found">कोई बातचीत नहीं मिली</string>
+    <string name="start_conversation">बातचीत शुरू करें</string>
+    <string name="feedback_positive">Helpful</string>
+    <string name="feedback_neutral">Neutral</string>
+    <string name="feedback_negative">Not Helpful</string>
+
 
 </resources>

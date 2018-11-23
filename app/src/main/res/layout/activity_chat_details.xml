@@ -40,6 +40,112 @@
             android:visibility="gone" />
     </RelativeLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="2dp"
+        android:paddingTop="2dp"
+        android:paddingStart="5dp"
+        android:paddingEnd="8dp"
+        android:gravity="center_horizontal"
+        android:background="@color/grey_translucent">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="@color/white"
+            android:elevation="20dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="5dp"
+            android:padding="16dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+                <TextView
+                    android:id="@+id/feedback_pos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/feedback_positive"
+                    android:textSize="16dp"
+                    android:layout_marginRight="7dp"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_thumb_up_dark_24dp"
+                    android:layout_gravity="center_vertical"
+                    />
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="@color/white"
+            android:elevation="20dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="5dp"
+            android:padding="16dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+                <TextView
+                    android:id="@+id/feedback_neg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/feedback_negative"
+                    android:textSize="16dp"
+                    android:layout_marginRight="7dp"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_thumb_down_dark_24dp"
+                    android:layout_gravity="center_vertical"
+                    />
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="@color/white"
+            android:elevation="20dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="5dp"
+            android:padding="16dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+                <TextView
+                    android:id="@+id/feedback_nuetral"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/feedback_neutral"
+                    android:textSize="16dp"
+                    android:layout_marginRight="7dp"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_thumbs_up_down_dark_24dp"
+                    android:layout_gravity="center_vertical"
+                    />
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
     <android.support.v7.widget.CardView
 
         android:layout_width="match_parent"
@@ -86,9 +192,8 @@
                 app:cardCornerRadius="20dp">
                 <EditText
                     android:id="@+id/text_content"
-                    android:hint="Enter message"
+                    android:hint="@string/enter_message"
                     android:background="@android:color/transparent"
-
                     android:layout_gravity="center"
                     android:layout_marginBottom="8dp"
                     android:layout_marginTop="8dp"

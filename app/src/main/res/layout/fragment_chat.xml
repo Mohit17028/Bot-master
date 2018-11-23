@@ -38,7 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-            android:text="No Chat found"/>
+            android:text="@string/no_chat_found"/>
     </LinearLayout>
 
 </RelativeLayout>

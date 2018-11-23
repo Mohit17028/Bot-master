@@ -64,7 +64,7 @@ public class ActivitySelectFriend extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String totalData = dataSnapshot.getValue().toString();
                 System.out.println("FRIEND SELECTED  :::  "+totalData);
-                totalData = "{101303631882520175868={name=Start a Conversation, photo=https://lh5.googleusercontent.com/-aB7ra_oRRdo/AAAAAAAAAAI/AAAAAAAAAT0/YV97n4P2WC8/s96-c/photo.jpg, id=101303631882520175868}}";
+                totalData = "{101303631882520175868={name=Start a conversation, photo=https://lh5.googleusercontent.com/-aB7ra_oRRdo/AAAAAAAAAAI/AAAAAAAAAT0/YV97n4P2WC8/s96-c/photo.jpg, id=101303631882520175868}}";
                 // TODO: 25-05-2017 if number of items is 0 then show something else
                 mAdapter = new FriendsListAdapter(ActivitySelectFriend.this, pfbd.getUserList(totalData));
                 recyclerView.setAdapter(mAdapter);
@@ -75,7 +75,7 @@ public class ActivitySelectFriend extends AppCompatActivity {
                         System.out.println("OBJECT ------  "+obj);
                         String bot = obj.getId();
                         obj.setId("101303631882520175868");
-                        obj.setName("Sahaika");
+                        obj.setName(getApplicationContext().getResources().getString(R.string.bot_name));
                         obj.setPhoto("\"https://lh5.googleusercontent.com/-aB7ra_oRRdo/AAAAAAAAAAI/AAAAAAAAAT0/YV97n4P2WC8/s96-c/photo.jpg\"");
                         ActivityChatDetails.navigate((ActivitySelectFriend) ActivitySelectFriend.this, findViewById(R.id.lyt_parent), obj);
                     }
