@@ -21,6 +21,9 @@ public class ChatMessage {
 
     private String text;
     private String aud_name;
+    private String feedback;
+    private String senderEmail;
+    private String friendEmail;
     private String is_text;
     private String friendId;
     private String friendName;
@@ -30,10 +33,13 @@ public class ChatMessage {
     private String senderPhoto;
     private String timestamp;
 
-    public ChatMessage(String text, String aud_name, String is_text, String timestamp,String friendId, String friendName,String friendPhoto,String senderId,String senderName,String senderPhoto) {
+    public ChatMessage(String text, String feedback, String friend_email, String sender_email, String aud_name, String is_text, String timestamp, String friendId, String friendName,String friendPhoto,String senderId,String senderName,String senderPhoto) {
         this.text = text;
         this.aud_name = aud_name;
         this.is_text = is_text;
+        this.feedback = feedback;
+        this.friendEmail = friend_email;
+        this.senderEmail = sender_email;
         this.timestamp = timestamp;
         this.friendId=friendId;
         this.friendName=friendName;
@@ -45,6 +51,18 @@ public class ChatMessage {
 
     public String getText() {
         return text;
+    }
+
+    public String getFeedback(){
+        return feedback;
+    }
+
+    public String getSenderEmail(){
+        return senderEmail;
+    }
+
+    public String getFriendEmail(){
+        return friendEmail;
     }
 
     public String getAudName(){

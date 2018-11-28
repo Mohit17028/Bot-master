@@ -88,7 +88,7 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
     }
 
     private TextView feedback_pos,feedback_neg,feedback_neutral;
-    private String feedback_str;
+    private String feedback_str="";
     private Button btn_send;
     private EditText et_content;
     public static ChatDetailsListAdapter mAdapter;
@@ -254,9 +254,11 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
         hm.put("receiverid", friend.getId());
         hm.put("receivername", friend.getName());
         hm.put("receiverphoto", friend.getPhoto());
+        hm.put("receiveremail","himani17014@iiitd.ac.in");
         hm.put("senderid", set.readSetting("myid"));
         hm.put("sendername", set.readSetting("myname"));
         hm.put("senderphoto", set.readSetting("mydp"));
+        hm.put("senderemail","himani17014@iiitd.ac.in");
         hm.put("audio_name",audName);
         hm.put("isText","0");
         hm.put("feedback_string",feedback_str);
@@ -383,11 +385,14 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
                 hm.put("receiverid", friend.getId());
                 hm.put("receivername", friend.getName());
                 hm.put("receiverphoto", friend.getPhoto());
+                hm.put("receiveremail","himani17014@iiitd.ac.in");
                 hm.put("senderid", set.readSetting("myid"));
                 hm.put("sendername", set.readSetting("myname"));
                 hm.put("senderphoto", set.readSetting("mydp"));
+                hm.put("senderemail","himani17014@iiitd.ac.in");
                 hm.put("audio_name",null);
                 hm.put("isText","1");
+                hm.put("feedback_string",feedback_str);
                 System.out.println("hm"+hm.entrySet());
                 ref.child(chatNode).push().setValue(hm);
                 String qy = String.valueOf(et_content.getText());
