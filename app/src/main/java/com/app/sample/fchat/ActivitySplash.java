@@ -2,7 +2,6 @@ package com.app.sample.fchat;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -12,14 +11,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import com.app.sample.fchat.data.SettingsAPI;
-import com.app.sample.fchat.data.Tools;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -42,26 +38,23 @@ import com.google.firebase.database.ValueEventListener;
 public class ActivitySplash extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener,
         View.OnClickListener {
 
+    public static final String USERS_CHILD = "users";
     private static final int RC_SIGN_IN = 100;
+    Handler handler = new Handler();
+    DatabaseReference ref;
+    SettingsAPI set;
     private SignInButton signInButton;
 //    private TextView signInButton;
     private ProgressBar loginProgress;
     private RelativeLayout loginLayout;
-
-    Handler handler = new Handler();
     Runnable runnable = new Runnable() {
         @Override
         public void run() {
             loginLayout.setVisibility(View.VISIBLE);
         }
     };
-
     private GoogleApiClient mGoogleApiClient;
     private FirebaseAuth mFirebaseAuth;
-    DatabaseReference ref;
-    SettingsAPI set;
-
-    public static final String USERS_CHILD = "users";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -240,15 +233,19 @@ public class ActivitySplash extends AppCompatActivity implements GoogleApiClient
                                     final String usrNm = acct.getDisplayName();
                                     final String usrId = acct.getId();
                                     final String usrDp = acct.getPhotoUrl().toString();
+                                    final String usrEmail = acct.getEmail();
 
                                     set.addUpdateSettings("myid", usrId);
                                     set.addUpdateSettings("myname", usrNm);
                                     set.addUpdateSettings("mydp", usrDp);
+                                    set.addUpdateSettings("myemail", usrEmail);
+
 
                                     if (!snapshot.hasChild(usrId)) {
                                         ref.child(usrId + "/name").setValue(usrNm);
                                         ref.child(usrId + "/photo").setValue(usrDp);
                                         ref.child(usrId + "/id").setValue(usrId);
+                                        ref.child(usrId + "/email").setValue(usrEmail);
                                     }
                                 }
 

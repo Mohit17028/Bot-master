@@ -53,6 +53,10 @@ public class ChatMessage {
         return text;
     }
 
+    public void setText(String text) {
+        this.text = text;
+    }
+
     public String getFeedback(){
         return feedback;
     }
@@ -71,10 +75,6 @@ public class ChatMessage {
 
     public String getIs_text(){ return is_text; }
 
-    public void setText(String text) {
-        this.text = text;
-    }
-
     public String getReadableTime()
     {
         try {
@@ -86,11 +86,11 @@ public class ChatMessage {
     }
 
     public Friend getReceiver() {
-        return new Friend(friendId,friendName,friendPhoto);
+        return new Friend(friendId, friendName, friendPhoto, friendEmail);
     }
 
     public Friend getSender() {
-        return new Friend(senderId,senderName,senderPhoto);
+        return new Friend(senderId, senderName, senderPhoto, senderEmail);
     }
 
     public String getTimestamp() {

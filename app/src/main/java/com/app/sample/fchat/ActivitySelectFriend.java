@@ -9,18 +9,15 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.app.sample.fchat.adapter.ChatsListAdapter;
 import com.app.sample.fchat.adapter.FriendsListAdapter;
 import com.app.sample.fchat.data.ParseFirebaseData;
 import com.app.sample.fchat.data.Tools;
-import com.app.sample.fchat.model.ChatMessage;
 import com.app.sample.fchat.model.Friend;
 import com.app.sample.fchat.widget.DividerItemDecoration;
 import com.google.firebase.database.DataSnapshot;
@@ -32,18 +29,15 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import io.grpc.netty.shaded.io.netty.util.internal.SocketUtils;
-
 public class ActivitySelectFriend extends AppCompatActivity {
 
+    public static final String USERS_CHILD = "users";
+    List<Friend> friendList;
+    ParseFirebaseData pfbd;
     private Toolbar toolbar;
     private ActionBar actionBar;
     private RecyclerView recyclerView;
     private FriendsListAdapter mAdapter;
-    List<Friend> friendList;
-
-    public static final String USERS_CHILD = "users";
-    ParseFirebaseData pfbd;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +51,8 @@ public class ActivitySelectFriend extends AppCompatActivity {
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
         String userid= pref.getString("userid",null);
         String username=pref.getString("username",null);
-        System.out.println("test login select friend :"+userid+"  "+username);
+        String useremail = pref.getString("useremail", null);
+        System.out.println("test login select friend :" + userid + "  " + username + " " + useremail);
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference(USERS_CHILD);
         ref.addValueEventListener(new ValueEventListener() {
             @Override
@@ -75,8 +70,9 @@ public class ActivitySelectFriend extends AppCompatActivity {
                         System.out.println("OBJECT ------  "+obj);
                         String bot = obj.getId();
                         obj.setId("101303631882520175868");
-                        obj.setName(getApplicationContext().getResources().getString(R.string.bot_name));
+                        obj.setName("Sahaika");
                         obj.setPhoto("\"https://lh5.googleusercontent.com/-aB7ra_oRRdo/AAAAAAAAAAI/AAAAAAAAAT0/YV97n4P2WC8/s96-c/photo.jpg\"");
+                        obj.setEmail("Sahaika");
                         ActivityChatDetails.navigate((ActivitySelectFriend) ActivitySelectFriend.this, findViewById(R.id.lyt_parent), obj);
                     }
                 });

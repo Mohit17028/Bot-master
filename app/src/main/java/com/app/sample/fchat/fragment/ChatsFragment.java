@@ -1,25 +1,16 @@
 package com.app.sample.fchat.fragment;
 
-import android.app.NotificationManager;
-import android.content.Context;
 import android.content.SharedPreferences;
-import android.media.RingtoneManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.NotificationCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
-import android.support.v7.app.AppCompatActivity;
-
-import com.firebase.client.Firebase;
 
 import com.app.sample.fchat.ActivityChatDetails;
 import com.app.sample.fchat.ActivityMain;
@@ -29,6 +20,7 @@ import com.app.sample.fchat.data.ParseFirebaseData;
 import com.app.sample.fchat.data.SettingsAPI;
 import com.app.sample.fchat.model.ChatMessage;
 import com.app.sample.fchat.widget.DividerItemDecoration;
+import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -38,18 +30,14 @@ import com.google.firebase.database.ValueEventListener;
 
 public class ChatsFragment extends Fragment {
 
-    public RecyclerView recyclerView;
-
-    private LinearLayoutManager mLayoutManager;
-    public ChatsListAdapter mAdapter;
-    private ProgressBar progressBar;
-
     public static final String MESSAGE_CHILD = "messages";
-
+    public RecyclerView recyclerView;
+    public ChatsListAdapter mAdapter;
     View view;
-
     ParseFirebaseData pfbd;
     SettingsAPI set;
+    private LinearLayoutManager mLayoutManager;
+    private ProgressBar progressBar;
 
     @Nullable
     @Override
@@ -75,7 +63,8 @@ public class ChatsFragment extends Fragment {
         SharedPreferences pref = getActivity().getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
        String userid= pref.getString("userid",null);
        String username=pref.getString("username",null);
-        System.out.println("test login :"+userid+"  "+username);
+        String useremail = pref.getString("useremail", null);
+        System.out.println("test login :" + userid + "  " + username + " " + useremail);
         // Get a reference to our posts
 
         Firebase ref2 = new Firebase("https://docs-examples.firebaseio.com/web/saving-data/fireblog/posts");

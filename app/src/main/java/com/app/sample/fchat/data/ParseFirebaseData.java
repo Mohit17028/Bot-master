@@ -10,7 +10,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-
 public class ParseFirebaseData {
     private SettingsAPI set;
 
@@ -20,7 +19,7 @@ public class ParseFirebaseData {
 
     public List<Friend> getUserList(String userData) {
         List<Friend> frnds = new ArrayList<>();
-        String name = null, id = null, photo = null;
+        String name = null, id = null, photo = null, email = null;
         for (String oneUser : userData.split("[}][,]")) {
             String[] temp = oneUser.replace("}", "").split("[{]");
             String[] userParts = temp[temp.length - 1].split(",");
@@ -29,16 +28,20 @@ public class ParseFirebaseData {
                     name = part.split("=")[1].trim();
                 if (part.split("=")[0].trim().equals("id"))
                     id = part.split("=")[1].trim();
+                if (part.split("=")[0].trim().equals("email"))
+                    email = part.split("=")[1].trim();
+
                 if (part.split("=")[0].trim().equals("photo"))
                     photo = part.split("=")[1].trim();
             }
             if (!set.readSetting("myid").equals(id))
-                frnds.add(new Friend(id, name, photo));
+                frnds.add(new Friend(id, name, photo, email));
         }
         return frnds;
     }
 
     public List<ChatMessage> getMessageListForUser(String msgData) {
+        System.out.println("MESSAGE ::::::" + msgData);
         List<ChatMessage> chats = new ArrayList<>();
         if(msgData.replace("{","").replace("}","").split(",")[1].trim().equals("value = null"))
             return chats;

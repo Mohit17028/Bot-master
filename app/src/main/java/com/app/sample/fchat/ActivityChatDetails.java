@@ -5,15 +5,10 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
-import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.speech.RecognizerIntent;
-import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
@@ -29,10 +24,8 @@ import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.app.sample.fchat.adapter.ChatDetailsListAdapter;
 import com.app.sample.fchat.data.ParseFirebaseData;
@@ -40,17 +33,11 @@ import com.app.sample.fchat.data.SettingsAPI;
 import com.app.sample.fchat.data.Tools;
 import com.app.sample.fchat.model.ChatMessage;
 import com.app.sample.fchat.model.Friend;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FileDownloadTask;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -62,7 +49,6 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -70,15 +56,55 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-import java.util.concurrent.ExecutionException;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ActivityChatDetails extends AppCompatActivity implements RecordDialog.RecordDialogListener {
-    public static String KEY_FRIEND = "FRIEND";
-
-    private final int REQ_CODE_SPEECH_INPUT = 100;
     public static final int RECORD_AUDIO = 0;
+    public static final String MESSAGE_CHILD = "messages";
+    public static String KEY_FRIEND = "FRIEND";
+    public static ChatDetailsListAdapter mAdapter;
+    static String uid = "";
+    private final int REQ_CODE_SPEECH_INPUT = 100;
+    ParseFirebaseData pfbd;
+    SettingsAPI set;
+    String urlLink = "http://192.168.2.71:9009/answer/";
+    String urlLink_hin = "https://api.dialogflow.com/v1/query";
+    String chatNode, chatNode_1, chatNode_2;
+    String ques = " ";
+    String sender_email = "";
+    DatabaseReference ref;
+    private TextView feedback_pos,feedback_neg,feedback_neutral;
+    private String feedback_str="";
+    private Button btn_send;
+    private EditText et_content;
+    private ListView listview;
+    private ActionBar actionBar;
+    private Friend friend;
+    private List<ChatMessage> items = new ArrayList<>();
+//    String audName;
+private View parent_view;
+    private TextWatcher contentWatcher = new TextWatcher() {
+        @Override
+
+        public void afterTextChanged(Editable etd) {
+            if (etd.toString().trim().length() == 0) {
+                btn_send.setEnabled(false);
+            } else {
+                btn_send.setEnabled(true);
+            }
+            //draft.setContent(etd.toString());
+        }
+
+        @Override
+        public void beforeTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
+        }
+
+        @Override
+        public void onTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
+        }
+    };
+
     // give preparation animation activity transition
     public static void navigate(AppCompatActivity activity, View transitionImage, Friend obj) {
         Intent intent = new Intent(activity, ActivityChatDetails.class);
@@ -87,28 +113,91 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
         ActivityCompat.startActivity(activity, intent, options.toBundle());
     }
 
-    private TextView feedback_pos,feedback_neg,feedback_neutral;
-    private String feedback_str="";
-    private Button btn_send;
-    private EditText et_content;
-    public static ChatDetailsListAdapter mAdapter;
+    public static void POST(String url, String query) {
+        InputStream inputStream = null;
+        //String result = "" ;
+        JSONObject result = null;
+        JSONObject jsonObj = null;
+        String f_ids = "";
+        try {
 
-    private ListView listview;
-    private ActionBar actionBar;
-    private Friend friend;
-    private List<ChatMessage> items = new ArrayList<>();
-    private View parent_view;
-    ParseFirebaseData pfbd;
-    SettingsAPI set;
-    static String uid = "";
-    String urlLink = "http://192.168.2.71:9009/answer/";
-    String urlLink_hin = "https://api.dialogflow.com/v1/query";
-    String chatNode, chatNode_1, chatNode_2;
-    String ques = " ";
-//    String audName;
+            // 1. create HttpClient
+            HttpClient httpclient = new DefaultHttpClient();
 
-    public static final String MESSAGE_CHILD = "messages";
-    DatabaseReference ref;
+            // 2. make POST request to the given URL
+            HttpPost httpPost = new HttpPost(url);
+
+            String json = " ";
+
+            //Id object = new Id();
+            //String id = object.getId();
+
+            System.out.println("USER ID POST : " + uid);
+
+            // 3. build jsonObject
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.accumulate("question", query);
+            jsonObject.accumulate("id", uid);
+
+            System.out.println("USER ASKED  = " + query);
+            // 4. convert JSONObject to JSON to String
+            json = jsonObject.toString();
+            Log.d("json string ", json);
+
+            List<NameValuePair> params = new ArrayList<NameValuePair>();
+            params.add(new BasicNameValuePair("question", query));
+            params.add(new BasicNameValuePair("id", "jass"));
+            httpPost.setEntity(new UrlEncodedFormEntity(params));
+
+
+            //Log.d(" json entity ", se+" "+httpPost);
+            System.out.println("ENTITY    =   " + httpPost.getEntity());
+
+            HttpResponse httpResponse = httpclient.execute((httpPost));
+
+            //httpResponse.setStatusCode();
+
+            int status = httpResponse.getStatusLine().getStatusCode();
+
+            System.out.print("STATUS == == == " + status);
+            // 9. receive response as inputStream
+            inputStream = httpResponse.getEntity().getContent();
+
+            BufferedReader br = null;
+            StringBuilder sb = new StringBuilder();
+
+            String line;
+            try {
+
+                br = new BufferedReader(new InputStreamReader(inputStream));
+                while ((line = br.readLine()) != null) {
+                    sb.append(line);
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                if (br != null) {
+                    try {
+                        br.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            String ss = "";
+            ss = sb.toString();
+            System.out.println(ss + "INPUTSTREAM");
+
+            //System.out.println("ID  ID  = "+ss.charAt(13) + "  " + ss.charAt(16)+ "  "+ss.charAt(19));
+
+        } catch (Exception e) {
+            //Log.d("InputStream", e.getLocalizedMessage());
+        }
+        //Log.d("Post meth " , result);
+        //return jsonObj;
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,13 +227,14 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
 
         String useremail=pref.getString("useremail",null);
         System.out.println("test login activity main :"+userid+"  "+useremail);
+        sender_email = useremail;
 
         uid = useremail;
         // animation transition
         ViewCompat.setTransitionName(parent_view, KEY_FRIEND);
 
 
-        ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.RECORD_AUDIO,Manifest.permission.WRITE_EXTERNAL_STORAGE},
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO, Manifest.permission.WRITE_EXTERNAL_STORAGE},
                 10);
 
         // initialize conversation data
@@ -158,19 +248,19 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
         System.out.println("testing"+chatNode+" "+chatNode_1+" "+chatNode_2);
 
 //      /* FEEDBACK */
-        feedback_pos.setOnClickListener(new View.OnClickListener(){
+        feedback_pos.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 feedback_str = feedback_pos.getText().toString();
             }
         });
-        feedback_neg.setOnClickListener(new View.OnClickListener(){
+        feedback_neg.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 feedback_str = feedback_neg.getText().toString();
             }
         });
-        feedback_neutral.setOnClickListener(new View.OnClickListener(){
+        feedback_neutral.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 feedback_str = feedback_neutral.getText().toString();
@@ -180,7 +270,7 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
         /*  MICROPHONE   */
 //        ImageButton microphone = (ImageButton)findViewById(R.id.microphone);
         CircleImageView microphone = (CircleImageView)findViewById(R.id.microphone);
-        microphone.setOnClickListener(new View.OnClickListener() {
+        microphone.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Intent intent = new Intent(getApplicationContext(),Microphone.class);
@@ -235,40 +325,6 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
 
     private void downloadAudioFile() {
         System.out.println("download audio file called");
-    }
-
-
-    private void showRecordDialog() {
-        RecordDialog recDialog = new RecordDialog();
-        recDialog.show(getSupportFragmentManager(),"Record Dialog");
-    }
-
-    @Override
-    public void applyTexts(String audName) {
-//        feedback_str has the feedback,  i have Put it in hashmap just make sure
-//        it is parsed correctly in ParseFirebaseData file
-        HashMap hm = new HashMap();
-//        et_content.setText(null);
-        hm.put("text",null);
-        hm.put("timestamp", String.valueOf(System.currentTimeMillis()));
-        hm.put("receiverid", friend.getId());
-        hm.put("receivername", friend.getName());
-        hm.put("receiverphoto", friend.getPhoto());
-        hm.put("receiveremail","himani17014@iiitd.ac.in");
-        hm.put("senderid", set.readSetting("myid"));
-        hm.put("sendername", set.readSetting("myname"));
-        hm.put("senderphoto", set.readSetting("mydp"));
-        hm.put("senderemail","himani17014@iiitd.ac.in");
-        hm.put("audio_name",audName);
-        hm.put("isText","0");
-        hm.put("feedback_string",feedback_str);
-//        Log.d("hm1",audName);
-        System.out.println("hm"+hm.entrySet());
-        ref.child(chatNode).push().setValue(hm);
-        String qy = String.valueOf(et_content.getText());
-
-        MyFirebaseInstanceIdService ob = new MyFirebaseInstanceIdService();
-        ob.onTokenRefresh();
     }
 
 //    @Override
@@ -340,6 +396,39 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
 //        });
 //    }
 
+    private void showRecordDialog() {
+        RecordDialog recDialog = new RecordDialog();
+        recDialog.show(getSupportFragmentManager(), "Record Dialog");
+    }
+
+    @Override
+    public void applyTexts(String audName) {
+//        feedback_str has the feedback,  i have Put it in hashmap just make sure
+//        it is parsed correctly in ParseFirebaseData file
+        HashMap hm = new HashMap();
+//        et_content.setText(null);
+        hm.put("text", null);
+        hm.put("timestamp", String.valueOf(System.currentTimeMillis()));
+        hm.put("receiverid", friend.getId());
+        hm.put("receivername", friend.getName());
+        hm.put("receiverphoto", friend.getPhoto());
+        hm.put("receiveremail", friend.getEmail());
+        hm.put("senderid", set.readSetting("myid"));
+        hm.put("sendername", set.readSetting("myname"));
+        hm.put("senderphoto", set.readSetting("mydp"));
+        hm.put("senderemail", sender_email);
+        hm.put("audio_name", audName);
+        hm.put("isText", "0");
+        hm.put("feedback_string", feedback_str);
+//        Log.d("hm1",audName);
+        System.out.println("hm" + hm.entrySet());
+        ref.child(chatNode).push().setValue(hm);
+        String qy = String.valueOf(et_content.getText());
+
+        MyFirebaseInstanceIdService ob = new MyFirebaseInstanceIdService();
+        ob.onTokenRefresh();
+    }
+
     public void initToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -385,11 +474,11 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
                 hm.put("receiverid", friend.getId());
                 hm.put("receivername", friend.getName());
                 hm.put("receiverphoto", friend.getPhoto());
-                hm.put("receiveremail","himani17014@iiitd.ac.in");
+                hm.put("receiveremail", friend.getEmail());
                 hm.put("senderid", set.readSetting("myid"));
                 hm.put("sendername", set.readSetting("myname"));
                 hm.put("senderphoto", set.readSetting("mydp"));
-                hm.put("senderemail","himani17014@iiitd.ac.in");
+                hm.put("senderemail", sender_email);
                 hm.put("audio_name",null);
                 hm.put("isText","1");
                 hm.put("feedback_string",feedback_str);
@@ -426,36 +515,6 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
         hideKeyboard();
     }
 
-
-    private void hideKeyboard() {
-        View view = this.getCurrentFocus();
-        if (view != null) {
-            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-        }
-    }
-
-    private TextWatcher contentWatcher = new TextWatcher() {
-        @Override
-
-        public void afterTextChanged(Editable etd) {
-            if (etd.toString().trim().length() == 0) {
-                btn_send.setEnabled(false);
-            } else {
-                btn_send.setEnabled(true);
-            }
-            //draft.setContent(etd.toString());
-        }
-
-        @Override
-        public void beforeTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
-        }
-
-        @Override
-        public void onTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
-        }
-    };
-
     /*@Override
     public void onBackPressed() {
         super.onBackPressed();
@@ -467,6 +526,13 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
         return true;
     }*/
 
+    private void hideKeyboard() {
+        View view = this.getCurrentFocus();
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
+    }
 
     private void askSpeechInput() {
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
@@ -482,7 +548,6 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
             //intent_m.putExtra("message", "HIIIIII");
         }
     }
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -508,93 +573,6 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
             }
         }
     }
-    public static void POST(String url, String query) {
-        InputStream inputStream = null;
-        //String result = "" ;
-        JSONObject result = null;
-        JSONObject jsonObj = null;
-        String f_ids = "";
-        try {
-
-            // 1. create HttpClient
-            HttpClient httpclient = new DefaultHttpClient();
-
-            // 2. make POST request to the given URL
-            HttpPost httpPost = new HttpPost(url);
-
-            String json = " ";
-
-            //Id object = new Id();
-            //String id = object.getId();
-
-            System.out.println("USER ID POST : "+uid);
-
-            // 3. build jsonObject
-            JSONObject jsonObject = new JSONObject();
-            jsonObject.accumulate("question", query);
-            jsonObject.accumulate("id",uid);
-
-            System.out.println("USER ASKED  = "+query);
-            // 4. convert JSONObject to JSON to String
-            json = jsonObject.toString();
-            Log.d("json string ", json);
-
-            List<NameValuePair> params = new ArrayList<NameValuePair>();
-            params.add(new BasicNameValuePair("question", query));
-            params.add(new BasicNameValuePair("id", "jass"));
-            httpPost.setEntity(new UrlEncodedFormEntity(params));
-
-
-            //Log.d(" json entity ", se+" "+httpPost);
-            System.out.println("ENTITY    =   " + httpPost.getEntity());
-
-            HttpResponse httpResponse = httpclient.execute((httpPost));
-
-            //httpResponse.setStatusCode();
-
-            int status = httpResponse.getStatusLine().getStatusCode();
-
-            System.out.print("STATUS == == == " + status);
-            // 9. receive response as inputStream
-            inputStream = httpResponse.getEntity().getContent();
-
-            BufferedReader br = null;
-            StringBuilder sb = new StringBuilder();
-
-            String line;
-            try {
-
-                br = new BufferedReader(new InputStreamReader(inputStream));
-                while ((line = br.readLine()) != null) {
-                    sb.append(line);
-                }
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            } finally {
-                if (br != null) {
-                    try {
-                        br.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-            String ss = "";
-            ss = sb.toString();
-            System.out.println(ss + "INPUTSTREAM");
-
-            //System.out.println("ID  ID  = "+ss.charAt(13) + "  " + ss.charAt(16)+ "  "+ss.charAt(19));
-
-        } catch (Exception e) {
-            //Log.d("InputStream", e.getLocalizedMessage());
-        }
-        //Log.d("Post meth " , result);
-        //return jsonObj;
-
-    }
-
-
 
     private class HttpAsyncTask extends AsyncTask<String, Void, Void> {
         @Override
