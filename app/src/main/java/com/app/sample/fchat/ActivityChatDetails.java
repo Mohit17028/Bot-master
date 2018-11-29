@@ -24,6 +24,11 @@ import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -66,6 +71,7 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
     public static ChatDetailsListAdapter mAdapter;
     static String uid = "";
     private final int REQ_CODE_SPEECH_INPUT = 100;
+
     ParseFirebaseData pfbd;
     SettingsAPI set;
     String urlLink = "http://192.168.2.71:9009/answer/";
@@ -74,6 +80,11 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
     String ques = " ";
     String sender_email = "";
     DatabaseReference ref;
+
+
+    private LinearLayout attachment_layout;
+    private ImageView add_image, add_video,attachment_iv;
+
     private TextView feedback_pos,feedback_neg,feedback_neutral;
     private String feedback_str="";
     private Button btn_send;
@@ -213,6 +224,11 @@ private View parent_view;
 //            actionBar.setDisplayHomeAsUpEnabled(false);
 //        }
 
+        add_image = (ImageView) findViewById(R.id.attach_img);
+        add_video = (ImageView) findViewById(R.id.attach_video);
+        attachment_iv = (ImageView) findViewById(R.id.attatchment_iv);
+        attachment_layout = (LinearLayout) findViewById(R.id.attatchment_layout);
+
         feedback_pos = (TextView)findViewById(R.id.feedback_pos);
         feedback_neg = (TextView)findViewById(R.id.feedback_neg);
         feedback_neutral = (TextView)findViewById(R.id.feedback_nuetral);
@@ -264,6 +280,34 @@ private View parent_view;
             @Override
             public void onClick(View view) {
                 feedback_str = feedback_neutral.getText().toString();
+            }
+        });
+
+        /*  ATTACHMENTS  */
+        attachment_iv.setOnClickListener(new OnClickListener(){
+            @Override
+            public void onClick(View view){
+                if(attachment_layout.getVisibility() == View.GONE){
+                    attachment_layout.setVisibility(View.VISIBLE);
+                }
+                else {
+                    attachment_layout.setVisibility(View.GONE);
+                }
+
+            }
+        });
+        add_image.setOnClickListener(new OnClickListener(){
+            @Override
+            public void onClick(View view){
+                attachment_layout.setVisibility(View.GONE);
+                // add code here.
+            }
+        });
+        add_video.setOnClickListener(new OnClickListener(){
+            @Override
+            public void onClick(View view){
+                attachment_layout.setVisibility(View.GONE);
+                // add code here.
             }
         });
 
