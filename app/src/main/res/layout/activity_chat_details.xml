@@ -41,6 +41,7 @@
     </RelativeLayout>
 
     <LinearLayout
+        android:id="@+id/feedback_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -48,6 +49,7 @@
         android:paddingTop="2dp"
         android:paddingStart="5dp"
         android:paddingEnd="8dp"
+        android:animateLayoutChanges="true"
         android:gravity="center_horizontal"
         android:background="@color/grey_translucent">
 
@@ -146,6 +148,57 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/attatchment_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:animateLayoutChanges="true"
+        android:paddingBottom="2dp"
+        android:paddingEnd="20dp"
+        android:visibility="gone"
+        android:background="@color/grey_translucent">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="20dp"
+            android:animateLayoutChanges="true"
+            android:padding="40dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:animateLayoutChanges="true">
+
+                <ImageView
+                    android:id="@+id/attach_img"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/ic_add_a_photo_dark_24dp"/>
+                <ImageView
+                    android:id="@+id/attach_video"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/ic_video_attatch_dark_24dp"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
     <android.support.v7.widget.CardView
 
         android:layout_width="match_parent"
@@ -187,7 +240,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_gravity="center"
-                android:layout_marginLeft="16dp"
+                android:layout_marginLeft="12dp"
                 android:padding="20dp"
                 app:cardCornerRadius="20dp">
                 <EditText
@@ -206,11 +259,18 @@
 
             </android.support.v7.widget.CardView>
 
+            <ImageView
+                android:id="@+id/attatchment_iv"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="10dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/ic_attachment_dark_24dp"/>
             <Button
                 android:id="@+id/btn_send"
                 android:background="@drawable/ic_send_black_24dp"
                 android:clickable="true"
-                android:layout_marginLeft="12dp"
+                android:layout_marginLeft="10dp"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:gravity="center"

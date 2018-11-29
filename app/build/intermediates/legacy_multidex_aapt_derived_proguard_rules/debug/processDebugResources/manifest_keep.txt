@@ -1,2 +1,0 @@
-# Referenced at D:\Bot-master\app\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:35
--keep class android.support.multidex.MultiDexApplication { <init>(...); }
