@@ -41,6 +41,7 @@ public class ParseFirebaseData {
     }
 
     public List<ChatMessage> getMessageListForUser(String msgData) {
+        System.out.println("MESSAGE ::::::"+msgData);
         List<ChatMessage> chats = new ArrayList<>();
         if(msgData.replace("{","").replace("}","").split(",")[1].trim().equals("value = null"))
             return chats;

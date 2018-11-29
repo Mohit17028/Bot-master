@@ -240,15 +240,19 @@ public class ActivitySplash extends AppCompatActivity implements GoogleApiClient
                                     final String usrNm = acct.getDisplayName();
                                     final String usrId = acct.getId();
                                     final String usrDp = acct.getPhotoUrl().toString();
+                                    final String usrEmail=acct.getEmail();
 
                                     set.addUpdateSettings("myid", usrId);
                                     set.addUpdateSettings("myname", usrNm);
                                     set.addUpdateSettings("mydp", usrDp);
+                                    set.addUpdateSettings("myemail",usrEmail);
+
 
                                     if (!snapshot.hasChild(usrId)) {
                                         ref.child(usrId + "/name").setValue(usrNm);
                                         ref.child(usrId + "/photo").setValue(usrDp);
                                         ref.child(usrId + "/id").setValue(usrId);
+                                        ref.child(usrId+"/email").setValue(usrEmail);
                                     }
                                 }
 

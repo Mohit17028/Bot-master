@@ -75,7 +75,8 @@ public class ChatsFragment extends Fragment {
         SharedPreferences pref = getActivity().getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
        String userid= pref.getString("userid",null);
        String username=pref.getString("username",null);
-        System.out.println("test login :"+userid+"  "+username);
+       String useremail=pref.getString("useremail",null);
+        System.out.println("test login :"+userid+"  "+username+" "+useremail);
         // Get a reference to our posts
 
         Firebase ref2 = new Firebase("https://docs-examples.firebaseio.com/web/saving-data/fireblog/posts");

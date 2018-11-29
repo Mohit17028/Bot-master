@@ -57,7 +57,8 @@ public class ActivitySelectFriend extends AppCompatActivity {
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
         String userid= pref.getString("userid",null);
         String username=pref.getString("username",null);
-        System.out.println("test login select friend :"+userid+"  "+username);
+        String useremail=pref.getString("useremail",null);
+        System.out.println("test login select friend :"+userid+"  "+username+" "+useremail);
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference(USERS_CHILD);
         ref.addValueEventListener(new ValueEventListener() {
             @Override
