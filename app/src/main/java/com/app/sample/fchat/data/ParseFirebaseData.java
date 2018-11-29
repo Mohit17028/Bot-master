@@ -10,9 +10,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-/**
- * Created by Bibaswann on 23-06-2017.
- */
 
 public class ParseFirebaseData {
     private SettingsAPI set;
@@ -46,14 +43,21 @@ public class ParseFirebaseData {
         if(msgData.replace("{","").replace("}","").split(",")[1].trim().equals("value = null"))
             return chats;
         ChatMessage tempMsg = null;
-        String [] feedback_arr=null;
+        String[] feedback_arr = null, text_arr = null;
         String text = null, feedback=null, audioName = null, is_text = null, msgTime = null, sender_email=null, senderId = null, senderName = null, senderPhoto = null, receiver_email=null, receiverId = null, receiverName = null, receiverPhoto = null;
         for (String msgInConv : msgData.split("[}][,]")) {
             String[] temp = msgInConv.replace("}", "").split("[{]");
             String[] msgParts = temp[temp.length - 1].split(",");
             for (String part : msgParts) {
-                if (part.split("=")[0].trim().equals("text"))
-                    text = decodeText(part.split("=")[1].trim());
+                if (part.split("=")[0].trim().equals("text")) {
+//                    text = decodeText(part.split("=")[1].trim());
+                    text_arr = part.split("=");
+                    if (text_arr.length <= 1) {
+                        text = "";
+                    } else {
+                        text = text_arr[1].trim();
+                    }
+                }
                 if (part.split("=")[0].trim().equals("timestamp"))
                     msgTime = part.split("=")[1].trim();
                 if (part.split("=")[0].trim().equals("senderid"))
