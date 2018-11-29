@@ -949,8 +949,10 @@ drawable eat_healthy_icon
 drawable features_menu
 drawable health_stethescope
 drawable heartbeat_icon
+drawable ic_add_a_photo_dark_24dp
 drawable ic_add_friend
 drawable ic_add_group
+drawable ic_attachment_dark_24dp
 drawable ic_brief
 drawable ic_call
 drawable ic_check_box_white_24dp
@@ -992,6 +994,7 @@ drawable ic_stop_white_24dp
 drawable ic_thumb_down_dark_24dp
 drawable ic_thumb_up_dark_24dp
 drawable ic_thumbs_up_down_dark_24dp
+drawable ic_video_attatch_dark_24dp
 drawable ic_web
 drawable layout_click
 drawable left_chat_bubble
@@ -1056,6 +1059,7 @@ drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable two
 drawable unknown_avatar
+drawable video_attatch
 id ALT
 id CTRL
 id FUNCTION
@@ -1090,6 +1094,10 @@ id alertTitle
 id all
 id always
 id async
+id attach_img
+id attach_video
+id attatchment_iv
+id attatchment_layout
 id audio_layout
 id auto
 id barrier
@@ -1146,6 +1154,7 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id feedback_layout
 id feedback_neg
 id feedback_nuetral
 id feedback_pos

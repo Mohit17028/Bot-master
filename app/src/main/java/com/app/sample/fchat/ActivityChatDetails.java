@@ -30,6 +30,8 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -87,6 +89,8 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
         ActivityCompat.startActivity(activity, intent, options.toBundle());
     }
 
+    private LinearLayout attachment_layout;
+    private ImageView add_image, add_video,attachment_iv;
     private TextView feedback_pos,feedback_neg,feedback_neutral;
     private String feedback_str="";
     private Button btn_send;
@@ -123,6 +127,11 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
 //        if (actionBar != null) {
 //            actionBar.setDisplayHomeAsUpEnabled(false);
 //        }
+
+        add_image = (ImageView) findViewById(R.id.attach_img);
+        add_video = (ImageView) findViewById(R.id.attach_video);
+        attachment_iv = (ImageView) findViewById(R.id.attatchment_iv);
+        attachment_layout = (LinearLayout) findViewById(R.id.attatchment_layout);
 
         feedback_pos = (TextView)findViewById(R.id.feedback_pos);
         feedback_neg = (TextView)findViewById(R.id.feedback_neg);
@@ -174,6 +183,34 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
             @Override
             public void onClick(View view) {
                 feedback_str = feedback_neutral.getText().toString();
+            }
+        });
+
+        /*  ATTACHMENTS  */
+        attachment_iv.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                if(attachment_layout.getVisibility() == View.GONE){
+                    attachment_layout.setVisibility(View.VISIBLE);
+                }
+                else {
+                    attachment_layout.setVisibility(View.GONE);
+                }
+
+            }
+        });
+        add_image.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                attachment_layout.setVisibility(View.GONE);
+                // add code here.
+            }
+        });
+        add_video.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                attachment_layout.setVisibility(View.GONE);
+                // add code here.
             }
         });
 
