@@ -1,10 +1,10 @@
-#Thu Nov 01 14:42:59 IST 2018
-path.2=classes2.dex
-path.1=classes3.dex
+#Thu Nov 29 13:00:54 IST 2018
+path.2=classes3.dex
+path.1=classes2.dex
 path.0=classes.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
-base.2=/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/transforms/dexMerger/debug/10
-base.1=/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/transforms/dexMerger/debug/10
-base.0=/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/transforms/dexMerger/debug/10
+base.2=/Users/jasmeetkaur/Downloads/Ruchika/Bot-master/app/build/intermediates/transforms/dexMerger/debug/10
+base.1=/Users/jasmeetkaur/Downloads/Ruchika/Bot-master/app/build/intermediates/transforms/dexMerger/debug/10
+base.0=/Users/jasmeetkaur/Downloads/Ruchika/Bot-master/app/build/intermediates/transforms/dexMerger/debug/10

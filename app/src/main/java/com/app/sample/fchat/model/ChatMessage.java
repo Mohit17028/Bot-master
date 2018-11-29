@@ -86,11 +86,11 @@ public class ChatMessage {
     }
 
     public Friend getReceiver() {
-        return new Friend(friendId,friendName,friendPhoto);
+        return new Friend(friendId,friendName,friendPhoto,friendEmail);
     }
 
     public Friend getSender() {
-        return new Friend(senderId,senderName,senderPhoto);
+        return new Friend(senderId,senderName,senderPhoto,senderEmail);
     }
 
     public String getTimestamp() {

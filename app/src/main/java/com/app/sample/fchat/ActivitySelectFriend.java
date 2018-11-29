@@ -77,6 +77,7 @@ public class ActivitySelectFriend extends AppCompatActivity {
                         obj.setId("101303631882520175868");
                         obj.setName(getApplicationContext().getResources().getString(R.string.bot_name));
                         obj.setPhoto("\"https://lh5.googleusercontent.com/-aB7ra_oRRdo/AAAAAAAAAAI/AAAAAAAAAT0/YV97n4P2WC8/s96-c/photo.jpg\"");
+                        obj.setEmail(getApplicationContext().getResources().getString(R.string.bot_name));
                         ActivityChatDetails.navigate((ActivitySelectFriend) ActivitySelectFriend.this, findViewById(R.id.lyt_parent), obj);
                     }
                 });

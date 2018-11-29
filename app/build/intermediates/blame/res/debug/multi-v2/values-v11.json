@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/himani/AndroidStudioProjects/Bot-master/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v11/values-v11.xml",
+            "outputFile": "/Users/jasmeetkaur/Downloads/Ruchika/Bot-master/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v11/values-v11.xml",
             "map": [
                 {
-                    "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/play-services-appinvite-10.0.0.aar/76bf8a5fc557926c5730eba560e81636/res/values-v11/values.xml",
+                    "source": "/Users/jasmeetkaur/.gradle/caches/transforms-1/files-1.1/play-services-appinvite-10.0.0.aar/e995ed5db6d735818ea34b50c6105f5a/res/values-v11/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/home/himani/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/fc6d18af367b2a2890afe1058bf6ef56/res/values-v11/values-v11.xml",
+                    "source": "/Users/jasmeetkaur/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/f7608e669ad39c7fdd8e3583ccd694a5/res/values-v11/values-v11.xml",
                     "from": {
                         "startLines": "2,8,14,20,26,32,38,39,43,47,48,52,56,57,61,66,71,76,78,80,81,82,136,191",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
