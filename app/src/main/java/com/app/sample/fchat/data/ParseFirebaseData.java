@@ -46,6 +46,7 @@ public class ParseFirebaseData {
         if(msgData.replace("{","").replace("}","").split(",")[1].trim().equals("value = null"))
             return chats;
         ChatMessage tempMsg = null;
+        String [] feedback_arr=null;
         String text = null, feedback=null, audioName = null, is_text = null, msgTime = null, sender_email=null, senderId = null, senderName = null, senderPhoto = null, receiver_email=null, receiverId = null, receiverName = null, receiverPhoto = null;
         for (String msgInConv : msgData.split("[}][,]")) {
             String[] temp = msgInConv.replace("}", "").split("[{]");
@@ -75,8 +76,16 @@ public class ParseFirebaseData {
                     audioName = part.split("=")[1].trim();
                 if (part.split("=")[0].trim().equals("isText"))
                     is_text = part.split("=")[1].trim();
-                if (part.split("=")[0].trim().equals("feedback_string"))
-                    feedback = part.split("=")[1].trim();
+                if (part.split("=")[0].trim().equals("feedback_string")){
+                    feedback_arr = part.split("=");
+                    if(feedback_arr.length <= 1){
+                        feedback = "";
+                    }
+                    else {
+                        feedback = feedback_arr[1].trim();
+                    }
+                }
+
                 System.out.println(receiverPhoto);
             }
             tempMsg = new ChatMessage(text, feedback, receiver_email, sender_email, audioName, is_text, msgTime,  receiverId, receiverName, receiverPhoto, senderId, senderName, senderPhoto);
@@ -96,6 +105,7 @@ public class ParseFirebaseData {
         ChatMessage tempMsg = null;
         List<ChatMessage> tempMsgList;
         long lastTimeStamp;
+        String [] feedback_arr=null;
         String text = null, feedback=null, audioName=null,is_text = null, msgTime = null, sender_email=null, senderId = null, senderName = null, senderPhoto = null, receiver_email=null, receiverId = null, receiverName = null, receiverPhoto = null;
         for (String oneConv : msgData.split("[}][}][,]")) {
             tempMsgList = new ArrayList<>();
@@ -129,8 +139,15 @@ public class ParseFirebaseData {
                         audioName = part.split("=")[1].trim();
                     if (part.split("=")[0].trim().equals("isText"))
                         is_text = part.split("=")[1].trim();
-                    if (part.split("=")[0].trim().equals("feedback_string"))
-                        feedback = part.split("=")[1].trim();
+                    if (part.split("=")[0].trim().equals("feedback_string")){
+                        feedback_arr = part.split("=");
+                        if(feedback_arr.length < 1){
+                            feedback = "";
+                        }
+                        else {
+                            feedback = feedback_arr[1].trim();
+                        }
+                    }
                 }
                 tempMsg = new ChatMessage(text, feedback, receiver_email, sender_email, audioName, is_text, msgTime, receiverId, receiverName, receiverPhoto, senderId, senderName, senderPhoto);
                 tempMsgList.add(tempMsg);
