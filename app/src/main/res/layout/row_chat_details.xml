@@ -12,9 +12,9 @@
         android:id="@+id/profile_img"
         android:layout_width="40dp"
         android:layout_height="40dp"
+        android:layout_gravity="top"
         android:src="@drawable/mascot_face"
         app:civ_border_color="@color/translucent"
-        android:layout_gravity="top"
         app:civ_border_width="@dimen/cardview_default_radius" />
 
     <!--<android.support.v7.widget.CardView-->
@@ -42,17 +42,17 @@
             android:id="@+id/lyt_thread"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
             android:orientation="vertical"
             android:paddingBottom="5dp"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
-            android:paddingTop="20dp"
-            android:layout_marginTop="2dp">
+        android:paddingTop="20dp">
 
         <com.app.sample.fchat.HorizontalDottedProgress
+            android:id="@+id/dottedProgressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/dottedProgressBar"
             android:layout_gravity="center_vertical"
             android:visibility="gone"
             >
@@ -77,34 +77,34 @@
                 android:id="@+id/audio_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:animateLayoutChanges="true">
+                android:animateLayoutChanges="true"
+                android:orientation="horizontal">
                 <ImageView
                     android:id="@+id/imageViewPlay"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_file_download_white_24dp"
                     android:layout_gravity="center_vertical"
-                    android:clickable="true"
                     android:layout_marginStart="5dp"
-                    android:focusable="true"
                     android:animateLayoutChanges="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/ic_file_download_white_24dp"
                     />
                 <ImageView
                     android:id="@+id/download_btn"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_marginRight="10dp"
-                    android:visibility="gone"
-                    android:src="@drawable/ic_file_download_grey_24dp"/>
+                    android:src="@drawable/ic_file_download_grey_24dp"
+                    android:visibility="gone" />
 
                 <LinearLayout
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginStart="0dp"
                     android:layout_marginTop="0dp"
-                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal"
                     >
 
                     <TextView
@@ -142,6 +142,13 @@
             </LinearLayout>
 
 
+            <!--IMAGE View LAYOUT-->
+            <ImageView
+                android:id="@+id/photo_iv"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/mother_child3"
+                android:visibility="gone" />
 
 
 

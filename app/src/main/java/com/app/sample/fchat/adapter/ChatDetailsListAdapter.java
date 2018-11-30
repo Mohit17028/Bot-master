@@ -1,15 +1,13 @@
 package com.app.sample.fchat.adapter;
 
 import android.content.Context;
-import android.graphics.Color;
+import android.graphics.Bitmap;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Environment;
 import android.os.Handler;
-import android.os.SystemClock;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -22,14 +20,9 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.app.sample.fchat.ActivityChatDetails;
-import com.app.sample.fchat.ActivityMain;
 import com.app.sample.fchat.R;
-import com.app.sample.fchat.RecordDialog;
 import com.app.sample.fchat.data.SettingsAPI;
-import com.app.sample.fchat.fragment.ChatsFragment;
 import com.app.sample.fchat.model.ChatMessage;
-import com.github.library.bubbleview.BubbleLinearLayout;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FileDownloadTask;
@@ -43,11 +36,10 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ChatDetailsListAdapter extends BaseAdapter {
-	
-	private List<ChatMessage> mMessages;
-	private Context mContext;
-	SettingsAPI set;
 
+    SettingsAPI set;
+    private List<ChatMessage> mMessages;
+    private Context mContext;
     private MediaPlayer mediaPlayer;
     private Runnable runnable;
     private Handler handler;
@@ -94,27 +86,43 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 //        	holder.bubbleView   = (BubbleLinearLayout) convertView.findViewById(R.id.bubble_view);
 			holder.seekBar      = (SeekBar) convertView.findViewById(R.id.seekBar);
             holder.download_iv  = (ImageView) convertView.findViewById(R.id.download_btn);
-			convertView.setTag(holder);
+            holder.photo_iv = (ImageView) convertView.findViewById(R.id.photo_iv);
+            convertView.setTag(holder);
         }else{
             holder = (ViewHolder) convertView.getTag();
         }
 
-		try {
-			if(msg.getIs_text().equals("1")) {
-				holder.message.setVisibility(View.VISIBLE);
-				holder.message.setText(msg.getText());
-				holder.audio_layout.setVisibility(View.GONE);
 
-			}
-			else {
-			    String aud_name[] = msg.getAudName().split("/");
-				holder.message.setVisibility(View.GONE);
-				holder.audio_layout.setVisibility(View.VISIBLE);
-				holder.aud_name_tv.setText(aud_name[aud_name.length-1]);
-			}
-		} catch (NullPointerException e) {
-			e.printStackTrace();
-		}
+//            0=audio, 1=text, 2=photo, 3=video
+        try {
+            if (msg.getIs_text().equals("1")) {
+                holder.message.setVisibility(View.VISIBLE);
+                holder.message.setText(msg.getText());
+                holder.audio_layout.setVisibility(View.GONE);
+
+            } else if (msg.getIs_text().equals("0")) {
+                String aud_name[] = msg.getAudName().split("/");
+                holder.message.setVisibility(View.GONE);
+                holder.audio_layout.setVisibility(View.VISIBLE);
+                holder.aud_name_tv.setText(aud_name[aud_name.length - 1]);
+            } else if (msg.getIs_text().equals("2")) {
+//                String photoPath[] = msg.getPhotoPath().split("/");
+
+                holder.message.setVisibility(View.GONE);
+                holder.audio_layout.setVisibility(View.GONE);
+                holder.photo_iv.setVisibility(View.VISIBLE);
+
+//                set image
+                try {
+                    Bitmap bitmap = MediaStore.Images.Media.getBitmap(mContext.getContentResolver(), Uri.parse(msg.getPhotoPath()));
+                    holder.photo_iv.setImageBitmap(bitmap);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
 
 		holder.time.setText(msg.getReadableTime());
 
@@ -246,7 +254,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                 });
 
                 if (fileNameOnDevice.exists() || flag[0]==1) {
-                    if(msg.getReceiver().getId().equals(set.readSetting("myid"))){;
+                    if (msg.getReceiver().getId().equals(set.readSetting("myid"))) {
                         holder.play_icon.setImageResource(R.drawable.ic_play_circle_filled_dark_24dp);
                     }
                     else {
@@ -264,7 +272,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 //                    recDialog.show(fm,"Record Dialog");
                     if(mediaPlayer.isPlaying()){
                         mediaPlayer.pause();
-                        if(msg.getReceiver().getId().equals(set.readSetting("myid"))){;
+                        if (msg.getReceiver().getId().equals(set.readSetting("myid"))) {
                             holder.play_icon.setImageResource(R.drawable.ic_pause_circle_filled_dark_24dp);
                         }
                         else {
@@ -279,7 +287,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 //                        Toast.makeText(mContext, "media player set", Toast.LENGTH_SHORT).show();
                             mediaPlayer.prepare();
                             mediaPlayer.start();
-                            if(msg.getReceiver().getId().equals(set.readSetting("myid"))){;
+                            if (msg.getReceiver().getId().equals(set.readSetting("myid"))) {
                                 holder.play_icon.setImageResource(R.drawable.ic_pause_circle_filled_dark_24dp);
                             }
                             else {
@@ -344,7 +352,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                     @Override
                     public void onCompletion(MediaPlayer mediaPlayer) {
                         seekBar_inner.setProgress(0);
-                        if(msg.getReceiver().getId().equals(set.readSetting("myid"))){;
+                        if (msg.getReceiver().getId().equals(set.readSetting("myid"))) {
                             holder.play_icon.setImageResource(R.drawable.ic_play_circle_filled_dark_24dp);
                         }
                         else {
@@ -427,6 +435,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 		TextView aud_name_tv;
 		SeekBar seekBar;
 		ImageView download_iv;
+        ImageView photo_iv;
 //        BubbleLinearLayout bubbleView;
 	}	
 }

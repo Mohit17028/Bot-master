@@ -21,6 +21,8 @@ public class ChatMessage {
 
     private String text;
     private String aud_name;
+    private String photoPath;
+    private String videoPath;
     private String feedback;
     private String senderEmail;
     private String friendEmail;
@@ -33,9 +35,11 @@ public class ChatMessage {
     private String senderPhoto;
     private String timestamp;
 
-    public ChatMessage(String text, String feedback, String friend_email, String sender_email, String aud_name, String is_text, String timestamp, String friendId, String friendName,String friendPhoto,String senderId,String senderName,String senderPhoto) {
+    public ChatMessage(String text, String feedback, String friend_email, String sender_email, String aud_name, String photoPath, String videoPath, String is_text, String timestamp, String friendId, String friendName, String friendPhoto, String senderId, String senderName, String senderPhoto) {
         this.text = text;
         this.aud_name = aud_name;
+        this.photoPath = photoPath;
+        this.videoPath = videoPath;
         this.is_text = is_text;
         this.feedback = feedback;
         this.friendEmail = friend_email;
@@ -59,6 +63,22 @@ public class ChatMessage {
 
     public String getFeedback(){
         return feedback;
+    }
+
+    public String getPhotoPath() {
+        return photoPath;
+    }
+
+    public void setPhotoPath(String photoPath) {
+        this.photoPath = photoPath;
+    }
+
+    public String getVideoPath() {
+        return videoPath;
+    }
+
+    public void setVideoPath(String videoPath) {
+        this.videoPath = videoPath;
     }
 
     public String getSenderEmail(){

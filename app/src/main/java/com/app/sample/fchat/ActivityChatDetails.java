@@ -6,12 +6,10 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.speech.RecognizerIntent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -29,11 +27,8 @@ import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -84,13 +79,9 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
     public static ChatDetailsListAdapter mAdapter;
     static String uid = "";
     private final int REQ_CODE_SPEECH_INPUT = 100;
-    private ImageView imageView;
+    private final int PICK_IMAGE_REQUEST = 71;
     FirebaseStorage storage;
     StorageReference storageReference;
-    private Uri filePath;
-
-    private final int PICK_IMAGE_REQUEST = 71;
-
     ParseFirebaseData pfbd;
     SettingsAPI set;
     String urlLink = "http://192.168.2.71:9009/answer/";
@@ -99,8 +90,8 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
     String ques = " ";
     String sender_email = "";
     DatabaseReference ref;
-
-
+    private ImageView imageView;
+    private Uri filePath;
     private LinearLayout attachment_layout;
     private ImageView add_image, add_video,attachment_iv;
 
@@ -247,6 +238,7 @@ private View parent_view;
         add_video = (ImageView) findViewById(R.id.attach_video);
         attachment_iv = (ImageView) findViewById(R.id.attatchment_iv);
         attachment_layout = (LinearLayout) findViewById(R.id.attatchment_layout);
+        imageView = (ImageView) findViewById(R.id.photo_iv);
 
         feedback_pos = (TextView)findViewById(R.id.feedback_pos);
         feedback_neg = (TextView)findViewById(R.id.feedback_neg);
@@ -323,7 +315,7 @@ private View parent_view;
                 storage = FirebaseStorage.getInstance();
                 storageReference = storage.getReference();
                 chooseImage();
-                uploadImage();
+
             }
         });
         add_video.setOnClickListener(new OnClickListener(){
@@ -496,6 +488,41 @@ private View parent_view;
         ob.onTokenRefresh();
     }
 
+    public void dataUpload(String dataType, String dataPath) {
+        HashMap hm = new HashMap();
+//        et_content.setText(null);
+        hm.put("text", null);
+        hm.put("timestamp", String.valueOf(System.currentTimeMillis()));
+        hm.put("receiverid", friend.getId());
+        hm.put("receivername", friend.getName());
+        hm.put("receiverphoto", friend.getPhoto());
+        hm.put("receiveremail", friend.getEmail());
+        hm.put("senderid", set.readSetting("myid"));
+        hm.put("sendername", set.readSetting("myname"));
+        hm.put("senderphoto", set.readSetting("mydp"));
+        hm.put("senderemail", sender_email);
+        hm.put("audio_name", null);
+        hm.put("feedback_string", feedback_str);
+//        Log.d("hm1",audName);
+
+        if (dataType.equals("2")) {
+            hm.put("isText", "2");
+            hm.put("photoPath", dataPath);
+            hm.put("videoPath", null);
+        } else if (dataType.equals("3")) {
+            hm.put("isText", "3");
+            hm.put("photoPath", null);
+            hm.put("videoPath", dataPath);
+        }
+
+        System.out.println("hm" + hm.entrySet());
+        ref.child(chatNode).push().setValue(hm);
+        String qy = String.valueOf(et_content.getText());
+
+        MyFirebaseInstanceIdService ob = new MyFirebaseInstanceIdService();
+        ob.onTokenRefresh();
+    }
+
     public void initToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -599,7 +626,7 @@ private View parent_view;
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
     }
     private void uploadImage() {
-
+        System.out.println("filepath ::" + filePath);
         if(filePath != null)
         {
             final ProgressDialog progressDialog = new ProgressDialog(this);
@@ -681,12 +708,15 @@ private View parent_view;
                 if (resultCode == RESULT_OK
                         && data != null && data.getData() != null) {
                     filePath = data.getData();
-                    try {
-                        Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
-                        imageView.setImageBitmap(bitmap);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                    uploadImage();
+                    dataUpload("2", filePath.toString());
+//                    try {
+//                        Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
+//                        imageView = (ImageView) findViewById(R.id.photo_iv);
+//                        imageView.setImageBitmap(bitmap);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
                 }
                 break;
             }
