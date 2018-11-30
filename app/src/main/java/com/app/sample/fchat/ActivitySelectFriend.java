@@ -31,13 +31,14 @@ import java.util.List;
 
 public class ActivitySelectFriend extends AppCompatActivity {
 
-    public static final String USERS_CHILD = "users";
-    List<Friend> friendList;
-    ParseFirebaseData pfbd;
     private Toolbar toolbar;
     private ActionBar actionBar;
     private RecyclerView recyclerView;
     private FriendsListAdapter mAdapter;
+    List<Friend> friendList;
+
+    public static final String USERS_CHILD = "users";
+    ParseFirebaseData pfbd;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -51,15 +52,14 @@ public class ActivitySelectFriend extends AppCompatActivity {
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
         String userid= pref.getString("userid",null);
         String username=pref.getString("username",null);
-        String useremail = pref.getString("useremail", null);
-        System.out.println("test login select friend :" + userid + "  " + username + " " + useremail);
+        System.out.println("test login select friend :"+userid+"  "+username);
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference(USERS_CHILD);
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String totalData = dataSnapshot.getValue().toString();
                 System.out.println("FRIEND SELECTED  :::  "+totalData);
-                totalData = "{101303631882520175868={name=Start a conversation, photo=https://lh5.googleusercontent.com/-aB7ra_oRRdo/AAAAAAAAAAI/AAAAAAAAAT0/YV97n4P2WC8/s96-c/photo.jpg, id=101303631882520175868}}";
+                //totalData = "{104438938056703894690={name=Start a Conversation, photo=https://lh5.googleusercontent.com/-aB7ra_oRRdo/AAAAAAAAAAI/AAAAAAAAAT0/YV97n4P2WC8/s96-c/photo.jpg, id=104438938056703894690}}";
                 // TODO: 25-05-2017 if number of items is 0 then show something else
                 mAdapter = new FriendsListAdapter(ActivitySelectFriend.this, pfbd.getUserList(totalData));
                 recyclerView.setAdapter(mAdapter);
@@ -69,10 +69,9 @@ public class ActivitySelectFriend extends AppCompatActivity {
                     public void onItemClick(View view, Friend obj, int position) {
                         System.out.println("OBJECT ------  "+obj);
                         String bot = obj.getId();
-                        obj.setId("101303631882520175868");
-                        obj.setName("Sahaika");
-                        obj.setPhoto("\"https://lh5.googleusercontent.com/-aB7ra_oRRdo/AAAAAAAAAAI/AAAAAAAAAT0/YV97n4P2WC8/s96-c/photo.jpg\"");
-                        obj.setEmail("Sahaika");
+                        //obj.setId("104438938056703894690");
+                        //obj.setName("Sahaika");
+                        //obj.setPhoto("\"https://lh5.googleusercontent.com/-aB7ra_oRRdo/AAAAAAAAAAI/AAAAAAAAAT0/YV97n4P2WC8/s96-c/photo.jpg\"");
                         ActivityChatDetails.navigate((ActivitySelectFriend) ActivitySelectFriend.this, findViewById(R.id.lyt_parent), obj);
                     }
                 });
