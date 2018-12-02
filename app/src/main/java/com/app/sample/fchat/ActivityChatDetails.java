@@ -95,6 +95,7 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
     private LinearLayout attachment_layout;
     private ImageView add_image, add_video,attachment_iv;
 
+    private LinearLayout feedback_layout;
     private TextView feedback_pos,feedback_neg,feedback_neutral;
     private String feedback_str="";
     private Button btn_send;
@@ -240,6 +241,7 @@ private View parent_view;
         attachment_layout = (LinearLayout) findViewById(R.id.attatchment_layout);
         imageView = (ImageView) findViewById(R.id.photo_iv);
 
+        feedback_layout = (LinearLayout) findViewById(R.id.feedback_layout);
         feedback_pos = (TextView)findViewById(R.id.feedback_pos);
         feedback_neg = (TextView)findViewById(R.id.feedback_neg);
         feedback_neutral = (TextView)findViewById(R.id.feedback_nuetral);
@@ -261,7 +263,7 @@ private View parent_view;
         ViewCompat.setTransitionName(parent_view, KEY_FRIEND);
 
 
-        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO, Manifest.permission.WRITE_EXTERNAL_STORAGE},
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.MANAGE_DOCUMENTS},
                 10);
 
         // initialize conversation data
@@ -279,18 +281,27 @@ private View parent_view;
             @Override
             public void onClick(View view) {
                 feedback_str = feedback_pos.getText().toString();
+                feedback_layout.setVisibility(View.GONE);
+                Toast.makeText(getApplicationContext(), R.string.thankyou, Toast.LENGTH_SHORT).show();
+
             }
         });
         feedback_neg.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 feedback_str = feedback_neg.getText().toString();
+                feedback_layout.setVisibility(View.GONE);
+                Toast.makeText(getApplicationContext(), R.string.thankyou, Toast.LENGTH_SHORT).show();
+
             }
         });
         feedback_neutral.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 feedback_str = feedback_neutral.getText().toString();
+                feedback_layout.setVisibility(View.GONE);
+                Toast.makeText(getApplicationContext(), R.string.thankyou, Toast.LENGTH_SHORT).show();
+
             }
         });
 
@@ -298,6 +309,7 @@ private View parent_view;
         attachment_iv.setOnClickListener(new OnClickListener(){
             @Override
             public void onClick(View view){
+                hideKeyboard();
                 if(attachment_layout.getVisibility() == View.GONE){
                     attachment_layout.setVisibility(View.VISIBLE);
                 }
@@ -335,6 +347,7 @@ private View parent_view;
                 //Intent intent = new Intent(getApplicationContext(),Microphone.class);
                 //startActivity(intent);
 ////                askSpeechInput();
+                hideKeyboard();
                 showRecordDialog();
                 downloadAudioFile();
             }
@@ -486,6 +499,7 @@ private View parent_view;
 
         MyFirebaseInstanceIdService ob = new MyFirebaseInstanceIdService();
         ob.onTokenRefresh();
+        feedback_layout.setVisibility(View.VISIBLE);
     }
 
     public void dataUpload(String dataType, String dataPath) {
@@ -583,6 +597,7 @@ private View parent_view;
                 MyFirebaseInstanceIdService ob = new MyFirebaseInstanceIdService();
                 ob.onTokenRefresh();
 
+                feedback_layout.setVisibility(View.VISIBLE);
                 //sendNotificationToUser("puf", "Hi there puf!");
 
 
@@ -620,10 +635,14 @@ private View parent_view;
         return true;
     }*/
     private void chooseImage() {
-        Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
+        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(intent, PICK_IMAGE_REQUEST);
+
+
+//        Intent intent = new Intent();
+//        intent.setType("image/*");
+//        intent.setAction(Intent.ACTION_GET_CONTENT);
+//        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
     }
     private void uploadImage() {
         System.out.println("filepath ::" + filePath);
@@ -708,8 +727,17 @@ private View parent_view;
                 if (resultCode == RESULT_OK
                         && data != null && data.getData() != null) {
                     filePath = data.getData();
+
+                    final int takeFlags = data.getFlags()
+                            & (Intent.FLAG_GRANT_READ_URI_PERMISSION
+                            | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+                    // Check for the freshest data.
+                    getContentResolver().takePersistableUriPermission(filePath, takeFlags);
+
+
                     uploadImage();
                     dataUpload("2", filePath.toString());
+                    feedback_layout.setVisibility(View.VISIBLE);
 //                    try {
 //                        Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
 //                        imageView = (ImageView) findViewById(R.id.photo_iv);

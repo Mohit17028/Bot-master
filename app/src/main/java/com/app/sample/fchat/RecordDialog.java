@@ -3,40 +3,23 @@ package com.app.sample.fchat;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import org.apache.commons.io.FileUtils;
-
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.methods.HttpUriRequest;
-import org.apache.http.entity.ContentType;
-import org.apache.http.impl.client.DefaultHttpClient;
-
-import android.content.pm.PackageManager;
-import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatDialogFragment;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.api.gax.core.FixedCredentialsProvider;
-import com.google.auth.oauth2.GoogleCredentials;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.cloud.speech.v1p1beta1.RecognitionAudio;
 import com.google.cloud.speech.v1p1beta1.RecognitionConfig;
 import com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding;
@@ -44,49 +27,30 @@ import com.google.cloud.speech.v1p1beta1.RecognizeResponse;
 import com.google.cloud.speech.v1p1beta1.SpeechClient;
 import com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative;
 import com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult;
-
-import com.google.cloud.speech.v1p1beta1.SpeechSettings;
-import com.google.protobuf.ByteString;
-//import java.nio.file.Files;
-//import java.nio.file.Path;
-//import java.nio.file.Paths;
-import java.io.DataInputStream;
-import java.io.FileInputStream;
-import java.net.HttpURLConnection;
-import java.io.FileInputStream;
-import java.util.List;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import android.os.Environment;
-import java.io.File;
-import java.io.IOException;
-import java.sql.Timestamp;
-import android.os.*;
+import com.google.protobuf.ByteString;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpUriRequest;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.client.methods.HttpPost;
-
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.sql.Timestamp;
-
-
-
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.impl.client.DefaultHttpClient;
+
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.sql.Timestamp;
+import java.util.List;
+
+//import java.nio.file.Files;
+//import java.nio.file.Path;
+//import java.nio.file.Paths;
 
 public class RecordDialog extends AppCompatDialogFragment {
 
@@ -102,198 +66,6 @@ public class RecordDialog extends AppCompatDialogFragment {
         void applyTexts(String audName);
 //        void downloadAudio(String audName);
     }
-    public interface MyAlertDialogResultInterface {
-        abstract void onButtonClicked(int button);
-    }
-
-    @Override
-    public Dialog onCreateDialog(Bundle savedInstanceState) {
-        AlertDialog.Builder buider = new AlertDialog.Builder(getActivity());
-//        AlertDialog alert = buider.create();
-        SharedPreferences pref = getActivity().getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
-        String userid= pref.getString("userid",null);
-        String username=pref.getString("username",null);
-        System.out.println("test record dialog activity main :"+userid+"  "+username);
-
-        LayoutInflater inflater = getActivity().getLayoutInflater();
-        View view = inflater.inflate(R.layout.layout_record_dialog, null);
-
-        buider.setView(view);
-
-//        if (ActivityCompat.checkSelfPermission(getActivity().getApplicationContext(), android.Manifest.permission.RECORD_AUDIO)
-//                != PackageManager.PERMISSION_GRANTED) {
-//            ActivityCompat.requestPermissions(getActivity(), new String[]{android.Manifest.permission.RECORD_AUDIO},
-//                    10);
-//        }
-//        play = (Button)view.findViewById(R.id.play_btn);
-//        stop = (Button)view.findViewById(R.id.stop_btn);
-//        save = (Button)view.findViewById(R.id.save_btn);
-        chrono = (Chronometer)view.findViewById(R.id.chronometer);
-        buider.setCancelable(false);
-
-
-
-//        if (ActivityCompat.checkSelfPermission(getActivity().getApplicationContext(), android.Manifest.permission.RECORD_AUDIO)
-//                != PackageManager.PERMISSION_GRANTED) {
-//            ActivityCompat.requestPermissions(getActivity(), new String[] { android.Manifest.permission.RECORD_AUDIO },
-//                    10);
-//
-//            Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-//            opFile = Environment.getExternalStorageDirectory().getAbsolutePath()+ "/recording_"+timestamp.getTime()+".3gp";
-////        System.out.println("Record Dialog: filename :"+opFile);
-//            outputFile="/"+userid+"/recording_"+timestamp.getTime()+".3gp";
-//            myAudioRecorder = new MediaRecorder();
-//            myAudioRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-//            myAudioRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
-//            myAudioRecorder.setAudioEncoder(MediaRecorder.OutputFormat.AMR_NB);
-//            myAudioRecorder.setOutputFile(opFile);
-//            chrono.start();
-//
-//            startRecording();
-//
-//        } else {
-
-            Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-            opFile = Environment.getExternalStorageDirectory().getAbsolutePath()+ "/recording_"+timestamp.getTime()+".mp3";
-//        System.out.println("Record Dialog: filename :"+opFile);
-            outputFile="/"+userid+"/recording_"+timestamp.getTime()+".mp3";
-//            outputFile="/recording_"+timestamp.getTime()+"_"+userid+".mp3";
-            myAudioRecorder = new MediaRecorder();
-            myAudioRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-            myAudioRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
-            myAudioRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
-            myAudioRecorder.setOutputFile(opFile);
-            chrono.start();
-
-            startRecording();
-//        }
-
-        buider.setPositiveButton("Stop & Save", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-//                try {
-                    myAudioRecorder.stop();
-                    myAudioRecorder.release();
-                    chrono.stop();
-                    myAudioRecorder = null;
-
-                /*SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
-                SharedPreferences.Editor editor = pref.edit();
-                editor.putString("Filename",opfile);*/
-
-                    //                stop.setEnabled(false);
-                    //                play.setEnabled(true);
-//                }catch (IllegalStateException e){
-////                    Log.e("RECORDING :: ",e.getMessage());
-//                    e.printStackTrace();
-//                }
-                Toast.makeText(getContext(), "Question Saved :)", Toast.LENGTH_LONG).show();
-                Uri uriAudio = Uri.fromFile(new File(opFile).getAbsoluteFile());
-                System.out.println(uriAudio+"uriaudio");
-
-                FirebaseStorage storage = FirebaseStorage.getInstance();
-//                final StorageReference audioRef = ref.child("Education/audio").child(uriAudio.getLastPathSegment());
-                StorageReference storageRef = storage.getReference(outputFile);
-
-                // on success upload audio
-                storageRef.putFile(uriAudio).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(final UploadTask.TaskSnapshot audioSnapshot) {
-
-
-                        @SuppressWarnings("VisibleForTests") Uri audioUrl = audioSnapshot.getDownloadUrl();
-
-                    }
-                });
-
-
-
-                doFileUpload(opFile);
-
-                listener.applyTexts(outputFile);
-//                listener.downloadAudio(outputFile);
-                //translateAudioToText();
-
-//
-            }
-        });
-
-
-
-
-//        stop.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                myAudioRecorder.stop();
-//                myAudioRecorder.release();
-//                chrono.stop();
-//                myAudioRecorder = null;
-//                stop.setEnabled(false);
-//                play.setEnabled(true);
-//                Toast.makeText(getContext(), "Audio Recorded Successfully", Toast.LENGTH_LONG).show();
-//            }
-//        });
-
-//        play.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                MediaPlayer mediaPlayer = new MediaPlayer();
-//                try{
-//                    mediaPlayer.setDataSource(opFile);
-//                    mediaPlayer.prepare();
-//                    mediaPlayer.start();
-//
-//                    Toast.makeText(getContext(), "Playing Audio", Toast.LENGTH_SHORT).show();
-//                }catch (Exception e){
-//                    e.printStackTrace();
-//                }
-//            }
-//        });
-
-//        save.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Toast.makeText(getContext(), "Question Saved :)", Toast.LENGTH_LONG).show();
-//                Uri uriAudio = Uri.fromFile(new File(opFile).getAbsoluteFile());
-//                System.out.println(uriAudio+"uriaudio");
-//                FirebaseStorage storage = FirebaseStorage.getInstance();
-////                final StorageReference audioRef = ref.child("Education/audio").child(uriAudio.getLastPathSegment());
-//                StorageReference storageRef = storage.getReference(outputFile);
-//
-//                // on success upload audio
-//                storageRef.putFile(uriAudio).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-//                    @Override
-//                    public void onSuccess(final UploadTask.TaskSnapshot audioSnapshot) {
-//
-//
-//                        @SuppressWarnings("VisibleForTests") Uri audioUrl = audioSnapshot.getDownloadUrl();
-//
-//                    }
-//                });
-//
-//                doFileUpload(opFile);
-//                //translateAudioToText();
-//
-//                //translateAudioToText();
-//
-//            }
-//        });
-        return buider.create();
-    }
-
-
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        try {
-            listener = (RecordDialogListener) context;
-        } catch (ClassCastException e) {
-            throw new ClassCastException(context.toString()+"must implement RecordDialogListener");
-
-        }
-    }
-
     public static void doFileUpload(final String selectedPath){//}, final Handler handler) {
 
 
@@ -312,7 +84,7 @@ public class RecordDialog extends AppCompatDialogFragment {
                 post.setEntity(entity);
                 HttpClient client = new DefaultHttpClient();
                 try {
-                    HttpResponse response = client.execute((HttpUriRequest) post);
+                    HttpResponse response = client.execute(post);
                     System.out.println("RESPONSE  :::  "+response.getStatusLine());
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -480,6 +252,207 @@ public class RecordDialog extends AppCompatDialogFragment {
 
     }
 
+    @Override
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
+        AlertDialog.Builder buider = new AlertDialog.Builder(getActivity());
+//        AlertDialog alert = buider.create();
+        SharedPreferences pref = getActivity().getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+        String userid = pref.getString("userid", null);
+        String username = pref.getString("username", null);
+        System.out.println("test record dialog activity main :" + userid + "  " + username);
+
+        LayoutInflater inflater = getActivity().getLayoutInflater();
+        View view = inflater.inflate(R.layout.layout_record_dialog, null);
+
+        buider.setView(view);
+
+//        if (ActivityCompat.checkSelfPermission(getActivity().getApplicationContext(), android.Manifest.permission.RECORD_AUDIO)
+//                != PackageManager.PERMISSION_GRANTED) {
+//            ActivityCompat.requestPermissions(getActivity(), new String[]{android.Manifest.permission.RECORD_AUDIO},
+//                    10);
+//        }
+//        play = (Button)view.findViewById(R.id.play_btn);
+//        stop = (Button)view.findViewById(R.id.stop_btn);
+//        save = (Button)view.findViewById(R.id.save_btn);
+        chrono = (Chronometer) view.findViewById(R.id.chronometer);
+        buider.setCancelable(false);
+
+
+//        if (ActivityCompat.checkSelfPermission(getActivity().getApplicationContext(), android.Manifest.permission.RECORD_AUDIO)
+//                != PackageManager.PERMISSION_GRANTED) {
+//            ActivityCompat.requestPermissions(getActivity(), new String[] { android.Manifest.permission.RECORD_AUDIO },
+//                    10);
+//
+//            Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+//            opFile = Environment.getExternalStorageDirectory().getAbsolutePath()+ "/recording_"+timestamp.getTime()+".3gp";
+////        System.out.println("Record Dialog: filename :"+opFile);
+//            outputFile="/"+userid+"/recording_"+timestamp.getTime()+".3gp";
+//            myAudioRecorder = new MediaRecorder();
+//            myAudioRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+//            myAudioRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+//            myAudioRecorder.setAudioEncoder(MediaRecorder.OutputFormat.AMR_NB);
+//            myAudioRecorder.setOutputFile(opFile);
+//            chrono.start();
+//
+//            startRecording();
+//
+//        } else {
+
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        opFile = Environment.getExternalStorageDirectory().getAbsolutePath() + "/recording_" + timestamp.getTime() + ".mp3";
+//        System.out.println("Record Dialog: filename :"+opFile);
+        outputFile = "/" + userid + "/recording_" + timestamp.getTime() + ".mp3";
+//            outputFile="/recording_"+timestamp.getTime()+"_"+userid+".mp3";
+        myAudioRecorder = new MediaRecorder();
+        myAudioRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+        myAudioRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
+        myAudioRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
+        myAudioRecorder.setOutputFile(opFile);
+        chrono.start();
+
+        startRecording();
+//        }
+
+        buider.setPositiveButton("Stop & Save", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+//                try {
+                myAudioRecorder.stop();
+                myAudioRecorder.release();
+                chrono.stop();
+                myAudioRecorder = null;
+
+                /*SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+                SharedPreferences.Editor editor = pref.edit();
+                editor.putString("Filename",opfile);*/
+
+                //                stop.setEnabled(false);
+                //                play.setEnabled(true);
+//                }catch (IllegalStateException e){
+////                    Log.e("RECORDING :: ",e.getMessage());
+//                    e.printStackTrace();
+//                }
+                Toast.makeText(getContext(), R.string.question_saved, Toast.LENGTH_LONG).show();
+                Uri uriAudio = Uri.fromFile(new File(opFile).getAbsoluteFile());
+                System.out.println(uriAudio + "uriaudio");
+
+                FirebaseStorage storage = FirebaseStorage.getInstance();
+//                final StorageReference audioRef = ref.child("Education/audio").child(uriAudio.getLastPathSegment());
+                StorageReference storageRef = storage.getReference(outputFile);
+
+                // on success upload audio
+                storageRef.putFile(uriAudio).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(final UploadTask.TaskSnapshot audioSnapshot) {
+
+
+                        @SuppressWarnings("VisibleForTests") Uri audioUrl = audioSnapshot.getDownloadUrl();
+
+                    }
+                });
+
+
+                doFileUpload(opFile);
+
+                listener.applyTexts(outputFile);
+
+//                listener.downloadAudio(outputFile);
+                //translateAudioToText();
+
+//
+            }
+        });
+
+
+//        stop.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                myAudioRecorder.stop();
+//                myAudioRecorder.release();
+//                chrono.stop();
+//                myAudioRecorder = null;
+//                stop.setEnabled(false);
+//                play.setEnabled(true);
+//                Toast.makeText(getContext(), "Audio Recorded Successfully", Toast.LENGTH_LONG).show();
+//            }
+//        });
+
+//        play.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                MediaPlayer mediaPlayer = new MediaPlayer();
+//                try{
+//                    mediaPlayer.setDataSource(opFile);
+//                    mediaPlayer.prepare();
+//                    mediaPlayer.start();
+//
+//                    Toast.makeText(getContext(), "Playing Audio", Toast.LENGTH_SHORT).show();
+//                }catch (Exception e){
+//                    e.printStackTrace();
+//                }
+//            }
+//        });
+
+//        save.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Toast.makeText(getContext(), "Question Saved :)", Toast.LENGTH_LONG).show();
+//                Uri uriAudio = Uri.fromFile(new File(opFile).getAbsoluteFile());
+//                System.out.println(uriAudio+"uriaudio");
+//                FirebaseStorage storage = FirebaseStorage.getInstance();
+////                final StorageReference audioRef = ref.child("Education/audio").child(uriAudio.getLastPathSegment());
+//                StorageReference storageRef = storage.getReference(outputFile);
+//
+//                // on success upload audio
+//                storageRef.putFile(uriAudio).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+//                    @Override
+//                    public void onSuccess(final UploadTask.TaskSnapshot audioSnapshot) {
+//
+//
+//                        @SuppressWarnings("VisibleForTests") Uri audioUrl = audioSnapshot.getDownloadUrl();
+//
+//                    }
+//                });
+//
+//                doFileUpload(opFile);
+//                //translateAudioToText();
+//
+//                //translateAudioToText();
+//
+//            }
+//        });
+        return buider.create();
+    }
+
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        try {
+            listener = (RecordDialogListener) context;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString() + "must implement RecordDialogListener");
+
+        }
+    }
+
+    private void startRecording() {
+        try {
+            myAudioRecorder.prepare();
+            myAudioRecorder.start();
+            chrono.start();
+        } catch (IllegalStateException ise) {
+            ise.printStackTrace();
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
+
+//        stop.setEnabled(true);
+
+        Toast.makeText(getContext(), R.string.recording_started, Toast.LENGTH_LONG).show();
+
+    }
+
     private static String processResponse(HttpURLConnection conn, String responseFromServer) {
         DataInputStream inStream;
         try {
@@ -572,21 +545,8 @@ return null;
         }.execute();
     }
 
-    private void startRecording() {
-        try{
-            myAudioRecorder.prepare();
-            myAudioRecorder.start();
-            chrono.start();
-        }catch (IllegalStateException ise){
-            ise.printStackTrace();
-        }catch (IOException ioe){
-            ioe.printStackTrace();
-        }
-
-//        stop.setEnabled(true);
-
-        Toast.makeText(getContext(),"Recording Started", Toast.LENGTH_LONG).show();
-
+    public interface MyAlertDialogResultInterface {
+        void onButtonClicked(int button);
     }
 
 

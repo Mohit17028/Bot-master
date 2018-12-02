@@ -26,7 +26,7 @@
 
     <TextView
         android:id="@+id/slide_txt_view"
-        android:layout_width="314dp"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"

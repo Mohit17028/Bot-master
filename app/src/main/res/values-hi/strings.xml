@@ -18,5 +18,10 @@
     <string name="feedback_positive">Helpful</string>
     <string name="feedback_neutral">Neutral</string>
     <string name="feedback_negative">Not Helpful</string>
+    <string name="thankyou">धन्यवाद</string>
+    <string name="download_failed">डाउनलोड नहीं किया जा सका</string>
+    <string name="download_done">डाउनलोड सफल रहा</string>
+    <string name="recording_started">रिकॉर्डिंग शुरू हुई</string>
+    <string name="question_saved">सवाल सेव किया गया</string>
 
 </resources>

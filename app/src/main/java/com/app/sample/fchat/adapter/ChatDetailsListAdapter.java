@@ -114,6 +114,8 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 
 //                set image
                 try {
+//                    final int takeFlags = (Intent.FLAG_GRANT_READ_URI_PERMISSION
+//                            | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
                     Bitmap bitmap = MediaStore.Images.Media.getBitmap(mContext.getContentResolver(), Uri.parse(msg.getPhotoPath()));
                     holder.photo_iv.setImageBitmap(bitmap);
                 } catch (IOException e) {
@@ -240,7 +242,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                             @Override
                             public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
                                 Log.d("File Download", "downloaded the file");
-//                                Toast.makeText(mContext, "Downloaded the file", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(mContext, R.string.download_done, Toast.LENGTH_SHORT).show();
                                         flag[0] =1;
                             }
                         }).addOnFailureListener(new OnFailureListener() {
@@ -248,7 +250,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                     public void onFailure(@NonNull Exception exception) {
                         Log.e("File Download", "Failed to download the file");
                         Toast.makeText(mContext,
-                                "Couldn't be downloaded",
+                                R.string.download_failed,
                                 Toast.LENGTH_SHORT).show();
                     }
                 });
