@@ -10,6 +10,8 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.speech.RecognizerIntent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -32,6 +34,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import com.app.sample.fchat.adapter.ChatDetailsListAdapter;
 import com.app.sample.fchat.data.ParseFirebaseData;
@@ -64,6 +67,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -80,6 +84,7 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
     static String uid = "";
     private final int REQ_CODE_SPEECH_INPUT = 100;
     private final int PICK_IMAGE_REQUEST = 71;
+    private final int PICK_VIDEO_REQUEST=3;
     FirebaseStorage storage;
     StorageReference storageReference;
     ParseFirebaseData pfbd;
@@ -91,6 +96,7 @@ public class ActivityChatDetails extends AppCompatActivity implements RecordDial
     String sender_email = "";
     DatabaseReference ref;
     private ImageView imageView;
+    private VideoView videoView;
     private Uri filePath;
     private LinearLayout attachment_layout;
     private ImageView add_image, add_video,attachment_iv;
@@ -240,6 +246,7 @@ private View parent_view;
         attachment_iv = (ImageView) findViewById(R.id.attatchment_iv);
         attachment_layout = (LinearLayout) findViewById(R.id.attatchment_layout);
         imageView = (ImageView) findViewById(R.id.photo_iv);
+        videoView = (VideoView) findViewById(R.id.video_iv);
 
         feedback_layout = (LinearLayout) findViewById(R.id.feedback_layout);
         feedback_pos = (TextView)findViewById(R.id.feedback_pos);
@@ -335,8 +342,12 @@ private View parent_view;
             public void onClick(View view){
                 attachment_layout.setVisibility(View.GONE);
                 // add code here.
+                storage = FirebaseStorage.getInstance();
+                storageReference = storage.getReference();
+                chooseVideo();
             }
         });
+
 
         /*  MICROPHONE   */
 //        ImageButton microphone = (ImageButton)findViewById(R.id.microphone);
@@ -639,12 +650,61 @@ private View parent_view;
         startActivityForResult(intent, PICK_IMAGE_REQUEST);
 
 
+
 //        Intent intent = new Intent();
 //        intent.setType("image/*");
 //        intent.setAction(Intent.ACTION_GET_CONTENT);
 //        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
     }
-    private void uploadImage() {
+    private void chooseVideo() {
+        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT, MediaStore.Video.Media.EXTERNAL_CONTENT_URI);
+//        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(intent,PICK_VIDEO_REQUEST);}
+    private String uploadImage() {
+        System.out.println("filepath ::" + filePath);
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+        String userid = pref.getString("userid", null);
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+//        opFile = Environment.getExternalStorageDirectory().getAbsolutePath() + "/recording_" + timestamp.getTime() + ".mp3";
+////        System.out.println("Record Dialog: filename :"+opFile);
+        String outputFile = "/" + userid + "/image_" + timestamp.getTime();
+//        String outputFile = "/" + userid + "/"+getTim
+        if(filePath != null)
+        {
+            final ProgressDialog progressDialog = new ProgressDialog(this);
+            progressDialog.setTitle("Uploading...");
+            progressDialog.show();
+
+//            StorageReference ref = storageReference.child("/u/"+ UUID.randomUUID().toString());
+            StorageReference ref = storage.getReference(outputFile);
+
+            ref.putFile(filePath)
+                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            progressDialog.dismiss();
+                            Toast.makeText(getApplicationContext(), "Uploaded", Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            progressDialog.dismiss();
+                            Toast.makeText(getApplicationContext(), "Failed "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
+                            double progress = (100.0*taskSnapshot.getBytesTransferred()/taskSnapshot
+                                    .getTotalByteCount());
+                            progressDialog.setMessage("Uploaded "+(int)progress+"%");
+                        }
+                    });
+        }
+        return outputFile;
+    }
+    private void uploadVideo() {
         System.out.println("filepath ::" + filePath);
         if(filePath != null)
         {
@@ -652,7 +712,7 @@ private View parent_view;
             progressDialog.setTitle("Uploading...");
             progressDialog.show();
 
-            StorageReference ref = storageReference.child("images/"+ UUID.randomUUID().toString());
+            StorageReference ref = storageReference.child("videos/"+ UUID.randomUUID().toString());
             ref.putFile(filePath)
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
@@ -735,8 +795,9 @@ private View parent_view;
                     getContentResolver().takePersistableUriPermission(filePath, takeFlags);
 
 
-                    uploadImage();
-                    dataUpload("2", filePath.toString());
+                    String imgPath=uploadImage();
+//                    dataUpload("2", filePath.toString());
+                    dataUpload("2", imgPath);
                     feedback_layout.setVisibility(View.VISIBLE);
 //                    try {
 //                        Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
@@ -745,6 +806,26 @@ private View parent_view;
 //                    } catch (IOException e) {
 //                        e.printStackTrace();
 //                    }
+                }
+                break;
+            }
+            case PICK_VIDEO_REQUEST: {
+
+                if (resultCode == RESULT_OK
+                        && data != null && data.getData() != null) {
+                    filePath = data.getData();
+
+                    final int takeFlags = data.getFlags()
+                            & (Intent.FLAG_GRANT_READ_URI_PERMISSION
+                            | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+                    // Check for the freshest data.
+                    getContentResolver().takePersistableUriPermission(filePath, takeFlags);
+
+
+                    uploadVideo();
+                    dataUpload("3", filePath.toString());
+                    feedback_layout.setVisibility(View.VISIBLE);
+//
                 }
                 break;
             }

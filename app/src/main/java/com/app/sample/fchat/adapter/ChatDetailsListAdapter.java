@@ -19,6 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import com.app.sample.fchat.R;
 import com.app.sample.fchat.data.SettingsAPI;
@@ -87,6 +88,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 			holder.seekBar      = (SeekBar) convertView.findViewById(R.id.seekBar);
             holder.download_iv  = (ImageView) convertView.findViewById(R.id.download_btn);
             holder.photo_iv = (ImageView) convertView.findViewById(R.id.photo_iv);
+            holder.video_iv = (VideoView) convertView.findViewById(R.id.video_iv);
             convertView.setTag(holder);
         }else{
             holder = (ViewHolder) convertView.getTag();
@@ -111,20 +113,55 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                 holder.message.setVisibility(View.GONE);
                 holder.audio_layout.setVisibility(View.GONE);
                 holder.photo_iv.setVisibility(View.VISIBLE);
+                holder.video_iv.setVisibility(View.GONE);
 
 //                set image
                 try {
 //                    final int takeFlags = (Intent.FLAG_GRANT_READ_URI_PERMISSION
 //                            | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
-                    Bitmap bitmap = MediaStore.Images.Media.getBitmap(mContext.getContentResolver(), Uri.parse(msg.getPhotoPath()));
+                    System.out.println("PHOTOPATH :::"+msg.getPhotoPath());
+                    String DOWNLOAD_DIR = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath();
+                    String arr[] =msg.getPhotoPath().split("/");
+                    String path=DOWNLOAD_DIR+"/"+arr[2];
+                    System.out.println("PHOTO PATH ::"+path);
+                    File fileNameOnDevice = new File(path);
+                    if (fileNameOnDevice.exists())
+                        System.out.println("PATH EXISTS");
+                    else
+                        System.out.println("PATH WRONG");
+                    Uri val=Uri.fromFile(new File(path));
+                    System.out.println("PHOTO :"+val);
+                    Bitmap bitmap = MediaStore.Images.Media.getBitmap(mContext.getContentResolver(), val);
                     holder.photo_iv.setImageBitmap(bitmap);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
+            else if (msg.getIs_text().equals("3")) {
+//                String photoPath[] = msg.getPhotoPath().split("/");
+
+                holder.message.setVisibility(View.GONE);
+                holder.audio_layout.setVisibility(View.GONE);
+                holder.photo_iv.setVisibility(View.GONE);
+                holder.video_iv.setVisibility(View.VISIBLE);
+
+//                set video
+                try {
+//                    final int takeFlags = (Intent.FLAG_GRANT_READ_URI_PERMISSION
+//                            | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+//                    Bitmap bitmap = MediaStore.Images.Media.getBitmap(mContext.getContentResolver(), Uri.parse(msg.getPhotoPath()));
+//                    holder.photo_iv.setImageBitmap(bitmap);
+                    holder.video_iv.setVideoURI(Uri.parse(msg.getVideoPath()));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
+
 
 		holder.time.setText(msg.getReadableTime());
 
@@ -138,6 +175,12 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                 holder.aud_name_tv.setTextColor(mContext.getResources().getColor(R.color.colorPrimaryDarkDarkDark));
                 holder.download_iv.setVisibility(View.GONE);
 			}
+			//Added by Ruchika
+//            if(holder.photo_iv.getVisibility()==View.VISIBLE) {
+//                holder.photo_iv.setImageResource(R.drawable.ic_file_download_dark_24dp);
+//
+//                holder.download_iv.setVisibility(View.GONE);
+//            }
 			if (holder.message.getVisibility()==View.VISIBLE) {
 //                holder.download_iv.setVisibility(View.GONE);
                 holder.time.setTextColor(mContext.getResources().getColor(R.color.colorPrimaryDarkDarkDark));
@@ -174,9 +217,73 @@ public class ChatDetailsListAdapter extends BaseAdapter {
         }
 
 //       Download on click
-        holder.download_iv.setOnClickListener(new View.OnClickListener() {
+        final String photoPath = msg.getPhotoPath();
+        holder.photo_iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                System.out.println("Method photo called" + photoPath);
+                FirebaseStorage storage = FirebaseStorage.getInstance();
+                String fileName = photoPath;
+//        fileName="/111433108964661785456/recording_1539375297988.mp3";
+                String DOWNLOAD_DIR = Environment.getExternalStoragePublicDirectory
+                        (Environment.DIRECTORY_DOWNLOADS).getPath();
+
+                StorageReference storageRef = storage.getReference();
+                System.out.println("Filename :" + fileName.substring(1));
+                StorageReference downloadRef = storageRef.child(fileName.substring(1));
+                storageRef.child(fileName).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+//                        Toast.makeText(mContext, "file found",Toast.LENGTH_SHORT).show();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception exception) {
+                        // File not found
+                        Toast.makeText(mContext,
+                                "file not found",
+                                Toast.LENGTH_SHORT).show();
+                        try {
+                            Thread.sleep(10000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+                String[] arr = photoPath.split("/");
+                System.out.println("Array :" + arr);
+                System.out.println("download ref : " + downloadRef.toString() + " " + downloadRef.getPath() + " " + downloadRef.getName());
+                System.out.println("Pathname :" + DOWNLOAD_DIR + "/" + downloadRef.getName());
+                File localFile = new File(Environment.getExternalStoragePublicDirectory(
+                        Environment.DIRECTORY_DOWNLOADS), arr[2]);
+                System.out.println("local file :" + localFile);
+                try {
+                    localFile.createNewFile();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                downloadRef.getFile(localFile);
+                final int[] flag = {0};
+                File fileNameOnDevice = new File(DOWNLOAD_DIR + "/" + downloadRef.getName());
+                System.out.println("File on device :" + fileNameOnDevice);
+
+                downloadRef.getFile(fileNameOnDevice).addOnSuccessListener(
+                        new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                            @Override
+                            public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                                Log.d(" Photo Download", "downloaded the file");
+                                Toast.makeText(mContext, R.string.download_done, Toast.LENGTH_SHORT).show();
+                                flag[0] = 1;
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception exception) {
+                        Log.e("Photo Download", "Failed to download the file");
+                        Toast.makeText(mContext,
+                                R.string.download_failed,
+                                Toast.LENGTH_SHORT).show();
+                    }
+                });
 
             }
         });
@@ -411,7 +518,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 
 	/**
 	 * remove data item from messageAdapter
-	 * 
+	 *
 	 **/
 	public void remove(int position){
 		mMessages.remove(position);
@@ -438,6 +545,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 		SeekBar seekBar;
 		ImageView download_iv;
         ImageView photo_iv;
+        VideoView video_iv;
 //        BubbleLinearLayout bubbleView;
 	}	
 }

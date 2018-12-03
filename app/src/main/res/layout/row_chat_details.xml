@@ -150,7 +150,12 @@
                 android:src="@drawable/mother_child3"
                 android:visibility="gone" />
 
-
+<!--VIDEO VIEW LAYOUT -->
+            <VideoView
+                android:id="@+id/video_iv"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:visibility="gone" />
 
             <LinearLayout
                 android:layout_width="wrap_content"

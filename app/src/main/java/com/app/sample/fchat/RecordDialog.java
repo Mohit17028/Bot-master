@@ -277,27 +277,6 @@ public class RecordDialog extends AppCompatDialogFragment {
         chrono = (Chronometer) view.findViewById(R.id.chronometer);
         buider.setCancelable(false);
 
-
-//        if (ActivityCompat.checkSelfPermission(getActivity().getApplicationContext(), android.Manifest.permission.RECORD_AUDIO)
-//                != PackageManager.PERMISSION_GRANTED) {
-//            ActivityCompat.requestPermissions(getActivity(), new String[] { android.Manifest.permission.RECORD_AUDIO },
-//                    10);
-//
-//            Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-//            opFile = Environment.getExternalStorageDirectory().getAbsolutePath()+ "/recording_"+timestamp.getTime()+".3gp";
-////        System.out.println("Record Dialog: filename :"+opFile);
-//            outputFile="/"+userid+"/recording_"+timestamp.getTime()+".3gp";
-//            myAudioRecorder = new MediaRecorder();
-//            myAudioRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-//            myAudioRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
-//            myAudioRecorder.setAudioEncoder(MediaRecorder.OutputFormat.AMR_NB);
-//            myAudioRecorder.setOutputFile(opFile);
-//            chrono.start();
-//
-//            startRecording();
-//
-//        } else {
-
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         opFile = Environment.getExternalStorageDirectory().getAbsolutePath() + "/recording_" + timestamp.getTime() + ".mp3";
 //        System.out.println("Record Dialog: filename :"+opFile);
@@ -322,16 +301,6 @@ public class RecordDialog extends AppCompatDialogFragment {
                 chrono.stop();
                 myAudioRecorder = null;
 
-                /*SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
-                SharedPreferences.Editor editor = pref.edit();
-                editor.putString("Filename",opfile);*/
-
-                //                stop.setEnabled(false);
-                //                play.setEnabled(true);
-//                }catch (IllegalStateException e){
-////                    Log.e("RECORDING :: ",e.getMessage());
-//                    e.printStackTrace();
-//                }
                 Toast.makeText(getContext(), R.string.question_saved, Toast.LENGTH_LONG).show();
                 Uri uriAudio = Uri.fromFile(new File(opFile).getAbsoluteFile());
                 System.out.println(uriAudio + "uriaudio");
