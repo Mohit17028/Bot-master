@@ -69,6 +69,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -491,7 +492,15 @@ private View parent_view;
         HashMap hm = new HashMap();
 //        et_content.setText(null);
         hm.put("text", null);
-        hm.put("timestamp", String.valueOf(System.currentTimeMillis()));
+        Calendar c = Calendar.getInstance();
+        c.setTimeInMillis(System.currentTimeMillis());
+
+        String date = c.get(Calendar.YEAR)+"-"+c.get(Calendar.MONTH)+"-"+c.get(Calendar.DAY_OF_MONTH);
+        String time = c.get(Calendar.HOUR_OF_DAY)+":"+c.get(Calendar.MINUTE)+":"+c.get(Calendar.SECOND);
+
+        String tstamp=""+date + " " + time;
+//        hm.put("timestamp", tstamp);
+                hm.put("timestamp", String.valueOf(System.currentTimeMillis()));
         hm.put("receiverid", friend.getId());
         hm.put("receivername", friend.getName());
         hm.put("receiverphoto", friend.getPhoto());
@@ -517,7 +526,17 @@ private View parent_view;
         HashMap hm = new HashMap();
 //        et_content.setText(null);
         hm.put("text", null);
-        hm.put("timestamp", String.valueOf(System.currentTimeMillis()));
+
+//        hm.put("timestamp", String.valueOf(System.currentTimeMillis()));
+        Calendar c = Calendar.getInstance();
+        c.setTimeInMillis(System.currentTimeMillis());
+
+        String date = c.get(Calendar.YEAR)+"-"+c.get(Calendar.MONTH)+"-"+c.get(Calendar.DAY_OF_MONTH);
+        String time = c.get(Calendar.HOUR_OF_DAY)+":"+c.get(Calendar.MINUTE)+":"+c.get(Calendar.SECOND);
+
+        String tstamp=""+date + " " + time;
+//        hm.put("timestamp", tstamp);
+                hm.put("timestamp", String.valueOf(System.currentTimeMillis()));
         hm.put("receiverid", friend.getId());
         hm.put("receivername", friend.getName());
         hm.put("receiverphoto", friend.getPhoto());
@@ -588,7 +607,14 @@ private View parent_view;
                 }*/
 //                SharedPreferences pref = getApplicationContext().getSharedPreferences("Record_dialog_pref", 0); // 0 - for private mode
 //                String audName= pref.getString("aud_name",null);
+                Calendar c = Calendar.getInstance();
+                c.setTimeInMillis(System.currentTimeMillis());
 
+                String date = c.get(Calendar.YEAR)+"-"+c.get(Calendar.MONTH)+"-"+c.get(Calendar.DAY_OF_MONTH);
+                String time = c.get(Calendar.HOUR_OF_DAY)+":"+c.get(Calendar.MINUTE)+":"+c.get(Calendar.SECOND);
+
+                String tstamp=""+date + " " + time;
+//                hm.put("timestamp", tstamp);
                 hm.put("timestamp", String.valueOf(System.currentTimeMillis()));
                 hm.put("receiverid", friend.getId());
                 hm.put("receivername", friend.getName());
@@ -704,15 +730,24 @@ private View parent_view;
         }
         return outputFile;
     }
-    private void uploadVideo() {
+    private String uploadVideo() {
         System.out.println("filepath ::" + filePath);
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+        String userid = pref.getString("userid", null);
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+//        opFile = Environment.getExternalStorageDirectory().getAbsolutePath() + "/recording_" + timestamp.getTime() + ".mp3";
+////        System.out.println("Record Dialog: filename :"+opFile);
+        String outputFile = "/" + userid + "/video_" + timestamp.getTime()+".mp4";
+//        String outputFile = "/" + userid + "/"+getTim
         if(filePath != null)
         {
             final ProgressDialog progressDialog = new ProgressDialog(this);
             progressDialog.setTitle("Uploading...");
             progressDialog.show();
 
-            StorageReference ref = storageReference.child("videos/"+ UUID.randomUUID().toString());
+//            StorageReference ref = storageReference.child("/u/"+ UUID.randomUUID().toString());
+            StorageReference ref = storage.getReference(outputFile);
+
             ref.putFile(filePath)
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
@@ -737,7 +772,42 @@ private View parent_view;
                         }
                     });
         }
+        return outputFile;
     }
+//    private void uploadVideo() {
+//        System.out.println("filepath ::" + filePath);
+//        if(filePath != null)
+//        {
+//            final ProgressDialog progressDialog = new ProgressDialog(this);
+//            progressDialog.setTitle("Uploading...");
+//            progressDialog.show();
+//
+//            StorageReference ref = storageReference.child("videos/"+ UUID.randomUUID().toString());
+//            ref.putFile(filePath)
+//                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+//                        @Override
+//                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+//                            progressDialog.dismiss();
+//                            Toast.makeText(getApplicationContext(), "Uploaded", Toast.LENGTH_SHORT).show();
+//                        }
+//                    })
+//                    .addOnFailureListener(new OnFailureListener() {
+//                        @Override
+//                        public void onFailure(@NonNull Exception e) {
+//                            progressDialog.dismiss();
+//                            Toast.makeText(getApplicationContext(), "Failed "+e.getMessage(), Toast.LENGTH_SHORT).show();
+//                        }
+//                    })
+//                    .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+//                        @Override
+//                        public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
+//                            double progress = (100.0*taskSnapshot.getBytesTransferred()/taskSnapshot
+//                                    .getTotalByteCount());
+//                            progressDialog.setMessage("Uploaded "+(int)progress+"%");
+//                        }
+//                    });
+//        }
+//    }
     private void hideKeyboard() {
         View view = this.getCurrentFocus();
         if (view != null) {
@@ -822,8 +892,8 @@ private View parent_view;
                     getContentResolver().takePersistableUriPermission(filePath, takeFlags);
 
 
-                    uploadVideo();
-                    dataUpload("3", filePath.toString());
+                    String vid_Path=uploadVideo();
+                    dataUpload("3", vid_Path);
                     feedback_layout.setVisibility(View.VISIBLE);
 //
                 }

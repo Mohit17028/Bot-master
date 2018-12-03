@@ -72,7 +72,7 @@
         </activity>
         <activity
             android:name=".ActivitySelectFriend"
-            android:label="Sahaika"></activity>
+            android:label="@string/bot_name" />
         <activity android:name=".SignupActivity" />
 
         <!-- <service -->

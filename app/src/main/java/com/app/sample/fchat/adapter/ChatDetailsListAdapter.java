@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.MediaController;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -155,6 +156,33 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+                try {
+//                    final int takeFlags = (Intent.FLAG_GRANT_READ_URI_PERMISSION
+//                            | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+                    System.out.println("VIDEOPATH :::"+msg.getVideoPath());
+                    String DOWNLOAD_DIR = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath();
+                    String arr[] =msg.getVideoPath().split("/");
+                    String path=DOWNLOAD_DIR+"/"+arr[2];
+                    System.out.println("VIDEO PATH ::"+path);
+                    File fileNameOnDevice = new File(path);
+                    if (fileNameOnDevice.exists()){
+                        System.out.println("VIDEO PATH EXISTS");
+//                    Uri uri = Uri.parse(URL); //Declare your url here.
+//
+//                    VideoView mVideoView  = (VideoView)findViewById(R.id.videoview)
+//                    mVideoView.setMediaController(new MediaController(this));
+//                    mVideoView.setVideoURI(uri);
+//                    mVideoView.requestFocus();
+//                    mVideoView.start();
+                    }
+                    else
+                        System.out.println("VIDEO PATH WRONG");
+                    Uri val=Uri.fromFile(new File(path));
+                    System.out.println("VIDEO :"+val);
+                    holder.video_iv.setVideoURI(Uri.parse(msg.getVideoPath()));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
 
 
@@ -167,6 +195,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 
         if(msg.getReceiver().getId().equals(set.readSetting("myid"))){  //left side
             holder.profile_img.setVisibility(View.VISIBLE);
+//            holder.profile_img.setImageURI(Uri.parse(msg.getSender().getPhoto()));
             holder.lyt_parent.setPadding(5, 3, 90, 2);
             holder.lyt_parent.setGravity(Gravity.LEFT);
             if(holder.audio_layout.getVisibility()==View.VISIBLE) {
@@ -287,7 +316,76 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 
             }
         });
+        final String VideoPath = msg.getVideoPath();
+        holder.video_iv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.out.println("Method video called" + VideoPath);
+                FirebaseStorage storage = FirebaseStorage.getInstance();
+                String fileName = VideoPath;
+//        fileName="/111433108964661785456/recording_1539375297988.mp3";
+                String DOWNLOAD_DIR = Environment.getExternalStoragePublicDirectory
+                        (Environment.DIRECTORY_DOWNLOADS).getPath();
 
+                StorageReference storageRef = storage.getReference();
+                System.out.println("Filename :" + fileName.substring(1));
+                StorageReference downloadRef = storageRef.child(fileName.substring(1));
+                storageRef.child(fileName).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+//                        Toast.makeText(mContext, "file found",Toast.LENGTH_SHORT).show();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception exception) {
+                        // File not found
+                        Toast.makeText(mContext,
+                                "file not found",
+                                Toast.LENGTH_SHORT).show();
+                        try {
+                            Thread.sleep(10000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+                String[] arr = VideoPath.split("/");
+                System.out.println("Array :" + arr);
+                System.out.println("download ref : " + downloadRef.toString() + " " + downloadRef.getPath() + " " + downloadRef.getName());
+                System.out.println("Pathname :" + DOWNLOAD_DIR + "/" + downloadRef.getName());
+                File localFile = new File(Environment.getExternalStoragePublicDirectory(
+                        Environment.DIRECTORY_DOWNLOADS), arr[2]);
+                System.out.println("local file :" + localFile);
+                try {
+                    localFile.createNewFile();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                downloadRef.getFile(localFile);
+                final int[] flag = {0};
+                File fileNameOnDevice = new File(DOWNLOAD_DIR + "/" + downloadRef.getName());
+                System.out.println("File on device :" + fileNameOnDevice);
+
+                downloadRef.getFile(fileNameOnDevice).addOnSuccessListener(
+                        new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                            @Override
+                            public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                                Log.d(" Video Download", "downloaded the file");
+                                Toast.makeText(mContext, R.string.download_done, Toast.LENGTH_SHORT).show();
+                                flag[0] = 1;
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception exception) {
+                        Log.d("Video Download", "Failed to download the file");
+                        Toast.makeText(mContext,
+                                R.string.download_failed,
+                                Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+            }
+        });
 
 //       play on click
         final String audio_path = msg.getAudName();
