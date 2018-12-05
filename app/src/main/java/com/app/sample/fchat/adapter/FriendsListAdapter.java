@@ -79,8 +79,9 @@ public class FriendsListAdapter extends RecyclerView.Adapter<FriendsListAdapter.
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
         final Friend c = filtered_items.get(position);
-        holder.name.setText(c.getName());
-        Picasso.with(ctx).load(c.getPhoto()).resize(100, 100).transform(new CircleTransform()).into(holder.image);
+//        holder.name.setText(c.getName());
+        holder.name.setText(R.string.start_conversation);
+        Picasso.with(ctx).load(R.drawable.mascot_face).resize(100, 100).transform(new CircleTransform()).into(holder.image);
 
         // Here you apply the animation when the view is bound
         setAnimation(holder.itemView, position);

@@ -31,19 +31,18 @@ import java.util.List;
 
 public class ActivitySelectFriend extends AppCompatActivity {
 
+    public static final String USERS_CHILD = "users";
+    List<Friend> friendList;
+    ParseFirebaseData pfbd;
     private Toolbar toolbar;
     private ActionBar actionBar;
     private RecyclerView recyclerView;
     private FriendsListAdapter mAdapter;
-    List<Friend> friendList;
 
-    public static final String USERS_CHILD = "users";
-    ParseFirebaseData pfbd;
-
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_new_chat);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_new_chat);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         initToolbar();
         initComponent();
@@ -52,14 +51,15 @@ public class ActivitySelectFriend extends AppCompatActivity {
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
         String userid= pref.getString("userid",null);
         String username=pref.getString("username",null);
-        System.out.println("test login select friend :"+userid+"  "+username);
+        String useremail = pref.getString("useremail", null);
+        System.out.println("test login select friend :" + userid + "  " + username + " " + useremail);
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference(USERS_CHILD);
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String totalData = dataSnapshot.getValue().toString();
                 System.out.println("FRIEND SELECTED  :::  "+totalData);
-                //totalData = "{104438938056703894690={name=Start a Conversation, photo=https://lh5.googleusercontent.com/-aB7ra_oRRdo/AAAAAAAAAAI/AAAAAAAAAT0/YV97n4P2WC8/s96-c/photo.jpg, id=104438938056703894690}}";
+                totalData = "{101303631882520175868={name=Start a conversation, photo=https://lh5.googleusercontent.com/-aB7ra_oRRdo/AAAAAAAAAAI/AAAAAAAAAT0/YV97n4P2WC8/s96-c/photo.jpg, id=101303631882520175868}}";
                 // TODO: 25-05-2017 if number of items is 0 then show something else
                 mAdapter = new FriendsListAdapter(ActivitySelectFriend.this, pfbd.getUserList(totalData));
                 recyclerView.setAdapter(mAdapter);
@@ -69,9 +69,10 @@ public class ActivitySelectFriend extends AppCompatActivity {
                     public void onItemClick(View view, Friend obj, int position) {
                         System.out.println("OBJECT ------  "+obj);
                         String bot = obj.getId();
-                        //obj.setId("104438938056703894690");
-                        //obj.setName("Sahaika");
-                        //obj.setPhoto("\"https://lh5.googleusercontent.com/-aB7ra_oRRdo/AAAAAAAAAAI/AAAAAAAAAT0/YV97n4P2WC8/s96-c/photo.jpg\"");
+                        obj.setId("101303631882520175868");
+                        obj.setName("Sahaika");
+                        obj.setPhoto("\"https://lh5.googleusercontent.com/-aB7ra_oRRdo/AAAAAAAAAAI/AAAAAAAAAT0/YV97n4P2WC8/s96-c/photo.jpg\"");
+                        obj.setEmail("Sahaika");
                         ActivityChatDetails.navigate((ActivitySelectFriend) ActivitySelectFriend.this, findViewById(R.id.lyt_parent), obj);
                     }
                 });
@@ -81,7 +82,7 @@ public class ActivitySelectFriend extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                    Snackbar.make(getWindow().getDecorView(), "Could not connect", Snackbar.LENGTH_LONG).show();
+                Snackbar.make(getWindow().getDecorView(), "Could not connect", Snackbar.LENGTH_LONG).show();
                 //Snackbar.make(getWindow().getDecorView(), (CharSequence) databaseError, Snackbar.LENGTH_LONG).show();
             }
         });
@@ -94,11 +95,11 @@ public class ActivitySelectFriend extends AppCompatActivity {
 
     private void initComponent() {
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        
+
         // use a linear layout manager
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(mLayoutManager);
-		recyclerView.setHasFixedSize(true);
+        recyclerView.setHasFixedSize(true);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
     }
 
