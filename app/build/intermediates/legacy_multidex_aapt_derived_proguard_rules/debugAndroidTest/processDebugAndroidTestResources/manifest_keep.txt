@@ -1,2 +1,0 @@
-# Referenced at D:\Bot-master\app\build\intermediates\merged_manifests\debugAndroidTest\processDebugAndroidTestManifest\merged\AndroidManifest.xml:9
--keep class com.android.test.runner.MultiDexTestRunner { <init>(...); }

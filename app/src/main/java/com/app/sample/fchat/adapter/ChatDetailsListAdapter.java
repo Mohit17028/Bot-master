@@ -152,20 +152,21 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 //                            | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
 //                    Bitmap bitmap = MediaStore.Images.Media.getBitmap(mContext.getContentResolver(), Uri.parse(msg.getPhotoPath()));
 //                    holder.photo_iv.setImageBitmap(bitmap);
-                    holder.video_iv.setVideoURI(Uri.parse(msg.getVideoPath()));
+
+//                    holder.video_iv.setVideoURI(Uri.parse(path));
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
                 try {
 //                    final int takeFlags = (Intent.FLAG_GRANT_READ_URI_PERMISSION
 //                            | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
-                    System.out.println("VIDEOPATH :::"+msg.getVideoPath());
+                    System.out.println("VIDEOPATH :::" + msg.getVideoPath());
                     String DOWNLOAD_DIR = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath();
-                    String arr[] =msg.getVideoPath().split("/");
-                    String path=DOWNLOAD_DIR+"/"+arr[2];
-                    System.out.println("VIDEO PATH ::"+path);
+                    String arr[] = msg.getVideoPath().split("/");
+                    String path = DOWNLOAD_DIR + "/" + arr[2];
+                    System.out.println("VIDEO PATH ::" + path);
                     File fileNameOnDevice = new File(path);
-                    if (fileNameOnDevice.exists()){
+                    if (fileNameOnDevice.exists()) {
                         System.out.println("VIDEO PATH EXISTS");
 //                    Uri uri = Uri.parse(URL); //Declare your url here.
 //
@@ -174,12 +175,61 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 //                    mVideoView.setVideoURI(uri);
 //                    mVideoView.requestFocus();
 //                    mVideoView.start();
+                        final MediaController mediacontroller = new MediaController(mContext);
+                        mediacontroller.setAnchorView(holder.video_iv);
+
+
+                        holder.video_iv.setMediaController(mediacontroller);
+                        holder.video_iv.setVideoURI(Uri.parse(path));
+                        holder.video_iv.requestFocus();
+
+                        holder.video_iv.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                            @Override
+                            public void onPrepared(MediaPlayer mp) {
+                                mp.setOnVideoSizeChangedListener(new MediaPlayer.OnVideoSizeChangedListener() {
+                                    @Override
+                                    public void onVideoSizeChanged(MediaPlayer mp, int width, int height) {
+                                        holder.video_iv.setMediaController(mediacontroller);
+                                        mediacontroller.setAnchorView(holder.video_iv);
+
+                                    }
+                                });
+                            }
+                        });
+
+                        holder.video_iv.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mp) {
+                                Toast.makeText(mContext, "Video over", Toast.LENGTH_SHORT).show();
+//                                if (index++ == arrayList.size()) {
+//                                    index = 0;
+//                                    mp.release();
+//                                    Toast.makeText(getApplicationContext(), "Videos completed", Toast.LENGTH_SHORT).show();
+//                                } else {
+//                                    videoView.setVideoURI(Uri.parse(arrayList.get(index)));
+//                                    videoView.start();
+//                                }
+
+
+                            }
+                        });
+
+                        holder.video_iv.setOnErrorListener(new MediaPlayer.OnErrorListener() {
+                            @Override
+                            public boolean onError(MediaPlayer mp, int what, int extra) {
+                                Log.d("API123", "What " + what + " extra " + extra);
+                                return false;
+                            }
+                        });
                     }
+
+
+
                     else
                         System.out.println("VIDEO PATH WRONG");
                     Uri val=Uri.fromFile(new File(path));
                     System.out.println("VIDEO :"+val);
-                    holder.video_iv.setVideoURI(Uri.parse(msg.getVideoPath()));
+                    holder.video_iv.setVideoURI(Uri.parse(path));
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -321,11 +371,140 @@ public class ChatDetailsListAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 System.out.println("Method video called" + VideoPath);
+//                FirebaseStorage storage = FirebaseStorage.getInstance();
+//                String fileName = VideoPath;
+////        fileName="/111433108964661785456/recording_1539375297988.mp3";
+                String DOWNLOAD_DIR = Environment.getExternalStoragePublicDirectory
+                        (Environment.DIRECTORY_DOWNLOADS).getPath();
+//
+//                StorageReference storageRef = storage.getReference();
+//                System.out.println("Filename :" + fileName.substring(1));
+//                StorageReference downloadRef = storageRef.child(fileName.substring(1));
+//                storageRef.child(fileName).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+//                    @Override
+//                    public void onSuccess(Uri uri) {
+////                        Toast.makeText(mContext, "file found",Toast.LENGTH_SHORT).show();
+//                    }
+//                }).addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception exception) {
+//                        // File not found
+//                        Toast.makeText(mContext,
+//                                "file not found",
+//                                Toast.LENGTH_SHORT).show();
+//                        try {
+//                            Thread.sleep(10000);
+//                        } catch (InterruptedException e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
+//                });
+//                String[] arr = VideoPath.split("/");
+//                System.out.println("Array :" + arr);
+//                System.out.println("download ref : " + downloadRef.toString() + " " + downloadRef.getPath() + " " + downloadRef.getName());
+//                System.out.println("Pathname :" + DOWNLOAD_DIR + "/" + downloadRef.getName());
+//                File localFile = new File(Environment.getExternalStoragePublicDirectory(
+//                        Environment.DIRECTORY_DOWNLOADS), arr[2]);
+//                System.out.println("local file :" + localFile);
+//                try {
+//                    localFile.createNewFile();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//                downloadRef.getFile(localFile);
+//                final int[] flag = {0};
+//                File fileNameOnDevice = new File(DOWNLOAD_DIR + "/" + downloadRef.getName());
+//                System.out.println("File on device :" + fileNameOnDevice);
+//
+//                downloadRef.getFile(fileNameOnDevice).addOnSuccessListener(
+//                        new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+//                            @Override
+//                            public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+//                                Log.d(" Video Download", "downloaded the file");
+//                                Toast.makeText(mContext, R.string.download_done, Toast.LENGTH_SHORT).show();
+//                                flag[0] = 1;
+//                            }
+//                        }).addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception exception) {
+//                        Log.d("Video Download", "Failed to download the file");
+//                        Toast.makeText(mContext,
+//                                R.string.download_failed,
+//                                Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+
+                String arr1[] = msg.getVideoPath().split("/");
+                String path = DOWNLOAD_DIR + "/" + arr1[2];
+                File fileNameOnDevice = new File(DOWNLOAD_DIR + "/" + arr1[2]);
+                if (fileNameOnDevice.exists()) {
+                    System.out.println("VIDEO PATH EXISTS");
+//                    Uri uri = Uri.parse(URL); //Declare your url here.
+//
+//                    VideoView mVideoView  = (VideoView)findViewById(R.id.videoview)
+//                    mVideoView.setMediaController(new MediaController(this));
+//                    mVideoView.setVideoURI(uri);
+//                    mVideoView.requestFocus();
+//                    mVideoView.start();
+                    final MediaController mediacontroller = new MediaController(mContext);
+                    mediacontroller.setAnchorView(holder.video_iv);
+
+                    holder.video_iv.setMediaController(mediacontroller);
+                    holder.video_iv.setVideoURI(Uri.parse(path));
+                    holder.video_iv.requestFocus();
+
+                    holder.video_iv.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                        @Override
+                        public void onPrepared(MediaPlayer mp) {
+                            mp.setOnVideoSizeChangedListener(new MediaPlayer.OnVideoSizeChangedListener() {
+                                @Override
+                                public void onVideoSizeChanged(MediaPlayer mp, int width, int height) {
+                                    holder.video_iv.setMediaController(mediacontroller);
+                                    mediacontroller.setAnchorView(holder.video_iv);
+
+                                }
+                            });
+                        }
+                    });
+
+                    holder.video_iv.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mp) {
+                            Toast.makeText(mContext, "Video over", Toast.LENGTH_SHORT).show();
+//                                if (index++ == arrayList.size()) {
+//                                    index = 0;
+//                                    mp.release();
+//                                    Toast.makeText(getApplicationContext(), "Videos completed", Toast.LENGTH_SHORT).show();
+//                                } else {
+//                                    videoView.setVideoURI(Uri.parse(arrayList.get(index)));
+//                                    videoView.start();
+//                                }
+
+
+                        }
+                    });
+
+                    holder.video_iv.setOnErrorListener(new MediaPlayer.OnErrorListener() {
+                        @Override
+                        public boolean onError(MediaPlayer mp, int what, int extra) {
+                            Log.d("API123", "What " + what + " extra " + extra);
+                            return false;
+                        }
+                    });
+                }
+
+
+
+                else
+                    System.out.println("VIDEO PATH WRONG");
+                Uri val=Uri.fromFile(new File(path));
+                System.out.println("VIDEO :"+val);
+                holder.video_iv.setVideoURI(Uri.parse(path));
                 FirebaseStorage storage = FirebaseStorage.getInstance();
                 String fileName = VideoPath;
 //        fileName="/111433108964661785456/recording_1539375297988.mp3";
-                String DOWNLOAD_DIR = Environment.getExternalStoragePublicDirectory
-                        (Environment.DIRECTORY_DOWNLOADS).getPath();
+//                String DOWNLOAD_DIR = Environment.getExternalStoragePublicDirectory
+//                        (Environment.DIRECTORY_DOWNLOADS).getPath();
 
                 StorageReference storageRef = storage.getReference();
                 System.out.println("Filename :" + fileName.substring(1));
@@ -363,7 +542,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                 }
                 downloadRef.getFile(localFile);
                 final int[] flag = {0};
-                File fileNameOnDevice = new File(DOWNLOAD_DIR + "/" + downloadRef.getName());
+//                File fileNameOnDevice = new File(DOWNLOAD_DIR + "/" + downloadRef.getName());
                 System.out.println("File on device :" + fileNameOnDevice);
 
                 downloadRef.getFile(fileNameOnDevice).addOnSuccessListener(
@@ -383,6 +562,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                                 Toast.LENGTH_SHORT).show();
                     }
                 });
+
 
             }
         });
