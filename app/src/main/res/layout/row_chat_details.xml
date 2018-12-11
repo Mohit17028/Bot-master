@@ -90,6 +90,13 @@
                     android:focusable="true"
                     android:src="@drawable/ic_file_download_white_24dp"
                     />
+                <pl.droidsonroids.gif.GifImageView
+                    android:id="@+id/loading_gif"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/loading"
+                    android:visibility="gone"
+                    />
                 <ImageView
                     android:id="@+id/download_btn"
                     android:layout_width="24dp"

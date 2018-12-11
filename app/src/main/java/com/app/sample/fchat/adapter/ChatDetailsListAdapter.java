@@ -36,6 +36,7 @@ import java.io.IOException;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import pl.droidsonroids.gif.GifImageView;
 
 public class ChatDetailsListAdapter extends BaseAdapter {
 
@@ -90,6 +91,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
             holder.download_iv  = (ImageView) convertView.findViewById(R.id.download_btn);
             holder.photo_iv = (ImageView) convertView.findViewById(R.id.photo_iv);
             holder.video_iv = (VideoView) convertView.findViewById(R.id.video_iv);
+            holder.loading_gif_view = (GifImageView) convertView.findViewById(R.id.loading_gif);
             convertView.setTag(holder);
         }else{
             holder = (ViewHolder) convertView.getTag();
@@ -145,6 +147,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                 holder.audio_layout.setVisibility(View.GONE);
                 holder.photo_iv.setVisibility(View.GONE);
                 holder.video_iv.setVisibility(View.VISIBLE);
+
 
 //                set video
                 try {
@@ -295,11 +298,12 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 
         }
 
-//       Download on click
+//       Download on click IMAGE
         final String photoPath = msg.getPhotoPath();
         holder.photo_iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                holder.photo_iv.set;
                 System.out.println("Method photo called" + photoPath);
                 FirebaseStorage storage = FirebaseStorage.getInstance();
                 String fileName = photoPath;
@@ -351,6 +355,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                             @Override
                             public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
                                 Log.d(" Photo Download", "downloaded the file");
+
                                 Toast.makeText(mContext, R.string.download_done, Toast.LENGTH_SHORT).show();
                                 flag[0] = 1;
                             }
@@ -366,6 +371,8 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 
             }
         });
+
+//        OnClick for VIDEO
         final String VideoPath = msg.getVideoPath();
         holder.video_iv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -436,6 +443,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 
                 String arr1[] = msg.getVideoPath().split("/");
                 String path = DOWNLOAD_DIR + "/" + arr1[2];
+
                 File fileNameOnDevice = new File(DOWNLOAD_DIR + "/" + arr1[2]);
                 if (fileNameOnDevice.exists()) {
                     System.out.println("VIDEO PATH EXISTS");
@@ -550,6 +558,8 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                             @Override
                             public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
                                 Log.d(" Video Download", "downloaded the file");
+                                // Changing loading icon to play icon after file is donloading
+
                                 Toast.makeText(mContext, R.string.download_done, Toast.LENGTH_SHORT).show();
                                 flag[0] = 1;
                             }
@@ -560,6 +570,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                         Toast.makeText(mContext,
                                 R.string.download_failed,
                                 Toast.LENGTH_SHORT).show();
+
                     }
                 });
 
@@ -567,7 +578,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
             }
         });
 
-//       play on click
+//       play on click AUDIO
         final String audio_path = msg.getAudName();
         final SeekBar seekBar_inner = holder.seekBar;
         holder.play_icon.setOnClickListener(new View.OnClickListener() {
@@ -575,6 +586,9 @@ public class ChatDetailsListAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 //play audio code here
+                holder.play_icon.setVisibility(View.GONE);
+                holder.loading_gif_view.setVisibility(View.VISIBLE);
+
                 seekBar_inner.setVisibility(View.VISIBLE);
                 System.out.println("Method play called" + audio_path);
                 FirebaseStorage storage = FirebaseStorage.getInstance();
@@ -583,6 +597,125 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                 String DOWNLOAD_DIR = Environment.getExternalStoragePublicDirectory
                         (Environment.DIRECTORY_DOWNLOADS).getPath();
 
+
+
+
+
+////                NEW CODE
+//                String DOWNLOAD_DIR = Environment.getExternalStoragePublicDirectory
+//                        (Environment.DIRECTORY_DOWNLOADS).getPath();
+//                String arr1[] = msg.getVideoPath().split("/");
+////                File fileNameOnDevice = new File(DOWNLOAD_DIR + "/" + arr1[2]);
+////                if (fileNameOnDevice.exists() || flag[0]==1) {
+////                    System.out.println("VIDEO PATH EXISTS");
+////                }
+//
+//                StorageReference storageRef = storage.getReference();
+//                System.out.println("Filename :" + fileName.substring(1));
+//                StorageReference downloadRef = storageRef.child(fileName.substring(1));
+//
+//                String[] arr = audio_path.split("/");
+//                System.out.println("Array :" + arr);
+////                System.out.println("download ref : " + downloadRef.toString() + " " + downloadRef.getPath() + " " + downloadRef.getName());
+////                System.out.println("Pathname :" + DOWNLOAD_DIR + "/" + downloadRef.getName());
+//                File localFile = new File(Environment.getExternalStoragePublicDirectory(
+//                        Environment.DIRECTORY_DOWNLOADS), arr[2]);
+//                System.out.println("local file :" + localFile);
+//                try {
+//                    localFile.createNewFile();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//                downloadRef.getFile(localFile);
+//                final int[] flag = {0};
+//                File fileNameOnDevice = new File(DOWNLOAD_DIR + "/" + downloadRef.getName());
+//                System.out.println("File on device :" + fileNameOnDevice);
+//
+//
+//                downloadRef.getFile(fileNameOnDevice).addOnSuccessListener(
+//                        new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+//                            @Override
+//                            public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+//                                Log.d("File Download", "downloaded the file");
+////                                if (msg.getReceiver().getId().equals(set.readSetting("myid"))) {
+////                                    holder.play_icon.setImageResource(R.drawable.ic_play_circle_filled_dark_24dp);
+////                                }
+////                                else {
+////                                    holder.play_icon.setImageResource(R.drawable.ic_play_circle_filled_white_24dp);
+////                                }
+////                                Toast.makeText(mContext, R.string.download_done, Toast.LENGTH_SHORT).show();
+//                                flag[0] =1;
+//
+//                            }
+//                        }).addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception exception) {
+//                        Log.e("File Download", "Failed to download the file");
+//                        if (msg.getReceiver().getId().equals(set.readSetting("myid"))) {
+//                            holder.play_icon.setImageResource(R.drawable.ic_file_download_dark_24dp);
+//                        }
+//                        else {
+//                            holder.play_icon.setImageResource(R.drawable.ic_file_download_white_24dp);
+//                        }
+//                        Toast.makeText(mContext,
+//                                R.string.download_failed,
+//                                Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+//
+//
+//                if (fileNameOnDevice.exists() || flag[0]==1) {
+//                    if (msg.getReceiver().getId().equals(set.readSetting("myid"))) {
+//                        holder.play_icon.setImageResource(R.drawable.ic_play_circle_filled_dark_24dp);
+//                    } else {
+//                        holder.play_icon.setImageResource(R.drawable.ic_play_circle_filled_white_24dp);
+//                    }
+//                    handler = new Handler();
+//                    mediaPlayer = new MediaPlayer();
+////                    try {
+////                        mediaPlayer.setDataSource(fileNameOnDevice.getPath());
+////                    } catch (IOException e) {
+////                        e.printStackTrace();
+////                    }
+////                    RecordDialog recDialog = new RecordDialog();
+////                    FragmentManager fm = ((ActivityChatDetails)mContext).getSupportFragmentManager();
+////                    recDialog.show(fm,"Record Dialog");
+//                    if (mediaPlayer.isPlaying()) {
+//                        mediaPlayer.pause();
+//                        if (msg.getReceiver().getId().equals(set.readSetting("myid"))) {
+//                            holder.play_icon.setImageResource(R.drawable.ic_pause_circle_filled_dark_24dp);
+//                        } else {
+//                            holder.play_icon.setImageResource(R.drawable.ic_pause_circle_filled_white_24dp);
+//                        }
+//                    } else {
+//
+//                        try {
+//
+//                            mediaPlayer.setDataSource(fileNameOnDevice.getPath());
+////                        Toast.makeText(mContext, "media player set", Toast.LENGTH_SHORT).show();
+//                            mediaPlayer.prepare();
+//                            mediaPlayer.start();
+//                            if (msg.getReceiver().getId().equals(set.readSetting("myid"))) {
+//                                holder.play_icon.setImageResource(R.drawable.ic_pause_circle_filled_dark_24dp);
+//                            } else {
+//                                holder.play_icon.setImageResource(R.drawable.ic_pause_circle_filled_white_24dp);
+//                            }
+//                            isPlaying = true;
+//                            changeSeekbar();
+////                        Toast.makeText(mContext, "Playing Audio", Toast.LENGTH_SHORT).show();
+////                        seekBar_inner.setProgress(mediaPlayer.getCurrentPosition());
+//                        } catch (IOException e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
+//
+//                }
+//
+
+
+
+
+//              OLD CODE
                 StorageReference storageRef = storage.getReference();
                 System.out.println("Filename :" + fileName.substring(1));
                 StorageReference downloadRef = storageRef.child(fileName.substring(1));
@@ -628,12 +761,21 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                             public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
                                 Log.d("File Download", "downloaded the file");
                                 Toast.makeText(mContext, R.string.download_done, Toast.LENGTH_SHORT).show();
-                                        flag[0] =1;
+                                flag[0] =1;
+                                holder.loading_gif_view.setVisibility(View.GONE);
+                                holder.play_icon.setVisibility(View.VISIBLE);
+
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception exception) {
                         Log.e("File Download", "Failed to download the file");
+                        if (msg.getReceiver().getId().equals(set.readSetting("myid"))) {
+                            holder.play_icon.setImageResource(R.drawable.ic_file_download_dark_24dp);
+                        }
+                        else {
+                            holder.play_icon.setImageResource(R.drawable.ic_file_download_white_24dp);
+                        }
                         Toast.makeText(mContext,
                                 R.string.download_failed,
                                 Toast.LENGTH_SHORT).show();
@@ -824,6 +966,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 		ImageView download_iv;
         ImageView photo_iv;
         VideoView video_iv;
+        GifImageView loading_gif_view;
 //        BubbleLinearLayout bubbleView;
 	}	
 }
