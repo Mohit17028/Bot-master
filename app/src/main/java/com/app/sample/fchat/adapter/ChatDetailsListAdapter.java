@@ -92,6 +92,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
             holder.photo_iv = (ImageView) convertView.findViewById(R.id.photo_iv);
             holder.video_iv = (VideoView) convertView.findViewById(R.id.video_iv);
             holder.loading_gif_view = (GifImageView) convertView.findViewById(R.id.loading_gif);
+            holder.photo_loading_gif = (GifImageView) convertView.findViewById(R.id.photo_loading_gif);
             convertView.setTag(holder);
         }else{
             holder = (ViewHolder) convertView.getTag();
@@ -104,12 +105,17 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                 holder.message.setVisibility(View.VISIBLE);
                 holder.message.setText(msg.getText());
                 holder.audio_layout.setVisibility(View.GONE);
+                holder.photo_iv.setVisibility(View.GONE);
+                holder.video_iv.setVisibility(View.GONE);
 
             } else if (msg.getIs_text().equals("0")) {
                 String aud_name[] = msg.getAudName().split("/");
                 holder.message.setVisibility(View.GONE);
                 holder.audio_layout.setVisibility(View.VISIBLE);
                 holder.aud_name_tv.setText(aud_name[aud_name.length - 1]);
+                holder.photo_iv.setVisibility(View.GONE);
+                holder.video_iv.setVisibility(View.GONE);
+                
             } else if (msg.getIs_text().equals("2")) {
 //                String photoPath[] = msg.getPhotoPath().split("/");
 
@@ -298,12 +304,14 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 
         }
 
+
 //       Download on click IMAGE
         final String photoPath = msg.getPhotoPath();
         holder.photo_iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                holder.photo_iv.set;
+                holder.photo_iv.setVisibility(View.GONE);
+                holder.photo_loading_gif.setVisibility(View.VISIBLE);
                 System.out.println("Method photo called" + photoPath);
                 FirebaseStorage storage = FirebaseStorage.getInstance();
                 String fileName = photoPath;
@@ -356,6 +364,9 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                             public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
                                 Log.d(" Photo Download", "downloaded the file");
 
+                                holder.photo_loading_gif.setVisibility(View.GONE);
+                                holder.photo_iv.setVisibility(View.VISIBLE);
+
                                 Toast.makeText(mContext, R.string.download_done, Toast.LENGTH_SHORT).show();
                                 flag[0] = 1;
                             }
@@ -366,6 +377,9 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                         Toast.makeText(mContext,
                                 R.string.download_failed,
                                 Toast.LENGTH_SHORT).show();
+
+                        holder.photo_loading_gif.setVisibility(View.GONE);
+                        holder.photo_iv.setVisibility(View.VISIBLE);
                     }
                 });
 
@@ -967,6 +981,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
         ImageView photo_iv;
         VideoView video_iv;
         GifImageView loading_gif_view;
+        GifImageView photo_loading_gif;
 //        BubbleLinearLayout bubbleView;
 	}	
 }

@@ -242,6 +242,7 @@ private View parent_view;
 //            actionBar.setDisplayHomeAsUpEnabled(false);
 //        }
 
+        hideKeyboard();
         add_image = (ImageView) findViewById(R.id.attach_img);
         add_video = (ImageView) findViewById(R.id.attach_video);
         attachment_iv = (ImageView) findViewById(R.id.attatchment_iv);
