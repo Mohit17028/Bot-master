@@ -47,14 +47,14 @@ public class ChatDetailsListAdapter extends BaseAdapter {
     private Runnable runnable;
     private Handler handler;
     private boolean isPlaying = false;
-	
+
 	public ChatDetailsListAdapter(Context context, List<ChatMessage> messages) {
         super();
         this.mContext = context;
         this.mMessages = messages;
         set=new SettingsAPI(mContext);
 	}
-	
+
 	@Override
 	public int getCount() {
 		return mMessages.size();
@@ -93,6 +93,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
             holder.video_iv = (VideoView) convertView.findViewById(R.id.video_iv);
             holder.loading_gif_view = (GifImageView) convertView.findViewById(R.id.loading_gif);
             holder.photo_loading_gif = (GifImageView) convertView.findViewById(R.id.photo_loading_gif);
+            holder.video_layout = (LinearLayout) convertView.findViewById(R.id.video_layout);
             convertView.setTag(holder);
         }else{
             holder = (ViewHolder) convertView.getTag();
@@ -153,7 +154,9 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                 holder.audio_layout.setVisibility(View.GONE);
                 holder.photo_iv.setVisibility(View.GONE);
                 holder.video_iv.setVisibility(View.VISIBLE);
-
+                Toast.makeText(mContext,
+                                "video_view mila",
+                                Toast.LENGTH_SHORT).show();
 
 //                set video
                 try {
@@ -184,13 +187,16 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 //                    mVideoView.setVideoURI(uri);
 //                    mVideoView.requestFocus();
 //                    mVideoView.start();
+
+
+                        holder.video_iv.setVideoURI(Uri.parse(path));
+
                         final MediaController mediacontroller = new MediaController(mContext);
+                        holder.video_iv.setMediaController(mediacontroller);
                         mediacontroller.setAnchorView(holder.video_iv);
 
-
-                        holder.video_iv.setMediaController(mediacontroller);
-                        holder.video_iv.setVideoURI(Uri.parse(path));
                         holder.video_iv.requestFocus();
+                        holder.video_iv.start();
 
                         holder.video_iv.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
                             @Override
@@ -200,7 +206,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                                     public void onVideoSizeChanged(MediaPlayer mp, int width, int height) {
                                         holder.video_iv.setMediaController(mediacontroller);
                                         mediacontroller.setAnchorView(holder.video_iv);
-
+//                                        holder.video_iv.start();
                                     }
                                 });
                             }
@@ -389,10 +395,13 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 
 //        OnClick for VIDEO
         final String VideoPath = msg.getVideoPath();
-        holder.video_iv.setOnClickListener(new View.OnClickListener() {
+        holder.video_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 System.out.println("Method video called" + VideoPath);
+                Toast.makeText(mContext,
+                                "clicked",
+                                Toast.LENGTH_SHORT).show();
 //                FirebaseStorage storage = FirebaseStorage.getInstance();
 //                String fileName = VideoPath;
 ////        fileName="/111433108964661785456/recording_1539375297988.mp3";
@@ -469,12 +478,14 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 //                    mVideoView.setVideoURI(uri);
 //                    mVideoView.requestFocus();
 //                    mVideoView.start();
+                    holder.video_iv.setVideoURI(Uri.parse(path));
+
                     final MediaController mediacontroller = new MediaController(mContext);
+                    holder.video_iv.setMediaController(mediacontroller);
                     mediacontroller.setAnchorView(holder.video_iv);
 
-                    holder.video_iv.setMediaController(mediacontroller);
-                    holder.video_iv.setVideoURI(Uri.parse(path));
                     holder.video_iv.requestFocus();
+                    holder.video_iv.start();
 
                     holder.video_iv.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
                         @Override
@@ -484,6 +495,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                                 public void onVideoSizeChanged(MediaPlayer mp, int width, int height) {
                                     holder.video_iv.setMediaController(mediacontroller);
                                     mediacontroller.setAnchorView(holder.video_iv);
+//                                    holder.video_iv.start();
 
                                 }
                             });
@@ -958,15 +970,15 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 	public void remove(int position){
 		mMessages.remove(position);
 	}
-	
+
 	/**
 	 * add data item to messageAdapter
-	 * 
+	 *
 	 **/
 	public void add(ChatMessage msg){
 		mMessages.add(msg);
 	}
-	
+
 	private static class ViewHolder{
 		TextView time;
 		TextView message;
@@ -983,6 +995,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
         VideoView video_iv;
         GifImageView loading_gif_view;
         GifImageView photo_loading_gif;
+        LinearLayout video_layout;
 //        BubbleLinearLayout bubbleView;
-	}	
+	}
 }

@@ -686,7 +686,9 @@ private View parent_view;
     private void chooseVideo() {
         Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT, MediaStore.Video.Media.EXTERNAL_CONTENT_URI);
 //        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        startActivityForResult(intent,PICK_VIDEO_REQUEST);}
+        startActivityForResult(intent,PICK_VIDEO_REQUEST);
+    }
+
     private String uploadImage() {
         System.out.println("filepath ::" + filePath);
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
