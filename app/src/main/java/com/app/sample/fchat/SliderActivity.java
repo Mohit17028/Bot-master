@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -12,7 +13,9 @@ import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.MediaController;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 import com.app.sample.fchat.adapter.SliderAdapter;
 
@@ -24,7 +27,7 @@ public class SliderActivity extends AppCompatActivity {
     private int[] layouts ={R.layout.slide_layout, R.layout.slide_layout2, R.layout.slide_layout3};
     private SliderAdapter sliderAdapter;
     private Button btnSkip, btnNext;
-
+    private VideoView videoView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +61,7 @@ public class SliderActivity extends AppCompatActivity {
             public void onPageSelected(int position) {
                 if (position == layouts.length-1){
                     //Last page
-                    btnNext.setText("Start");
+                    btnNext.setText(R.string.next_btn);
                     btnSkip.setVisibility(View.GONE);
                 }
                 else{
@@ -90,6 +93,18 @@ public class SliderActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 int currentPage = slideViewPager.getCurrentItem()+1;
+                if (currentPage == layouts.length-1) {
+                    videoView = (VideoView) findViewById(R.id.scenario_videoView);
+                    String videoPath = "android.resource://com.app.sample.fchat/" + R.raw.scenario_video;
+                    Uri uri = Uri.parse(videoPath);
+                    videoView.setVideoURI(uri);
+
+//                    MediaController mediaController = new MediaController(getApplicationContext());
+//                    videoView.setMediaController(mediaController);
+//                    mediaController.setAnchorView(videoView);
+
+                    videoView.start();
+                }
                 if (currentPage < layouts.length){
                     //move to next page
                     slideViewPager.setCurrentItem(currentPage);

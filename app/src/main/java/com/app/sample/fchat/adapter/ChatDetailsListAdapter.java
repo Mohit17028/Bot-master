@@ -115,7 +115,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                 holder.aud_name_tv.setText(aud_name[aud_name.length - 1]);
                 holder.photo_iv.setVisibility(View.GONE);
                 holder.video_iv.setVisibility(View.GONE);
-                
+
             } else if (msg.getIs_text().equals("2")) {
 //                String photoPath[] = msg.getPhotoPath().split("/");
 
@@ -312,6 +312,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
             public void onClick(View view) {
                 holder.photo_iv.setVisibility(View.GONE);
                 holder.photo_loading_gif.setVisibility(View.VISIBLE);
+
                 System.out.println("Method photo called" + photoPath);
                 FirebaseStorage storage = FirebaseStorage.getInstance();
                 String fileName = photoPath;
