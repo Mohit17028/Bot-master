@@ -1,6 +1,7 @@
 package com.app.sample.fchat.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -22,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
 
+import com.app.sample.fchat.OpenImageFullScreen;
 import com.app.sample.fchat.R;
 import com.app.sample.fchat.data.SettingsAPI;
 import com.app.sample.fchat.model.ChatMessage;
@@ -47,6 +49,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
     private Runnable runnable;
     private Handler handler;
     private boolean isPlaying = false;
+    private Uri imageUri;
 
 	public ChatDetailsListAdapter(Context context, List<ChatMessage> messages) {
         super();
@@ -125,6 +128,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                 holder.photo_iv.setVisibility(View.VISIBLE);
                 holder.video_iv.setVisibility(View.GONE);
 
+
 //                set image
                 try {
 //                    final int takeFlags = (Intent.FLAG_GRANT_READ_URI_PERMISSION
@@ -140,6 +144,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                     else
                         System.out.println("PATH WRONG");
                     Uri val=Uri.fromFile(new File(path));
+                    imageUri = val;
                     System.out.println("PHOTO :"+val);
                     Bitmap bitmap = MediaStore.Images.Media.getBitmap(mContext.getContentResolver(), val);
                     holder.photo_iv.setImageBitmap(bitmap);
@@ -376,6 +381,10 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 
                                 Toast.makeText(mContext, R.string.download_done, Toast.LENGTH_SHORT).show();
                                 flag[0] = 1;
+
+                                // Open Image in fullScreen
+                                Intent intent = new Intent(mContext,OpenImageFullScreen.class);
+                                intent.setData(imageUri);
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                     @Override
@@ -389,6 +398,10 @@ public class ChatDetailsListAdapter extends BaseAdapter {
                         holder.photo_iv.setVisibility(View.VISIBLE);
                     }
                 });
+                if(flag[0] == 1){
+                    Intent intent = new Intent(mContext,OpenImageFullScreen.class);
+                    intent.setData(imageUri);
+                }
 
             }
         });

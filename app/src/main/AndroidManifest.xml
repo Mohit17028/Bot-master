@@ -79,7 +79,8 @@
         <!-- android:name=".MyMsgService" -->
         <!-- android:enabled="true" -->
         <!-- android:exported="true"></service> -->
-        <activity android:name=".SliderActivity"></activity>
+        <activity android:name=".SliderActivity" />
+        <activity android:name=".OpenImageFullScreen"></activity>
     </application>
 
 </manifest>
